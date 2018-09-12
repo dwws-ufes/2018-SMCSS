@@ -227,14 +227,47 @@
   </compose>
   <compose xsi:type="frameweb:NavigationModel" name="Navigation Model">
     <packagedElement xsi:type="frameweb:ViewPackage" name="View Package">
-      <packagedElement xsi:type="frameweb:Page" name="boasvindas"/>
-      <packagedElement xsi:type="frameweb:UIComponent" name="New UI Component"/>
-      <packagedElement xsi:type="frameweb:UIComponent" name="New UI Component"/>
-      <packagedElement xsi:type="frameweb:AuthForm" name="New Auth Form">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="J_username"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="J_password"/>
+      <packagedElement xsi:type="frameweb:Page" name="solicitacaoMatricula" isAbstract="true">
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo" association="//@compose.1/View%20Package/@packagedElement.2"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="numeroMatricula" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeOrientador" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="curso" visibility="private"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:UIComponent" name="listaOfertasDisciplinasPeriodo">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoDisciplina" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeDisciplina" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="diaSemanaAula" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="horarioInicioAula" visibility="private" isID="true">
+          <qualifier xsi:type="frameweb:UIComponentField" name="horarioTerminoAula" visibility="private" isID="true"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="cursoDiciplina" visibility="private"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/View%20Package/@packagedElement.2/@ownedEnd.0 //@compose.1/View%20Package/solicitacaoMatricula/@ownedAttribute.0">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.1/View%20Package/solicitacaoMatricula" association="//@compose.1/View%20Package/@packagedElement.2"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="solicitacaoRealizada">
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/solicitacaoMatricula"/>
       </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package"/>
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package" URI="">
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="SolicitarMatriculaController">
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="listarOfertasDiciplinasPeriodo"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="solicitarMatricula">
+          <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
+        </ownedOperation>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency">
+      <resultDependencyConstraint result="null"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" name="" client="//@compose.1/View%20Package/solicitacaoMatricula" supplier="//@compose.1/View%20Package/solicitacaoMatricula">
+      <resultDependencyConstraint result="null"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/solicitacaoMatricula" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/listarOfertasDiciplinasPeriodo">
+      <resultDependencyConstraint result="sucesso"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/solicitacaoRealizada" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/solicitarMatricula">
+      <resultDependencyConstraint result="sucesso"/>
+    </packagedElement>
   </compose>
 </frameweb:FramewebProject>
