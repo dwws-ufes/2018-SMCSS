@@ -248,6 +248,7 @@
       <packagedElement xsi:type="frameweb:Page" name="solicitacaoRealizada">
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/solicitacaoMatricula"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="NenhumaOfertasDiciplinasPeriodo"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package" URI="">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="SolicitarMatriculaController">
@@ -268,6 +269,16 @@
     </packagedElement>
     <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/solicitacaoRealizada" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/solicitarMatricula">
       <resultDependencyConstraint result="sucesso"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:PageDependency" name="" client="//@compose.1/View%20Package/solicitacaoRealizada" supplier="//@compose.1/View%20Package/solicitacaoMatricula">
+      <pageDependencyConstraint/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/View%20Package/solicitacaoMatricula" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/listarOfertasDiciplinasPeriodo"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/NenhumaOfertasDiciplinasPeriodo" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/listarOfertasDiciplinasPeriodo">
+      <resultDependencyConstraint result="falha"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.1/View%20Package/NenhumaOfertasDiciplinasPeriodo" supplier="//@compose.1/View%20Package/solicitacaoMatricula">
+      <pageDependencyConstraint/>
     </packagedElement>
   </compose>
 </frameweb:FramewebProject>
