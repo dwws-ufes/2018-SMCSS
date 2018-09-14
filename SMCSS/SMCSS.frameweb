@@ -282,7 +282,7 @@
       <pageDependencyConstraint/>
     </packagedElement>
   </compose>
-  <compose xsi:type="frameweb:NavigationModel" name="NavegacaoAprovarSolicitacaoMatricula">
+  <compose xsi:type="frameweb:NavigationModel" name="NavegacaoAvaliarSolicitacaoMatricula">
     <packagedElement xsi:type="frameweb:ViewPackage" name="View Package">
       <packagedElement xsi:type="frameweb:Page" name="solicitacoesMatriculasEnviadas">
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.2/View%20Package/lisaSolicitacoesEnviadas" association="//@compose.2/View%20Package/@packagedElement.2"/>

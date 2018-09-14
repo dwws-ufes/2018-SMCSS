@@ -104,7 +104,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWeb%20Project']/@defaultLayer/@containerMappings[name='NavigationModel']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_htXTULgeEei4LeT61HTcAQ" name="NavegacaoAprovarSolicitacaoMatricula">
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_htXTULgeEei4LeT61HTcAQ" name="NavegacaoAvaliarSolicitacaoMatricula">
       <target xmi:type="frameweb:NavigationModel" href="SMCSS.frameweb#//@compose.2"/>
       <semanticElements xmi:type="frameweb:NavigationModel" href="SMCSS.frameweb#//@compose.2"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
