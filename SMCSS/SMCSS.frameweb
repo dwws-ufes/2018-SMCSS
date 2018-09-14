@@ -234,14 +234,23 @@
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="curso" visibility="private"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:UIComponent" name="listaOfertasDisciplinasPeriodo">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoDisciplina" visibility="private"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeDisciplina" visibility="private"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="diaSemanaAula" visibility="private"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="horarioInicioAula" visibility="private" isID="true">
-          <qualifier xsi:type="frameweb:UIComponentField" name="horarioTerminoAula" visibility="private" isID="true"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoDisciplina" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="cursoDiciplina" visibility="private"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="periodo" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeDisciplina" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="diaSemanaAula" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="horarioInicioAula" visibility="private" isID="true">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+          <qualifier xsi:type="frameweb:UIComponentField" name="horarioTerminoAula" visibility="private" isID="true">
+            <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+          </qualifier>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="cursoDiciplina" visibility="private" type="//@compose.0/Entity%20Package/Curso"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="periodo" visibility="private" type="//@compose.0/Entity%20Package/PeriodoLetivo"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/View%20Package/@packagedElement.2/@ownedEnd.0 //@compose.1/View%20Package/solicitacaoMatricula/@ownedAttribute.0">
         <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.1/View%20Package/solicitacaoMatricula" association="//@compose.1/View%20Package/@packagedElement.2"/>
@@ -288,12 +297,21 @@
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.2/View%20Package/lisaSolicitacoesEnviadas" association="//@compose.2/View%20Package/@packagedElement.2"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:UIComponent" name="lisaSolicitacoesEnviadas">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="numeroMatricula" visibility="private"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeAluno" visibility="private"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="periodo" visibility="private">
-          <qualifier xsi:type="frameweb:UIComponentField" name="nomeDisciplina" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="numeroMatricula" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoDisciplina" visibility="private"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeAluno" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="periodo" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+          <qualifier xsi:type="frameweb:UIComponentField" name="nomeDisciplina" visibility="private">
+            <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+          </qualifier>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoDisciplina" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.2/View%20Package/@packagedElement.2/@ownedEnd.0 //@compose.2/View%20Package/solicitacoesMatriculasEnviadas/@ownedAttribute.0">
         <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.2/View%20Package/solicitacoesMatriculasEnviadas" association="//@compose.2/View%20Package/@packagedElement.2"/>
@@ -320,6 +338,74 @@
     </packagedElement>
     <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.2/View%20Package/periodoMatriculaEncerrado" supplier="//@compose.2/View%20Package/solicitacoesMatriculasEnviadas">
       <pageDependencyConstraint/>
+    </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:NavigationModel" name="NavegacaoCadastrarAprovadosSelecao">
+    <packagedElement xsi:type="frameweb:ViewPackage" name="View Package">
+      <packagedElement xsi:type="frameweb:Page" name="gerenciarAprovadosSelecao/lista">
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.3/View%20Package/formulario"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.3/View%20Package/listaAprovados" association="//@compose.3/View%20Package/@packagedElement.3"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.3/View%20Package/excluirAprovado" association="//@compose.3/View%20Package/@packagedElement.7"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:UIComponent" name="formulario">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nome" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="email" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="cpf" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="dataNascimento" visibility="private">
+          <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:UIComponent" name="listaAprovados"/>
+      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.3/View%20Package/@packagedElement.3/@ownedEnd.0 //@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista/@ownedAttribute.1">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" association="//@compose.3/View%20Package/@packagedElement.3"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:Page" name="gerenciarAprovadoSelecao/formulario">
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.3/View%20Package/formulario" association="//@compose.3/View%20Package/@packagedElement.5"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.3/View%20Package/@packagedElement.5/@ownedEnd.0 //@compose.3/View%20Package/gerenciarAprovadoSelecao%2Fformulario/@ownedAttribute.0">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.3/View%20Package/gerenciarAprovadoSelecao%2Fformulario" association="//@compose.3/View%20Package/@packagedElement.5"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:UIComponent" name="excluirAprovado"/>
+      <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.3/View%20Package/@packagedElement.7/@ownedEnd.0 //@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista/@ownedAttribute.2">
+        <ownedEnd xsi:type="frameweb:NavigationCompositionPart" type="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" association="//@compose.3/View%20Package/@packagedElement.7"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package">
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="GerenciarAprovadoSelecaoController">
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="incluir"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="excluir"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="salvar"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="consultar"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="cancelar"/>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="listar"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/incluir"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/consultar"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" supplier="//@compose.3/View%20Package/gerenciarAprovadoSelecao%2Fformulario" resultMethod="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/incluir">
+      <resultDependencyConstraint result="sucesso"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" supplier="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" resultMethod="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/salvar">
+      <resultDependencyConstraint result="sucesso"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" supplier="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" resultMethod="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/excluir">
+      <resultDependencyConstraint ajax="true" result="sucesso"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" supplier="//@compose.3/View%20Package/gerenciarAprovadoSelecao%2Fformulario" resultMethod="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/consultar">
+      <resultDependencyConstraint result="sucesso"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.3/View%20Package/formulario" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/salvar"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.3/View%20Package/excluirAprovado" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/excluir"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/listar"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" name="" client="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" supplier="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" resultMethod="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/listar">
+      <resultDependencyConstraint result="true|false"/>
     </packagedElement>
   </compose>
 </frameweb:FramewebProject>
