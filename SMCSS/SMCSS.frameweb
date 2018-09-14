@@ -99,6 +99,9 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="situacao" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="numeroMatricula" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Professor">
         <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
@@ -124,14 +127,14 @@
         </ownedEnd>
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" association="//@compose.0/Entity%20Package/Relationship"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="e realizada por" memberEnd="//@compose.0/Entity%20Package/e%20realizada%20por/Source //@compose.0/Entity%20Package/e%20realizada%20por/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/e%20realizada%20por/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/e%20realizada%20por/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/e%20realizada%20por"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/OfertaDisciplina" association="//@compose.0/Entity%20Package/e%20realizada%20por">
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="ministrada por" memberEnd="//@compose.0/Entity%20Package/ministrada%20por/Source //@compose.0/Entity%20Package/ministrada%20por/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/ministrada%20por/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/ministrada%20por/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/ministrada%20por"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/OfertaDisciplina" association="//@compose.0/Entity%20Package/ministrada%20por">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Professor" association="//@compose.0/Entity%20Package/e%20realizada%20por"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Professor" association="//@compose.0/Entity%20Package/ministrada%20por"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="faz" memberEnd="//@compose.0/Entity%20Package/faz/Source //@compose.0/Entity%20Package/faz/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/faz/Source"/>
@@ -142,13 +145,6 @@
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="realizada em" memberEnd="//@compose.0/Entity%20Package/realizada%20em/Source //@compose.0/Entity%20Package/realizada%20em/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/realizada%20em/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/realizada%20em/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/realizada%20em"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/OfertaDisciplina" association="//@compose.0/Entity%20Package/realizada%20em"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Matricula" association="//@compose.0/Entity%20Package/realizada%20em"/>
-      </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/Entity%20Package/possui/Source //@compose.0/Entity%20Package/possui/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/possui/Source"/>
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/possui/Target"/>
@@ -156,7 +152,18 @@
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/OfertaDisciplina" association="//@compose.0/Entity%20Package/possui">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
         </ownedEnd>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Aula" association="//@compose.0/Entity%20Package/possui">
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Matricula" association="//@compose.0/Entity%20Package/possui">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="possui" memberEnd="//@compose.0/Entity%20Package/possui.1/Source //@compose.0/Entity%20Package/possui.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/possui.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/possui.1/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/possui.1"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/OfertaDisciplina" association="//@compose.0/Entity%20Package/possui.1">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="1"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Aula" association="//@compose.0/Entity%20Package/possui.1">
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
       </packagedElement>
@@ -164,11 +171,14 @@
         <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="pontuacaoAlcancada" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="classificacaoFinal" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Aluno">
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="matricula" visibility="private">
-          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
-        </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
@@ -361,6 +371,12 @@
         <ownedAttribute xsi:type="frameweb:UIComponentField" name="dataNascimento" visibility="private">
           <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/Date"/>
         </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="pontuacaoAlcancada" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="classificacaoFinal" visibility="private">
+          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+        </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:UIComponent" name="listaAprovados"/>
       <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.3/View%20Package/@packagedElement.3/@ownedEnd.0 //@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista/@ownedAttribute.1">
@@ -406,6 +422,59 @@
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/listar"/>
     <packagedElement xsi:type="frameweb:ResultDependency" name="" client="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" supplier="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" resultMethod="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/listar">
       <resultDependencyConstraint result="true|false"/>
+    </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:PersistenceModel" name="ModeloPersistencia">
+    <packagedElement xsi:type="frameweb:PersistencePackage" name="Persistence Package">
+      <packagedElement xsi:type="frameweb:DAOClass" name="JPADAOPadrao" powertypeExtent="//@compose.4/Persistence%20Package/JPADAOPadrao.1 //@compose.4/Persistence%20Package/JPADAOPadrao.2 //@compose.4/Persistence%20Package/JPADAOPadrao.3 //@compose.4/Persistence%20Package/JPADAOPadrao.4 //@compose.4/Persistence%20Package/JPADAOPadrao.5 //@compose.4/Persistence%20Package/JPADAOPadrao.6 //@compose.4/Persistence%20Package/JPADAOPadrao.7 //@compose.4/Persistence%20Package/JPADAOPadrao.8"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="CursoJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.1"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="CursoDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/CursoJPADAO" supplier="//@compose.4/Persistence%20Package/CursoDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/CursoJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="DisciplinaJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.2"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="DisciplinaDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/DisciplinaJPADAO" supplier="//@compose.4/Persistence%20Package/DisciplinaDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/DisciplinaJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="PeriodoLetivoJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.3"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="PeriodoLetivoDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/PeriodoLetivoJPADAO" supplier="//@compose.4/Persistence%20Package/PeriodoLetivoDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/PeriodoLetivoJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="PessoaJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.4"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="PessoaDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/PessoaJPADAO" supplier="//@compose.4/Persistence%20Package/PessoaDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/PessoaJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="CandidatoJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.5"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="CandidatoDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/CandidatoJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="OfertaDisciplinaJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.6"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="OfertaDisciplinaDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/OfertaDisciplinaJPADAO" supplier="//@compose.4/Persistence%20Package/OfertaDisciplinaDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/OfertaDisciplinaJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="AulaJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.7"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/AulaJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="AulaDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/AulaJPADAO" supplier="//@compose.4/Persistence%20Package/AulaDAO"/>
+      <packagedElement xsi:type="frameweb:DAOClass" name="MatriculaJPADAO">
+        <generalization xsi:type="frameweb:DAOGeneralization" generalizationSet="//@compose.4/Persistence%20Package/JPADAOPadrao.8"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOInterface" name="MatriculaDAO"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/MatriculaJPADAO" supplier="//@compose.4/Persistence%20Package/MatriculaDAO"/>
+      <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/MatriculaJPADAO/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/CandidatoJPADAO" supplier="//@compose.4/Persistence%20Package/CandidatoDAO"/>
     </packagedElement>
   </compose>
 </frameweb:FramewebProject>
