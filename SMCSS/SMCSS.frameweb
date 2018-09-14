@@ -277,6 +277,12 @@
           <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.1/Controller%20Package/@packagedElement.1/Source //@compose.1/Controller%20Package/@packagedElement.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.1/Controller%20Package/@packagedElement.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.1/Controller%20Package/@packagedElement.1/Target"/>
+        <ownedEnd name="Source" type="//@compose.1/Controller%20Package/GerenciarMatriculasController" association="//@compose.1/Controller%20Package/@packagedElement.1"/>
+        <ownedEnd name="Target" type="//@compose.5/Application%20Package/GerenciarMatriculasService" association="//@compose.1/Controller%20Package/@packagedElement.1"/>
+      </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ResultDependency">
       <resultDependencyConstraint result="null"/>
@@ -330,20 +336,26 @@
       <packagedElement xsi:type="frameweb:Page" name="periodoMatriculaEncerrado"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package">
-      <packagedElement xsi:type="frameweb:FrontControllerClass" name="GerenciarMatriculasController">
+      <packagedElement xsi:type="frameweb:FrontControllerClass" name="GerenciarAvaliacaoMatriculasController">
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="avaliarSolicitacaoMatricula">
           <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
         </ownedOperation>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.2/Controller%20Package/@packagedElement.1/Source //@compose.2/Controller%20Package/@packagedElement.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.2/Controller%20Package/@packagedElement.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.2/Controller%20Package/@packagedElement.1/Target"/>
+        <ownedEnd name="Source" type="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController" association="//@compose.2/Controller%20Package/@packagedElement.1"/>
+        <ownedEnd name="Target" type="//@compose.5/Application%20Package/AvaliacaoMatriculaService" association="//@compose.2/Controller%20Package/@packagedElement.1"/>
+      </packagedElement>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.2/View%20Package/solicitacoesMatriculasEnviadas" supplier="//@compose.2/Controller%20Package/GerenciarMatriculasController" method="//@compose.2/Controller%20Package/GerenciarMatriculasController/avaliarSolicitacaoMatricula"/>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/Controller%20Package/GerenciarMatriculasController" supplier="//@compose.2/View%20Package/solicitacaoAvaliada" resultMethod="//@compose.2/Controller%20Package/GerenciarMatriculasController/avaliarSolicitacaoMatricula">
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.2/View%20Package/solicitacoesMatriculasEnviadas" supplier="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController" method="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController/avaliarSolicitacaoMatricula"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController" supplier="//@compose.2/View%20Package/solicitacaoAvaliada" resultMethod="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController/avaliarSolicitacaoMatricula">
       <resultDependencyConstraint result="true"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.2/View%20Package/solicitacaoAvaliada" supplier="//@compose.2/View%20Package/solicitacoesMatriculasEnviadas">
       <pageDependencyConstraint/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/Controller%20Package/GerenciarMatriculasController" supplier="//@compose.2/View%20Package/periodoMatriculaEncerrado" resultMethod="//@compose.2/Controller%20Package/GerenciarMatriculasController/avaliarSolicitacaoMatricula">
+    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController" supplier="//@compose.2/View%20Package/periodoMatriculaEncerrado" resultMethod="//@compose.2/Controller%20Package/GerenciarAvaliacaoMatriculasController/avaliarSolicitacaoMatricula">
       <resultDependencyConstraint result="false"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:PageDependency" client="//@compose.2/View%20Package/periodoMatriculaEncerrado" supplier="//@compose.2/View%20Package/solicitacoesMatriculasEnviadas">
@@ -399,8 +411,13 @@
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="excluir"/>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="salvar"/>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="consultar"/>
-        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="cancelar"/>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="listar"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceControllerAssociation" memberEnd="//@compose.3/Controller%20Package/@packagedElement.1/Source //@compose.3/Controller%20Package/@packagedElement.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.3/Controller%20Package/@packagedElement.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.3/Controller%20Package/@packagedElement.1/Target"/>
+        <ownedEnd name="Source" type="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" association="//@compose.3/Controller%20Package/@packagedElement.1"/>
+        <ownedEnd name="Target" type="//@compose.5/Application%20Package/GerenciarAprovadoSelecaoService" association="//@compose.3/Controller%20Package/@packagedElement.1"/>
       </packagedElement>
     </packagedElement>
     <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.3/View%20Package/gerenciarAprovadosSelecao%2Flista" supplier="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController" method="//@compose.3/Controller%20Package/GerenciarAprovadoSelecaoController/incluir"/>
@@ -475,6 +492,52 @@
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/MatriculaJPADAO" supplier="//@compose.4/Persistence%20Package/MatriculaDAO"/>
       <packagedElement xsi:type="frameweb:DAOGeneralizationSet" name="JPADAOPadrao" powertype="//@compose.4/Persistence%20Package/JPADAOPadrao" generalization="//@compose.4/Persistence%20Package/MatriculaJPADAO/@generalization.0"/>
       <packagedElement xsi:type="frameweb:DAORealization" client="//@compose.4/Persistence%20Package/CandidatoJPADAO" supplier="//@compose.4/Persistence%20Package/CandidatoDAO"/>
+    </packagedElement>
+  </compose>
+  <compose xsi:type="frameweb:ApplicationModel" name="ModeloAplicacao">
+    <packagedElement xsi:type="frameweb:ApplicationPackage" name="Application Package">
+      <packagedElement xsi:type="frameweb:ServiceClass" name="GerenciarMatriculasServiceBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="solicitarMatricula">
+          <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="listarOfertasDisciplinas"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="GerenciarMatriculasService"/>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/Application%20Package/GerenciarMatriculasServiceBean" supplier="//@compose.5/Application%20Package/GerenciarMatriculasService"/>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="AvaliacaoMatriculaServiceBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="avaliarSolicitacaoMatricula">
+          <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="AvaliacaoMatriculaService"/>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/Application%20Package/AvaliacaoMatriculaServiceBean" supplier="//@compose.5/Application%20Package/AvaliacaoMatriculaService"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/Application%20Package/@packagedElement.6/Source //@compose.5/Application%20Package/@packagedElement.6/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.6/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.6/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/Application%20Package/GerenciarMatriculasServiceBean" association="//@compose.5/Application%20Package/@packagedElement.6"/>
+        <ownedEnd name="Target" type="//@compose.4/Persistence%20Package/OfertaDisciplinaDAO" association="//@compose.5/Application%20Package/@packagedElement.6"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/Application%20Package/@packagedElement.7/Source //@compose.5/Application%20Package/@packagedElement.7/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.7/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.7/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/Application%20Package/AvaliacaoMatriculaServiceBean" association="//@compose.5/Application%20Package/@packagedElement.7"/>
+        <ownedEnd name="Target" type="//@compose.4/Persistence%20Package/MatriculaDAO" association="//@compose.5/Application%20Package/@packagedElement.7"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceClass" name="GerenciarAprovadoSelecaoServiceBean">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="incluir"/>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="excluir"/>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="salvar"/>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="consultar"/>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="listar"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:ServiceInterface" name="GerenciarAprovadoSelecaoService"/>
+      <packagedElement xsi:type="frameweb:ServiceRealization" client="//@compose.5/Application%20Package/GerenciarAprovadoSelecaoServiceBean" supplier="//@compose.5/Application%20Package/GerenciarAprovadoSelecaoService"/>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/Application%20Package/@packagedElement.11/Source //@compose.5/Application%20Package/@packagedElement.11/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.11/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.11/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/Application%20Package/GerenciarAprovadoSelecaoServiceBean" association="//@compose.5/Application%20Package/@packagedElement.11"/>
+        <ownedEnd name="Target" type="//@compose.4/Persistence%20Package/CandidatoDAO" association="//@compose.5/Application%20Package/@packagedElement.11"/>
+      </packagedElement>
     </packagedElement>
   </compose>
 </frameweb:FramewebProject>
