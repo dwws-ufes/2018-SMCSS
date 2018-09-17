@@ -89,7 +89,9 @@
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="email" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="dataNascimento" visibility="private" dateTimePrecision="date"/>
+        <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="dataNascimento" visibility="private" dateTimePrecision="date">
+          <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/Date"/>
+        </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="cpf" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>

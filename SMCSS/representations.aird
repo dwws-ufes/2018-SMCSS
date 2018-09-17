@@ -853,7 +853,7 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@containerMappings[name='Domain%20Package']/@subContainerMappings[name='DomainClass%20Node']/@subNodeMappings[name='IdAttribute']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_wMf_Qq9_EeiF1c76EunLIw" name=" - dataNascimento :  {precision=date}">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_wMf_Qq9_EeiF1c76EunLIw" name=" - dataNascimento : Date {precision=date}">
           <target xmi:type="frameweb:DateTimeAttribute" href="SMCSS.frameweb#//@compose.0/Entity%20Package/Pessoa/dataNascimento"/>
           <semanticElements xmi:type="frameweb:DateTimeAttribute" href="SMCSS.frameweb#//@compose.0/Entity%20Package/Pessoa/dataNascimento"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="_wMf_Q69_EeiF1c76EunLIw" showIcon="false" labelAlignment="LEFT" labelPosition="node">
