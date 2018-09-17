@@ -483,7 +483,7 @@
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wB_tga-BEeiF1c76EunLIw" x="363" y="-33"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_wB_tgq-BEeiF1c76EunLIw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wB_tg6-BEeiF1c76EunLIw" x="-112" y="16"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wB_tg6-BEeiF1c76EunLIw" x="-106" y="14"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_wB_thK-BEeiF1c76EunLIw" type="6003">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wB_tha-BEeiF1c76EunLIw" x="109" y="-13" width="10" height="13"/>
@@ -512,7 +512,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Ho_O0LD0EeiewYRQAS1Thw" type="4001" element="_HoPn8LD0EeiewYRQAS1Thw" source="_WQSrAK92EeiF1c76EunLIw" target="_5JAAMK9_EeiF1c76EunLIw">
           <children xmi:type="notation:Node" xmi:id="_Ho_O1LD0EeiewYRQAS1Thw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ho_O1bD0EeiewYRQAS1Thw" x="25" y="-15"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ho_O1bD0EeiewYRQAS1Thw" x="-25" y="-15"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Ho_O1rD0EeiewYRQAS1Thw" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ho_O17D0EeiewYRQAS1Thw" x="-6" y="9" width="17" height="13"/>
@@ -1085,14 +1085,14 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ZwioMK-CEeiF1c76EunLIw" name="- ofertas" sourceNode="_WQJhEK92EeiF1c76EunLIw" targetNode="_0Py1kK9_EeiF1c76EunLIw" beginLabel="1" endLabel="1..*">
-      <target xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas"/>
-      <semanticElements xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas/Target"/>
-      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas/Source%20Constraint"/>
-      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas/Target%20Constraint"/>
-      <semanticElements xmi:type="frameweb:VocabularyConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20ofertas/Vocabulary%20Constraint"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ZwioMK-CEeiF1c76EunLIw" name="- oferta" sourceNode="_WQJhEK92EeiF1c76EunLIw" targetNode="_0Py1kK9_EeiF1c76EunLIw" beginLabel="1" endLabel="1..*">
+      <target xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta"/>
+      <semanticElements xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta/Source"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta/Target"/>
+      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta/Source%20Constraint"/>
+      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta/Target%20Constraint"/>
+      <semanticElements xmi:type="frameweb:VocabularyConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta/Vocabulary%20Constraint"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ZwioMa-CEeiF1c76EunLIw" size="2" centered="Both" strokeColor="69,69,69">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_ZwioMq-CEeiF1c76EunLIw" showIcon="false"/>
@@ -1101,14 +1101,14 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_HoPn8LD0EeiewYRQAS1Thw" name="- aulas" sourceNode="_WQJhEK92EeiF1c76EunLIw" targetNode="_5I4rcK9_EeiF1c76EunLIw" beginLabel="1" endLabel="1..*">
-      <target xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas"/>
-      <semanticElements xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas/Source"/>
-      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas/Target"/>
-      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas/Source%20Constraint"/>
-      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas/Target%20Constraint"/>
-      <semanticElements xmi:type="frameweb:VocabularyConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20aulas/Vocabulary%20Constraint"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_HoPn8LD0EeiewYRQAS1Thw" name="- oferta" sourceNode="_WQJhEK92EeiF1c76EunLIw" targetNode="_5I4rcK9_EeiF1c76EunLIw" beginLabel="1" endLabel="1..*">
+      <target xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1"/>
+      <semanticElements xmi:type="frameweb:DomainAssociation" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1/Source"/>
+      <semanticElements xmi:type="frameweb:DomainProperty" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1/Target"/>
+      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1/Source%20Constraint"/>
+      <semanticElements xmi:type="frameweb:DomainConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1/Target%20Constraint"/>
+      <semanticElements xmi:type="frameweb:VocabularyConstraints" href="SMCSS.frameweb#//@compose.0/Entity%20Package/-%20oferta.1/Vocabulary%20Constraint"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_HoZY8LD0EeiewYRQAS1Thw" size="2" centered="Both" strokeColor="69,69,69">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebEntityModel']/@defaultLayer/@edgeMappings[name='DomainAssociation']/@style"/>
         <beginLabelStyle xmi:type="diagram:BeginLabelStyle" xmi:id="_HoZY8bD0EeiewYRQAS1Thw" showIcon="false"/>
