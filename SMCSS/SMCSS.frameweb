@@ -238,6 +238,15 @@
           <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
         </ownedEnd>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainAssociation" name="- curso" memberEnd="//@compose.0/Entity%20Package/-%20curso.1/Source //@compose.0/Entity%20Package/-%20curso.1/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20curso.1/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20curso.1/Target"/>
+        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20curso.1"/>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Candidato" association="//@compose.0/Entity%20Package/-%20curso.1">
+          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
+        </ownedEnd>
+        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Curso" association="//@compose.0/Entity%20Package/-%20curso.1"/>
+      </packagedElement>
     </packagedElement>
   </compose>
   <compose xsi:type="frameweb:NavigationModel" name="NavegacaoSolicitarMatricula" viewpoint="">
