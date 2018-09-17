@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis xmi:id="_FmnYcK91EeiF1c76EunLIw" selectedViews="_bw63cK91EeiF1c76EunLIw" version="12.1.2.201804131029">
     <semanticResources>SMCSS.frameweb</semanticResources>
     <semanticResources>JAVA.frameweb</semanticResources>
@@ -35,6 +35,14 @@
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_A4htI7haEei4LeT61HTcAQ" name="Aplicacao" repPath="#_A37QELhaEei4LeT61HTcAQ">
         <description xmi:type="description_1:DiagramDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']"/>
         <target xmi:type="frameweb:ApplicationModel" href="SMCSS.frameweb#//@compose.5"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_AKLP8LogEeiMK4wok0sVwg" name="solicitarMatricula" repPath="#_AJ6xQLogEeiMK4wok0sVwg">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
+        <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_5Ylx97ogEeiMK4wok0sVwg" name="listarOfertasDisciplinasPeriodo" repPath="#_5Yj8wLogEeiMK4wok0sVwg">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
+        <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo"/>
       </ownedRepresentationDescriptors>
     </ownedViews>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_9HiTQLA4EeiYwdI7W26LyQ">
@@ -1274,15 +1282,19 @@
                   <styles xmi:type="notation:FontStyle" xmi:id="_q2QGMbZ4Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_q2QGMrZ4Eei7CuiWqIJM5w"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_1J_m4LZ4Eei7CuiWqIJM5w" type="3010" element="_1JvvQLZ4Eei7CuiWqIJM5w">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_1J_m4bZ4Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_1J_m4rZ4Eei7CuiWqIJM5w"/>
+                <children xmi:type="notation:Node" xmi:id="_cc6lcLojEeiMK4wok0sVwg" type="3010" element="_ccdScLojEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_cc6lcbojEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_cc6lcrojEeiMK4wok0sVwg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_PAfAELokEeiMK4wok0sVwg" type="3010" element="_O__Q0LokEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_PAfAEbokEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_PAfAErokEeiMK4wok0sVwg"/>
                 </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_Xkxq8bZ3Eei7CuiWqIJM5w"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_Xkxq8rZ3Eei7CuiWqIJM5w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_XksycbZ3Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XksycrZ3Eei7CuiWqIJM5w" x="60" y="99" width="158" height="98"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XksycrZ3Eei7CuiWqIJM5w" x="60" y="99" width="233" height="103"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_2GaoULZ3Eei7CuiWqIJM5w" type="3009" element="_2GFRILZ3Eei7CuiWqIJM5w">
               <children xmi:type="notation:Node" xmi:id="_2GaoU7Z3Eei7CuiWqIJM5w" type="5004"/>
@@ -1295,31 +1307,11 @@
                   <styles xmi:type="notation:FontStyle" xmi:id="_F-jJMbZ5Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_F-jJMrZ5Eei7CuiWqIJM5w"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_OTA5wLZ5Eei7CuiWqIJM5w" type="3010" element="_OSyQQLZ5Eei7CuiWqIJM5w">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_OTA5wbZ5Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_OTA5wrZ5Eei7CuiWqIJM5w"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_XGp5oLZ5Eei7CuiWqIJM5w" type="3010" element="_XGb3MLZ5Eei7CuiWqIJM5w">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_XGp5obZ5Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_XGp5orZ5Eei7CuiWqIJM5w"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_iW3poLZ5Eei7CuiWqIJM5w" type="3010" element="_iW0mULZ5Eei7CuiWqIJM5w">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_iW3pobZ5Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_iW3porZ5Eei7CuiWqIJM5w"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_tnDkcLZ5Eei7CuiWqIJM5w" type="3010" element="_tm1iALZ5Eei7CuiWqIJM5w">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_tnDkcbZ5Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_tnDkcrZ5Eei7CuiWqIJM5w"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_wwvhALggEei4LeT61HTcAQ" type="3010" element="_wwoMQLggEei4LeT61HTcAQ">
-                  <styles xmi:type="notation:FontStyle" xmi:id="_wwvhAbggEei4LeT61HTcAQ" fontName="Segoe UI" fontHeight="8"/>
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_wwvhArggEei4LeT61HTcAQ"/>
-                </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_2GbPYbZ3Eei7CuiWqIJM5w"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_2GbPYrZ3Eei7CuiWqIJM5w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_2GaoUbZ3Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2GaoUrZ3Eei7CuiWqIJM5w" x="60" y="239"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2GaoUrZ3Eei7CuiWqIJM5w" x="66" y="354"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_Qk3_8LZ_Eei7CuiWqIJM5w" type="3009" element="_QkrLoLZ_Eei7CuiWqIJM5w">
               <children xmi:type="notation:Node" xmi:id="_Qk3_87Z_Eei7CuiWqIJM5w" type="5004"/>
@@ -1328,7 +1320,7 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_Qk3_9rZ_Eei7CuiWqIJM5w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_Qk3_8bZ_Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qk3_8rZ_Eei7CuiWqIJM5w" x="60" y="379"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qk3_8rZ_Eei7CuiWqIJM5w" x="68" y="439" width="186"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_n_y3gLgaEei4LeT61HTcAQ" type="3009" element="_n_Z18LgaEei4LeT61HTcAQ">
               <children xmi:type="notation:Node" xmi:id="_n_y3g7gaEei4LeT61HTcAQ" type="5004"/>
@@ -1337,13 +1329,30 @@
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_n_y3hrgaEei4LeT61HTcAQ"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_n_y3gbgaEei4LeT61HTcAQ" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n_y3grgaEei4LeT61HTcAQ" x="60" y="24"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_n_y3grgaEei4LeT61HTcAQ" x="60" y="24" width="228"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_luDHsLolEeiMK4wok0sVwg" type="3009" element="_ltlNoLolEeiMK4wok0sVwg">
+              <children xmi:type="notation:Node" xmi:id="_luDuwLolEeiMK4wok0sVwg" type="5004"/>
+              <children xmi:type="notation:Node" xmi:id="_luEV0LolEeiMK4wok0sVwg" type="7003">
+                <children xmi:type="notation:Node" xmi:id="_yeMZYLolEeiMK4wok0sVwg" type="3010" element="_ydkHQLolEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_yeMZYbolEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_yeMZYrolEeiMK4wok0sVwg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_y2AccLolEeiMK4wok0sVwg" type="3010" element="_y1b0sLolEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_y2AccbolEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_y2AccrolEeiMK4wok0sVwg"/>
+                </children>
+                <styles xmi:type="notation:SortingStyle" xmi:id="_luEV0bolEeiMK4wok0sVwg"/>
+                <styles xmi:type="notation:FilteringStyle" xmi:id="_luEV0rolEeiMK4wok0sVwg"/>
+              </children>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_luDHsbolEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" bold="true"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_luDHsrolEeiMK4wok0sVwg" x="285" y="259" width="178" height="73"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_rnE65bEBEeiewYRQAS1Thw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_rnE65rEBEeiewYRQAS1Thw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_rnE64bEBEeiewYRQAS1Thw" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rnE64rEBEeiewYRQAS1Thw" x="-140" y="-270" width="483" height="448"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rnE64rEBEeiewYRQAS1Thw" x="-140" y="-270" width="483" height="523"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_r8dVALEBEeiewYRQAS1Thw" type="2002" element="_r8TkALEBEeiewYRQAS1Thw">
           <children xmi:type="notation:Node" xmi:id="_r8dVA7EBEeiewYRQAS1Thw" type="5006"/>
@@ -1359,114 +1368,114 @@
                   <styles xmi:type="notation:FontStyle" xmi:id="_KnjF4bZ_Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
                   <layoutConstraint xmi:type="notation:Location" xmi:id="_KnjF4rZ_Eei7CuiWqIJM5w"/>
                 </children>
+                <children xmi:type="notation:Node" xmi:id="_cvAF4LohEeiMK4wok0sVwg" type="3010" element="_cuYa0LohEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_cvAF4bohEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_cvAF4rohEeiMK4wok0sVwg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_qj284LohEeiMK4wok0sVwg" type="3010" element="_qjZC0LohEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_qj284bohEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_qj284rohEeiMK4wok0sVwg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_YN0HwLojEeiMK4wok0sVwg" type="3010" element="_YNTxcLojEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_YN0HwbojEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_YN0HwrojEeiMK4wok0sVwg"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_QBGIgLokEeiMK4wok0sVwg" type="3010" element="_QAoOcLokEeiMK4wok0sVwg">
+                  <styles xmi:type="notation:FontStyle" xmi:id="_QBGIgbokEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_QBGIgrokEeiMK4wok0sVwg"/>
+                </children>
                 <styles xmi:type="notation:SortingStyle" xmi:id="_X6tahbZ-Eei7CuiWqIJM5w"/>
                 <styles xmi:type="notation:FilteringStyle" xmi:id="_X6tahrZ-Eei7CuiWqIJM5w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_X6tagbZ-Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X6tagrZ-Eei7CuiWqIJM5w" x="230" y="144"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_X6tagrZ-Eei7CuiWqIJM5w" x="80" y="144" height="113"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_r8dVBbEBEeiewYRQAS1Thw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_r8dVBrEBEeiewYRQAS1Thw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_r8dVAbEBEeiewYRQAS1Thw" fontName="Segoe UI" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r8dVArEBEeiewYRQAS1Thw" x="340" y="-270" width="468" height="448"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r8dVArEBEeiewYRQAS1Thw" x="340" y="-270" width="563" height="523"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_NcrnkrD7EeiewYRQAS1Thw"/>
         <edges xmi:type="notation:Edge" xmi:id="_B84gALZ4Eei7CuiWqIJM5w" type="4001" element="_B8eQULZ4Eei7CuiWqIJM5w" source="_XksycLZ3Eei7CuiWqIJM5w" target="_2GaoULZ3Eei7CuiWqIJM5w">
           <children xmi:type="notation:Node" xmi:id="_B86VMLZ4Eei7CuiWqIJM5w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B86VMbZ4Eei7CuiWqIJM5w" x="-5" y="-9"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B86VMbZ4Eei7CuiWqIJM5w" x="-62" y="-9"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_B868QLZ4Eei7CuiWqIJM5w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B868QbZ4Eei7CuiWqIJM5w" x="8" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B868QbZ4Eei7CuiWqIJM5w" x="-9" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_B868QrZ4Eei7CuiWqIJM5w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B868Q7Z4Eei7CuiWqIJM5w" x="-17" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_B868Q7Z4Eei7CuiWqIJM5w" x="-115" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_B84gAbZ4Eei7CuiWqIJM5w" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_B84gArZ4Eei7CuiWqIJM5w" fontName="Segoe UI" bold="true"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B84gA7Z4Eei7CuiWqIJM5w" points="[7, 40, 18, -44]$[7, 84, 18, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B88xcLZ4Eei7CuiWqIJM5w" id="(0.40384615384615385,0.5833333333333334)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_B84gA7Z4Eei7CuiWqIJM5w" points="[11, 45, -5, -154]$[11, 199, -5, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B88xcLZ4Eei7CuiWqIJM5w" id="(0.2727272727272727,0.5544554455445544)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B88xcbZ4Eei7CuiWqIJM5w" id="(0.3358208955223881,0.0)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_658kkLZ-Eei7CuiWqIJM5w" type="4001" element="_65tUALZ-Eei7CuiWqIJM5w" source="_X6tagLZ-Eei7CuiWqIJM5w" target="_XksycLZ3Eei7CuiWqIJM5w">
           <children xmi:type="notation:Node" xmi:id="_658klLZ-Eei7CuiWqIJM5w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_658klbZ-Eei7CuiWqIJM5w" x="-135" y="19"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_658klbZ-Eei7CuiWqIJM5w" x="-75" y="14"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_659LoLZ-Eei7CuiWqIJM5w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_659LobZ-Eei7CuiWqIJM5w" x="90" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_659LobZ-Eei7CuiWqIJM5w" x="121" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_659LorZ-Eei7CuiWqIJM5w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_659Lo7Z-Eei7CuiWqIJM5w" x="-5" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_659Lo7Z-Eei7CuiWqIJM5w" x="-27" y="-10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_658kkbZ-Eei7CuiWqIJM5w" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_658kkrZ-Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_658kk7Z-Eei7CuiWqIJM5w" points="[14, 0, 603, 35]$[14, -35, 603, 0]$[-589, -35, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_658kk7Z-Eei7CuiWqIJM5w" points="[-39, 0, 505, 35]$[-39, -35, 505, 0]$[-544, -35, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_659LpLZ-Eei7CuiWqIJM5w" id="(0.4377880184331797,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_659LpbZ-Eei7CuiWqIJM5w" id="(1.0,0.10416666666666667)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_659LpbZ-Eei7CuiWqIJM5w" id="(0.6753246753246753,0.09900990099009901)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_UZp5ILZ_Eei7CuiWqIJM5w" type="4001" element="_UZReoLZ_Eei7CuiWqIJM5w" source="_X6tagLZ-Eei7CuiWqIJM5w" target="_Qk3_8LZ_Eei7CuiWqIJM5w">
           <children xmi:type="notation:Node" xmi:id="_UZp5JLZ_Eei7CuiWqIJM5w" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZp5JbZ_Eei7CuiWqIJM5w" x="-89" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZp5JbZ_Eei7CuiWqIJM5w" x="112" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_UZp5JrZ_Eei7CuiWqIJM5w" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZp5J7Z_Eei7CuiWqIJM5w" x="11" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZp5J7Z_Eei7CuiWqIJM5w" x="60" y="166"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_UZqgMLZ_Eei7CuiWqIJM5w" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZqgMbZ_Eei7CuiWqIJM5w" x="-26" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UZqgMbZ_Eei7CuiWqIJM5w" x="-8" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_UZp5IbZ_Eei7CuiWqIJM5w" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_UZp5IrZ_Eei7CuiWqIJM5w" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UZp5I7Z_Eei7CuiWqIJM5w" points="[-108, 0, 653, -193]$[-108, 198, 653, 5]$[-761, 198, 0, 5]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UZqgMrZ_Eei7CuiWqIJM5w" id="(0.9953917050691244,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UZqgM7Z_Eei7CuiWqIJM5w" id="(1.0,0.20408163265306123)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_UZp5I7Z_Eei7CuiWqIJM5w" points="[-64, 59, 759, -194]$[-64, 258, 759, 5]$[-762, 258, 61, 5]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UZqgMrZ_Eei7CuiWqIJM5w" id="(0.9953917050691244,0.46846846846846846)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_UZqgM7Z_Eei7CuiWqIJM5w" id="(0.6684782608695652,0.20408163265306123)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_jEj7ULgUEeiJ_MJmH6VUoA" type="4001" element="_jEAhsLgUEeiJ_MJmH6VUoA" source="_Qk3_8LZ_Eei7CuiWqIJM5w" target="_XksycLZ3Eei7CuiWqIJM5w">
           <children xmi:type="notation:Node" xmi:id="_jEu6cLgUEeiJ_MJmH6VUoA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEu6cbgUEeiJ_MJmH6VUoA" x="-1" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEu6cbgUEeiJ_MJmH6VUoA" x="22" y="-10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_jEvhgLgUEeiJ_MJmH6VUoA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEvhgbgUEeiJ_MJmH6VUoA" x="20" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEvhgbgUEeiJ_MJmH6VUoA" x="76" y="10"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_jEwvoLgUEeiJ_MJmH6VUoA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEwvobgUEeiJ_MJmH6VUoA" x="-22" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jEwvobgUEeiJ_MJmH6VUoA" x="-71" y="2"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_jEj7UbgUEeiJ_MJmH6VUoA" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_jEj7UrgUEeiJ_MJmH6VUoA" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jEj7U7gUEeiJ_MJmH6VUoA" points="[-49, 25, -59, 209]$[-84, 25, -94, 209]$[-84, -195, -94, -11]$[-49, -195, -59, -11]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jEzL4LgUEeiJ_MJmH6VUoA" id="(0.4666666666666667,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jEzL4bgUEeiJ_MJmH6VUoA" id="(0.3782051282051282,1.0)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_MKpVkLgaEei4LeT61HTcAQ" type="4001" element="_MJ4gkLgaEei4LeT61HTcAQ" source="_XksycLZ3Eei7CuiWqIJM5w" target="_X6tagLZ-Eei7CuiWqIJM5w">
-          <children xmi:type="notation:Node" xmi:id="_MKqjsLgaEei4LeT61HTcAQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MKqjsbgaEei4LeT61HTcAQ" x="-130" y="-18"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_MKrKwLgaEei4LeT61HTcAQ" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MKrKwbgaEei4LeT61HTcAQ" x="13" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_MKrKwrgaEei4LeT61HTcAQ" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MKrKw7gaEei4LeT61HTcAQ" x="-10" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_MKpVkbgaEei4LeT61HTcAQ" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_MKpVkrgaEei4LeT61HTcAQ" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MKpVk7gaEei4LeT61HTcAQ" points="[0, 45, -494, 10]$[494, 45, 0, 10]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MKsY4LgaEei4LeT61HTcAQ" id="(1.0,0.20833333333333334)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_MKsY4bgaEei4LeT61HTcAQ" id="(0.0,0.19230769230769232)"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_jEj7U7gUEeiJ_MJmH6VUoA" points="[-57, 25, -51, 269]$[-100, 25, -94, 269]$[-100, -215, -94, 29]$[-35, -215, -29, 29]$[-35, -239, -29, 5]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jEzL4LgUEeiJ_MJmH6VUoA" id="(0.3119565217391304,0.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jEzL4bgUEeiJ_MJmH6VUoA" id="(0.2554112554112554,0.9504950495049505)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_292yQLgaEei4LeT61HTcAQ" type="4001" element="_29gM8LgaEei4LeT61HTcAQ" source="_X6tagLZ-Eei7CuiWqIJM5w" target="_n_y3gLgaEei4LeT61HTcAQ">
           <children xmi:type="notation:Node" xmi:id="_292yRLgaEei4LeT61HTcAQ" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_292yRbgaEei4LeT61HTcAQ" x="-37" y="-16"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_292yRbgaEei4LeT61HTcAQ" x="-11" y="-16"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_292yRrgaEei4LeT61HTcAQ" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_292yR7gaEei4LeT61HTcAQ" x="-5" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_292yR7gaEei4LeT61HTcAQ" x="18" y="-67"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_292ySLgaEei4LeT61HTcAQ" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_292ySbgaEei4LeT61HTcAQ" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_292ySbgaEei4LeT61HTcAQ" x="-22" y="10"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_292yQbgaEei4LeT61HTcAQ" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_292yQrgaEei4LeT61HTcAQ" fontName="Segoe UI" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_292yQ7gaEei4LeT61HTcAQ" points="[0, 0, 653, 110]$[0, -105, 653, 5]$[-653, -105, 0, 5]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_292yQ7gaEei4LeT61HTcAQ" points="[-90, 0, 589, 110]$[-90, -105, 589, 5]$[-663, -105, 16, 5]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_293ZULgaEei4LeT61HTcAQ" id="(0.8525345622119815,0.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_293ZUbgaEei4LeT61HTcAQ" id="(1.0,0.20408163265306123)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_293ZUbgaEei4LeT61HTcAQ" id="(0.9292035398230089,0.20408163265306123)"/>
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_F56h4LgbEei4LeT61HTcAQ" type="4001" element="_F5kjoLgbEei4LeT61HTcAQ" source="_n_y3gLgaEei4LeT61HTcAQ" target="_XksycLZ3Eei7CuiWqIJM5w">
           <children xmi:type="notation:Node" xmi:id="_F57I8LgbEei4LeT61HTcAQ" type="6001">
@@ -1481,8 +1490,56 @@
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_F56h4bgbEei4LeT61HTcAQ" routing="Rectilinear"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_F56h4rgbEei4LeT61HTcAQ" fontName="Segoe UI" fontHeight="8"/>
           <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_F56h47gbEei4LeT61HTcAQ" points="[-10, -29, -10, -55]$[-45, -29, -45, -55]$[-45, 86, -45, 60]$[-10, 86, -10, 60]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F57I9rgbEei4LeT61HTcAQ" id="(0.054945054945054944,1.0)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F57I97gbEei4LeT61HTcAQ" id="(0.0641025641025641,0.0)"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F57I9rgbEei4LeT61HTcAQ" id="(0.05105513955071477,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F57I97gbEei4LeT61HTcAQ" id="(0.04329004329004329,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_URpJ8LofEeiMK4wok0sVwg" type="4001" element="_URBe4LofEeiMK4wok0sVwg" source="_2GaoULZ3Eei7CuiWqIJM5w" target="_X6tagLZ-Eei7CuiWqIJM5w">
+          <children xmi:type="notation:Node" xmi:id="_URpxALofEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_URpxAbofEeiMK4wok0sVwg" x="-258" y="14"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_URpxArofEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_URpxA7ofEeiMK4wok0sVwg" x="-53" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_URpxBLofEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_URpxBbofEeiMK4wok0sVwg" x="48" y="-525"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_URpJ8bofEeiMK4wok0sVwg" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_URpJ8rofEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_URpJ87ofEeiMK4wok0sVwg" points="[2, 10, -274, 232]$[531, 10, 255, 232]$[531, -121, 255, 101]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_URqYELofEeiMK4wok0sVwg" id="(0.990909090909091,0.3384615384615385)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_URqYEbofEeiMK4wok0sVwg" id="(0.0,0.09009009009009009)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_8zWPULolEeiMK4wok0sVwg" type="4001" element="_8y5jYLolEeiMK4wok0sVwg" source="_luDHsLolEeiMK4wok0sVwg" target="_X6tagLZ-Eei7CuiWqIJM5w">
+          <children xmi:type="notation:Node" xmi:id="_8zWPVLolEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8zWPVbolEeiMK4wok0sVwg" x="28" y="16"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8zWPVrolEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8zWPV7olEeiMK4wok0sVwg" x="-25" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8zWPWLolEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8zWPWbolEeiMK4wok0sVwg" x="-12" y="-104"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_8zWPUbolEeiMK4wok0sVwg" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_8zWPUrolEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8zWPU7olEeiMK4wok0sVwg" points="[0, 10, -99, 140]$[154, 10, 55, 140]$[154, -19, 55, 111]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8zWPWrolEeiMK4wok0sVwg" id="(1.0,0.2112676056338028)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8zWPW7olEeiMK4wok0sVwg" id="(0.0,0.0)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_BN_OoLomEeiMK4wok0sVwg" type="4001" element="_BNjw0LomEeiMK4wok0sVwg" source="_XksycLZ3Eei7CuiWqIJM5w" target="_luDHsLolEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_BN_OpLomEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BN_OpbomEeiMK4wok0sVwg" x="-50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BN_OpromEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BN_Op7omEeiMK4wok0sVwg" x="-2"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_BN_OqLomEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BN_OqbomEeiMK4wok0sVwg" x="-131" y="-22"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_BN_OobomEeiMK4wok0sVwg" routing="Rectilinear"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_BN_OoromEeiMK4wok0sVwg" fontName="Ubuntu" bold="true"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_BN_Oo7omEeiMK4wok0sVwg" points="[0, 0, -80, -59]$[0, 33, -80, -26]$[120, 33, 40, -26]$[120, 59, 40, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BN_1sLomEeiMK4wok0sVwg" id="(0.7575757575757576,1.0)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_BN_1sbomEeiMK4wok0sVwg" id="(0.17045454545454544,0.0)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>
@@ -1497,7 +1554,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_XkLOALZ3Eei7CuiWqIJM5w" name="&lt;&lt;page>>&#xA;solicitacaoMatricula" outgoingEdges="_B8eQULZ4Eei7CuiWqIJM5w _MJ4gkLgaEei4LeT61HTcAQ" incomingEdges="_65tUALZ-Eei7CuiWqIJM5w _jEAhsLgUEeiJ_MJmH6VUoA _F5kjoLgbEei4LeT61HTcAQ">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_XkLOALZ3Eei7CuiWqIJM5w" name="&lt;&lt;page>>&#xA;solicitacaoMatricula" outgoingEdges="_B8eQULZ4Eei7CuiWqIJM5w _BNjw0LomEeiMK4wok0sVwg" incomingEdges="_65tUALZ-Eei7CuiWqIJM5w _jEAhsLgUEeiJ_MJmH6VUoA _F5kjoLgbEei4LeT61HTcAQ">
         <target xmi:type="frameweb:Page" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula"/>
         <semanticElements xmi:type="frameweb:Page" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1508,32 +1565,40 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_g8sAELZ4Eei7CuiWqIJM5w" name=" - numeroMatricula : ">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/numeroMatricula"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/numeroMatricula"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_g8sAELZ4Eei7CuiWqIJM5w" name=" + aluno : Aluno">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/aluno"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/aluno"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="_g8sAEbZ4Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_q2AOkLZ4Eei7CuiWqIJM5w" name=" - nomeOrientador : ">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/nomeOrientador"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/nomeOrientador"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_q2AOkLZ4Eei7CuiWqIJM5w" name=" + ofertasDisciplinas : OfertaDisciplina">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/ofertasDisciplinas"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/ofertasDisciplinas"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="_q2AOkbZ4Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_1JvvQLZ4Eei7CuiWqIJM5w" name=" - curso : ">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/curso"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/curso"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_1JvvQbZ4Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ccdScLojEeiMK4wok0sVwg" name=" + periodoLetivo : PeriodoLetivo">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/periodoLetivo"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/periodoLetivo"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_ccd5gLojEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_O__Q0LokEeiMK4wok0sVwg" name=" + matriculas : Matricula">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/matriculas"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoMatricula/matriculas"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_O__34LokEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_2GFRILZ3Eei7CuiWqIJM5w" name="&lt;&lt;form>>&#xA;listaOfertasDisciplinasPeriodo" incomingEdges="_B8eQULZ4Eei7CuiWqIJM5w">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_2GFRILZ3Eei7CuiWqIJM5w" name="&lt;&lt;form>>&#xA;listaOfertasDisciplinasPeriodo" outgoingEdges="_URBe4LofEeiMK4wok0sVwg" incomingEdges="_B8eQULZ4Eei7CuiWqIJM5w">
         <target xmi:type="frameweb:UIComponent" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo"/>
         <semanticElements xmi:type="frameweb:UIComponent" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1544,58 +1609,18 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__YIO0LZ4Eei7CuiWqIJM5w" name=" - codigoDisciplina : String">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/codigoDisciplina"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/codigoDisciplina"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="__YIO0LZ4Eei7CuiWqIJM5w" name=" + aluno : Aluno">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/aluno"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/aluno"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="__YIO0bZ4Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_F-Vt0LZ5Eei7CuiWqIJM5w" name=" - nomeDisciplina : String">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/nomeDisciplina"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/nomeDisciplina"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_F-Vt0LZ5Eei7CuiWqIJM5w" name=" + ofertasDisciplinas : OfertaDisciplina">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/ofertasDisciplinas"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/ofertasDisciplinas"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="_F-Vt0bZ5Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_OSyQQLZ5Eei7CuiWqIJM5w" name=" - diaSemanaAula : int">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/diaSemanaAula"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/diaSemanaAula"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_OSyQQbZ5Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_XGb3MLZ5Eei7CuiWqIJM5w" name=" - horarioInicioAula : int">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/horarioInicioAula"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/horarioInicioAula"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_XGb3MbZ5Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_iW0mULZ5Eei7CuiWqIJM5w" name=" - horarioTerminoAula : int">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/horarioInicioAula/horarioTerminoAula"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/horarioInicioAula/horarioTerminoAula"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_iW0mUbZ5Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_tm1iALZ5Eei7CuiWqIJM5w" name=" - cursoDiciplina : Curso">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/cursoDiciplina"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/cursoDiciplina"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_tm1iAbZ5Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
-            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
-        </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_wwoMQLggEei4LeT61HTcAQ" name=" - periodo : PeriodoLetivo">
-          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/periodo"/>
-          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/listaOfertasDisciplinasPeriodo/periodo"/>
-          <ownedStyle xmi:type="diagram:Dot" xmi:id="_wwozULggEei4LeT61HTcAQ" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
@@ -1613,9 +1638,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_n_Z18LgaEei4LeT61HTcAQ" name="&lt;&lt;page>>&#xA;NenhumaOfertasDiciplinasPeriodo" outgoingEdges="_F5kjoLgbEei4LeT61HTcAQ" incomingEdges="_29gM8LgaEei4LeT61HTcAQ">
-        <target xmi:type="frameweb:Page" href="SMCSS.frameweb#//@compose.1/View%20Package/NenhumaOfertasDiciplinasPeriodo"/>
-        <semanticElements xmi:type="frameweb:Page" href="SMCSS.frameweb#//@compose.1/View%20Package/NenhumaOfertasDiciplinasPeriodo"/>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_n_Z18LgaEei4LeT61HTcAQ" name="&lt;&lt;page>>&#xA;solicitacaoNaoRealizada" outgoingEdges="_F5kjoLgbEei4LeT61HTcAQ" incomingEdges="_29gM8LgaEei4LeT61HTcAQ">
+        <target xmi:type="frameweb:Page" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoNaoRealizada"/>
+        <semanticElements xmi:type="frameweb:Page" href="SMCSS.frameweb#//@compose.1/View%20Package/solicitacaoNaoRealizada"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -1624,6 +1649,34 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='Page%20Node']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ltlNoLolEeiMK4wok0sVwg" name="&lt;&lt;form>>&#xA;alterarPeriodo" outgoingEdges="_8y5jYLolEeiMK4wok0sVwg" incomingEdges="_BNjw0LomEeiMK4wok0sVwg">
+        <target xmi:type="frameweb:UIComponent" href="SMCSS.frameweb#//@compose.1/View%20Package/alterarPeriodo"/>
+        <semanticElements xmi:type="frameweb:UIComponent" href="SMCSS.frameweb#//@compose.1/View%20Package/alterarPeriodo"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ltl0sLolEeiMK4wok0sVwg" showIcon="false" borderSize="1" borderSizeComputationExpression="1" foregroundColor="217,196,215">
+          <labelFormat>bold</labelFormat>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_ydkHQLolEeiMK4wok0sVwg" name=" + anoLetivo : int">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/alterarPeriodo/anoLetivo"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/alterarPeriodo/anoLetivo"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_ydkHQbolEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_y1b0sLolEeiMK4wok0sVwg" name=" + semestreLetivo : int">
+          <target xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/alterarPeriodo/semestreLetivo"/>
+          <semanticElements xmi:type="frameweb:UIComponentField" href="SMCSS.frameweb#//@compose.1/View%20Package/alterarPeriodo/semestreLetivo"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_y1b0sbolEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='View%20Package']/@subContainerMappings[name='UI%20Component%20Node']/@subNodeMappings[name='UI%20Component%20Field%20Node']"/>
+        </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_r8TkALEBEeiewYRQAS1Thw" name="Controller Package">
@@ -1636,7 +1689,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']"/>
-      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_X6gmMLZ-Eei7CuiWqIJM5w" name="GerenciarMatriculasController" outgoingEdges="_65tUALZ-Eei7CuiWqIJM5w _UZReoLZ_Eei7CuiWqIJM5w _29gM8LgaEei4LeT61HTcAQ" incomingEdges="_MJ4gkLgaEei4LeT61HTcAQ">
+      <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_X6gmMLZ-Eei7CuiWqIJM5w" name="GerenciarMatriculasController" outgoingEdges="_65tUALZ-Eei7CuiWqIJM5w _UZReoLZ_Eei7CuiWqIJM5w _29gM8LgaEei4LeT61HTcAQ" incomingEdges="_URBe4LofEeiMK4wok0sVwg _8y5jYLolEeiMK4wok0sVwg">
         <target xmi:type="frameweb:FrontControllerClass" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController"/>
         <semanticElements xmi:type="frameweb:FrontControllerClass" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1647,21 +1700,53 @@
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']"/>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_bsDlMLZ-Eei7CuiWqIJM5w" name=" + listarOfertasDiciplinasPeriodo () : void">
-          <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDiciplinasPeriodo"/>
-          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDiciplinasPeriodo"/>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_bsDlMLZ-Eei7CuiWqIJM5w" name=" + listarOfertasDisciplinasPeriodo (anoLetivo : int, semestreLetivo : int) : void">
+          <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo"/>
+          <semanticElements xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="_bsDlMbZ-Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']"/>
         </ownedElements>
-        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_KnW4oLZ_Eei7CuiWqIJM5w" name=" + solicitarMatricula () : boolean">
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_KnW4oLZ_Eei7CuiWqIJM5w" name=" + solicitarMatricula (aluno : Aluno, ofertasDisciplinas : OfertaDisciplina) : boolean">
           <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula"/>
           <semanticElements xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula"/>
           <ownedStyle xmi:type="diagram:Dot" xmi:id="_KnW4obZ_Eei7CuiWqIJM5w" showIcon="false" labelAlignment="LEFT" labelPosition="node">
             <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='Front%20Controller%20Method%20Node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_cuYa0LohEeiMK4wok0sVwg" name=" + ofertasDisciplinas : OfertaDisciplina">
+          <target xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/ofertasDisciplinas"/>
+          <semanticElements xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/ofertasDisciplinas"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_cuZo8LohEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_qjZC0LohEeiMK4wok0sVwg" name=" + aluno : Aluno">
+          <target xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/aluno"/>
+          <semanticElements xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/aluno"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_qjZp4LohEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_YNTxcLojEeiMK4wok0sVwg" name=" + periodoLetivo : PeriodoLetivo">
+          <target xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/periodoLetivo"/>
+          <semanticElements xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/periodoLetivo"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_YNTxcbojEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']"/>
+        </ownedElements>
+        <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_QAoOcLokEeiMK4wok0sVwg" name=" + matriculas : Matricula">
+          <target xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/matriculas"/>
+          <semanticElements xmi:type="frameweb:IOParameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/matriculas"/>
+          <ownedStyle xmi:type="diagram:Dot" xmi:id="_QAoOcbokEeiMK4wok0sVwg" showIcon="false" labelAlignment="LEFT" labelPosition="node">
+            <description xmi:type="style:DotDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@containerMappings[name='Controller%20Package']/@subContainerMappings[name='Front%20Controller%20Node']/@subNodeMappings[name='IO%20Parameter%20Node']"/>
         </ownedElements>
       </ownedDiagramElements>
     </ownedDiagramElements>
@@ -1676,7 +1761,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='Navigation%20Association']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_65tUALZ-Eei7CuiWqIJM5w" name="{method=listarOfertasDiciplinasPeriodo, result=sucesso}" sourceNode="_X6gmMLZ-Eei7CuiWqIJM5w" targetNode="_XkLOALZ3Eei7CuiWqIJM5w">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_65tUALZ-Eei7CuiWqIJM5w" name="{method=listarOfertasDisciplinasPeriodo}" sourceNode="_X6gmMLZ-Eei7CuiWqIJM5w" targetNode="_XkLOALZ3Eei7CuiWqIJM5w">
       <target xmi:type="frameweb:ResultDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.4"/>
       <semanticElements xmi:type="frameweb:ResultDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.4"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_65tUAbZ-Eei7CuiWqIJM5w" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
@@ -1703,18 +1788,9 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='PageDependency%20Line']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_MJ4gkLgaEei4LeT61HTcAQ" name="{method=listarOfertasDiciplinasPeriodo}" sourceNode="_XkLOALZ3Eei7CuiWqIJM5w" targetNode="_X6gmMLZ-Eei7CuiWqIJM5w">
-      <target xmi:type="frameweb:FrontControllerDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.7"/>
-      <semanticElements xmi:type="frameweb:FrontControllerDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.7"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_MJ6VwLgaEei4LeT61HTcAQ" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_MJ6VwbgaEei4LeT61HTcAQ" showIcon="false"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_29gM8LgaEei4LeT61HTcAQ" name="{method=listarOfertasDiciplinasPeriodo, result=falha}" sourceNode="_X6gmMLZ-Eei7CuiWqIJM5w" targetNode="_n_Z18LgaEei4LeT61HTcAQ">
-      <target xmi:type="frameweb:ResultDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.8"/>
-      <semanticElements xmi:type="frameweb:ResultDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.8"/>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_29gM8LgaEei4LeT61HTcAQ" name="{method=solicitarMatricula, result=falha}" sourceNode="_X6gmMLZ-Eei7CuiWqIJM5w" targetNode="_n_Z18LgaEei4LeT61HTcAQ">
+      <target xmi:type="frameweb:ResultDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.7"/>
+      <semanticElements xmi:type="frameweb:ResultDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.7"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_29gM8bgaEei4LeT61HTcAQ" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='ResultDependency%20Line']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_29gM8rgaEei4LeT61HTcAQ" showIcon="false"/>
@@ -1722,13 +1798,42 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='ResultDependency%20Line']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_F5kjoLgbEei4LeT61HTcAQ" sourceNode="_n_Z18LgaEei4LeT61HTcAQ" targetNode="_XkLOALZ3Eei7CuiWqIJM5w">
-      <target xmi:type="frameweb:PageDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.9"/>
-      <semanticElements xmi:type="frameweb:PageDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.9"/>
+      <target xmi:type="frameweb:PageDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.8"/>
+      <semanticElements xmi:type="frameweb:PageDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.8"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_F5lKsLgbEei4LeT61HTcAQ" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='PageDependency%20Line']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_F5lKsbgbEei4LeT61HTcAQ" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='PageDependency%20Line']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_URBe4LofEeiMK4wok0sVwg" name="{method=solicitarMatricula}" sourceNode="_2GFRILZ3Eei7CuiWqIJM5w" targetNode="_X6gmMLZ-Eei7CuiWqIJM5w">
+      <target xmi:type="frameweb:FrontControllerDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.9"/>
+      <semanticElements xmi:type="frameweb:FrontControllerDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.9"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_URCF8LofEeiMK4wok0sVwg" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_URCF8bofEeiMK4wok0sVwg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8y5jYLolEeiMK4wok0sVwg" name="{method=listarOfertasDisciplinasPeriodo}" sourceNode="_ltlNoLolEeiMK4wok0sVwg" targetNode="_X6gmMLZ-Eei7CuiWqIJM5w">
+      <target xmi:type="frameweb:FrontControllerDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.10"/>
+      <semanticElements xmi:type="frameweb:FrontControllerDependency" href="SMCSS.frameweb#//@compose.1/@packagedElement.10"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8y5jYbolEeiMK4wok0sVwg" lineStyle="dash" size="2" routingStyle="manhattan" strokeColor="69,69,69">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8y5jYrolEeiMK4wok0sVwg" showIcon="false"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='FrontControllerDependency%20Line']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_BNjw0LomEeiMK4wok0sVwg" sourceNode="_XkLOALZ3Eei7CuiWqIJM5w" targetNode="_ltlNoLolEeiMK4wok0sVwg" endLabel="1">
+      <target xmi:type="frameweb:NavigationAssociation" href="SMCSS.frameweb#//@compose.1/View%20Package/@packagedElement.6"/>
+      <semanticElements xmi:type="frameweb:NavigationAssociation" href="SMCSS.frameweb#//@compose.1/View%20Package/@packagedElement.6"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_BNjw0bomEeiMK4wok0sVwg" sourceArrow="FillDiamond" targetArrow="NoDecoration" size="2" routingStyle="manhattan" strokeColor="69,69,69">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='Navigation%20Association']/@style"/>
+        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_BNjw0romEeiMK4wok0sVwg" labelSize="9" showIcon="false">
+          <labelFormat>bold</labelFormat>
+        </endLabelStyle>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']/@defaultLayer/@edgeMappings[name='Navigation%20Association']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebNavigationModel']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_NcidpLD7EeiewYRQAS1Thw"/>
@@ -4405,5 +4510,267 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_A4htIrhaEei4LeT61HTcAQ"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='FrameWebApplicationModel']/@defaultLayer"/>
     <target xmi:type="frameweb:ApplicationModel" href="SMCSS.frameweb#//@compose.5"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_AKAQ0LogEeiMK4wok0sVwg" name="solicitarMatricula" uid="_AJ6xQLogEeiMK4wok0sVwg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_AKAQ0bogEeiMK4wok0sVwg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_AKAQ0rogEeiMK4wok0sVwg"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_AKbuoLogEeiMK4wok0sVwg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_AKbuobogEeiMK4wok0sVwg" type="Sirius" element="_AKAQ0LogEeiMK4wok0sVwg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_AKhOMLogEeiMK4wok0sVwg" type="2001" element="_AKAQ1LogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_AKjDYLogEeiMK4wok0sVwg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_AKjDYbogEeiMK4wok0sVwg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_AKkRgLogEeiMK4wok0sVwg" type="3003" element="_AKAQ1bogEeiMK4wok0sVwg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_AKkRgbogEeiMK4wok0sVwg" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AKkRgrogEeiMK4wok0sVwg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_AKhOMbogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AKhOMrogEeiMK4wok0sVwg" x="85" y="50" width="100" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_H6fKkLogEeiMK4wok0sVwg" type="2001" element="_H524cLogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_H6fKk7ogEeiMK4wok0sVwg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_H6fKlLogEeiMK4wok0sVwg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_H6fxoLogEeiMK4wok0sVwg" type="3003" element="_H524cbogEeiMK4wok0sVwg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_H6fxobogEeiMK4wok0sVwg" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6fxorogEeiMK4wok0sVwg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_H6fKkbogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6fKkrogEeiMK4wok0sVwg" x="85" y="125" width="100" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_QeyG4LogEeiMK4wok0sVwg" type="2001" element="_QeEVMLogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_Qeyt8LogEeiMK4wok0sVwg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_Qeyt8bogEeiMK4wok0sVwg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Qeyt8rogEeiMK4wok0sVwg" type="3003" element="_QeEVMbogEeiMK4wok0sVwg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Qeyt87ogEeiMK4wok0sVwg" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qeyt9LogEeiMK4wok0sVwg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_QeyG4bogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QeyG4rogEeiMK4wok0sVwg" x="205" y="125" width="146" height="30"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_AKbuorogEeiMK4wok0sVwg"/>
+        <edges xmi:type="notation:Edge" xmi:id="_H6fxo7ogEeiMK4wok0sVwg" type="4001" element="_H557wLogEeiMK4wok0sVwg" source="_H6fKkLogEeiMK4wok0sVwg" target="_AKhOMLogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_H6gYsLogEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6gYsbogEeiMK4wok0sVwg" x="-4" y="-1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_H6gYsrogEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6gYs7ogEeiMK4wok0sVwg" x="5" y="1"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_H6gYtLogEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H6gYtbogEeiMK4wok0sVwg" x="5" y="1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_H6fxpLogEeiMK4wok0sVwg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_H6fxpbogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_H6fxprogEeiMK4wok0sVwg" points="[0, -15, 0, 60]$[0, -60, 0, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H6gYtrogEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_H6gYt7ogEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_Qeyt9bogEeiMK4wok0sVwg" type="4001" element="_QeImoLogEeiMK4wok0sVwg" source="_QeyG4LogEeiMK4wok0sVwg" target="_AKhOMLogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_QezVALogEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QezVAbogEeiMK4wok0sVwg" x="-3" y="-10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QezVArogEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QezVA7ogEeiMK4wok0sVwg" x="5" y="10"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_QezVBLogEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QezVBbogEeiMK4wok0sVwg" x="5" y="11"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_Qeyt9rogEeiMK4wok0sVwg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_Qeyt97ogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Qeyt-LogEeiMK4wok0sVwg" points="[-24, -15, 96, 60]$[-96, -60, 24, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QezVBrogEeiMK4wok0sVwg" id="(0.3424657534246575,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_QezVB7ogEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_AKAQ1LogEeiMK4wok0sVwg" name="solicitarMatricula" incomingEdges="_H557wLogEeiMK4wok0sVwg _QeImoLogEeiMK4wok0sVwg" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula"/>
+      <semanticElements xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_AKAQ1bogEeiMK4wok0sVwg" showIcon="false" labelPosition="node" width="10" height="3" color="217,196,215">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='FrontControllerMethod']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='FrontControllerMethod']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_H524cLogEeiMK4wok0sVwg" name="aluno" outgoingEdges="_H557wLogEeiMK4wok0sVwg" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula/aluno"/>
+      <semanticElements xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula/aluno"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_H524cbogEeiMK4wok0sVwg" labelPosition="node" width="10" height="3" color="209,209,209">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QeEVMLogEeiMK4wok0sVwg" name="ofertasDisciplinas" outgoingEdges="_QeImoLogEeiMK4wok0sVwg" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula/ofertasDisciplinas"/>
+      <semanticElements xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula/ofertasDisciplinas"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_QeEVMbogEeiMK4wok0sVwg" labelPosition="node" width="10" height="3" color="209,209,209">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_H557wLogEeiMK4wok0sVwg" sourceNode="_H524cLogEeiMK4wok0sVwg" targetNode="_AKAQ1LogEeiMK4wok0sVwg">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula/aluno"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_H557wbogEeiMK4wok0sVwg" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_H557wrogEeiMK4wok0sVwg"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_QeImoLogEeiMK4wok0sVwg" sourceNode="_QeEVMLogEeiMK4wok0sVwg" targetNode="_AKAQ1LogEeiMK4wok0sVwg">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula/ofertasDisciplinas"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_QeImobogEeiMK4wok0sVwg" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_QeImorogEeiMK4wok0sVwg"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_AKAQ1rogEeiMK4wok0sVwg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
+    <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/solicitarMatricula"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_5Ylx8LogEeiMK4wok0sVwg" name="listarOfertasDisciplinasPeriodo" uid="_5Yj8wLogEeiMK4wok0sVwg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_5Ylx8bogEeiMK4wok0sVwg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_5Ylx8rogEeiMK4wok0sVwg"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_5Yr4kLogEeiMK4wok0sVwg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_5Yr4kbogEeiMK4wok0sVwg" type="Sirius" element="_5Ylx8LogEeiMK4wok0sVwg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_5Yr4k7ogEeiMK4wok0sVwg" type="2001" element="_5Ylx9LogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_5YsfoLogEeiMK4wok0sVwg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_5YsfobogEeiMK4wok0sVwg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_5YsforogEeiMK4wok0sVwg" type="3003" element="_5Ylx9bogEeiMK4wok0sVwg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_5Ysfo7ogEeiMK4wok0sVwg" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5YsfpLogEeiMK4wok0sVwg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_5Yr4lLogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5Yr4lbogEeiMK4wok0sVwg" x="230" y="90" width="196" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_7EAK4LogEeiMK4wok0sVwg" type="2001" element="_7DWDkLogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_7EAx8LogEeiMK4wok0sVwg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_7EAx8bogEeiMK4wok0sVwg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_7EAx8rogEeiMK4wok0sVwg" type="3003" element="_7DWDkbogEeiMK4wok0sVwg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_7EAx87ogEeiMK4wok0sVwg" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7EAx9LogEeiMK4wok0sVwg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_7EAK4bogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7EAK4rogEeiMK4wok0sVwg" x="278" y="200" width="100" height="30"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_qqB5gLolEeiMK4wok0sVwg" type="2001" element="_qpjYYLolEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_qqB5g7olEeiMK4wok0sVwg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_qqB5hLolEeiMK4wok0sVwg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qqCgkLolEeiMK4wok0sVwg" type="3003" element="_qpjYYbolEeiMK4wok0sVwg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qqCgkbolEeiMK4wok0sVwg" fontName="Ubuntu"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqCgkrolEeiMK4wok0sVwg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_qqB5gbolEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8" italic="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqB5grolEeiMK4wok0sVwg" x="405" y="200" width="100" height="30"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_5Yr4krogEeiMK4wok0sVwg"/>
+        <edges xmi:type="notation:Edge" xmi:id="_7EAx9bogEeiMK4wok0sVwg" type="4001" element="_7DnJULogEeiMK4wok0sVwg" source="_7EAK4LogEeiMK4wok0sVwg" target="_5Yr4k7ogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_7EBZALogEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7EBZAbogEeiMK4wok0sVwg" x="-8" y="-4"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_7EBZArogEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7EBZA7ogEeiMK4wok0sVwg" x="12"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_7EBZBLogEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7EBZBbogEeiMK4wok0sVwg" x="11" y="1"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_7EAx9rogEeiMK4wok0sVwg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_7EAx97ogEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_7EAx-LogEeiMK4wok0sVwg" points="[0, -15, 0, 95]$[0, -95, 0, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7EBZBrogEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_7EBZB7ogEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+        </edges>
+        <edges xmi:type="notation:Edge" xmi:id="_qqCgk7olEeiMK4wok0sVwg" type="4001" element="_qplNkLolEeiMK4wok0sVwg" source="_qqB5gLolEeiMK4wok0sVwg" target="_5Yr4k7ogEeiMK4wok0sVwg">
+          <children xmi:type="notation:Node" xmi:id="_qqCgl7olEeiMK4wok0sVwg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqCgmLolEeiMK4wok0sVwg" x="-1" y="-9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qqCgmbolEeiMK4wok0sVwg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqCgmrolEeiMK4wok0sVwg" x="3" y="9"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qqCgm7olEeiMK4wok0sVwg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qqCgnLolEeiMK4wok0sVwg" x="4" y="10"/>
+          </children>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_qqCglLolEeiMK4wok0sVwg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_qqCglbolEeiMK4wok0sVwg" fontName="Ubuntu" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qqCglrolEeiMK4wok0sVwg" points="[-18, -15, 109, 95]$[-110, -95, 17, 15]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qqDHoLolEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qqDHobolEeiMK4wok0sVwg" id="(0.5,0.5)"/>
+        </edges>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_5Ylx9LogEeiMK4wok0sVwg" name="listarOfertasDisciplinasPeriodo" incomingEdges="_7DnJULogEeiMK4wok0sVwg _qplNkLolEeiMK4wok0sVwg" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo"/>
+      <semanticElements xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_5Ylx9bogEeiMK4wok0sVwg" showIcon="false" labelPosition="node" width="10" height="3" color="217,196,215">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='FrontControllerMethod']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='FrontControllerMethod']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_7DWDkLogEeiMK4wok0sVwg" name="anoLetivo" outgoingEdges="_7DnJULogEeiMK4wok0sVwg" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo/anoLetivo"/>
+      <semanticElements xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo/anoLetivo"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_7DWDkbogEeiMK4wok0sVwg" labelPosition="node" width="10" height="3" color="209,209,209">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_qpjYYLolEeiMK4wok0sVwg" name="semestreLetivo" outgoingEdges="_qplNkLolEeiMK4wok0sVwg" width="10" height="3" resizeKind="EAST_WEST">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo/semestreLetivo"/>
+      <semanticElements xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo/semestreLetivo"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" xmi:id="_qpjYYbolEeiMK4wok0sVwg" labelPosition="node" width="10" height="3" color="209,209,209">
+        <labelFormat>italic</labelFormat>
+        <description xmi:type="style:SquareDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@nodeMappings[name='Parameter']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_7DnJULogEeiMK4wok0sVwg" sourceNode="_7DWDkLogEeiMK4wok0sVwg" targetNode="_5Ylx9LogEeiMK4wok0sVwg">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo/anoLetivo"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_7DnJUbogEeiMK4wok0sVwg" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_7DnJUrogEeiMK4wok0sVwg"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_qplNkLolEeiMK4wok0sVwg" sourceNode="_qpjYYLolEeiMK4wok0sVwg" targetNode="_5Ylx9LogEeiMK4wok0sVwg">
+      <target xmi:type="uml:Parameter" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo/semestreLetivo"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_qpl0oLolEeiMK4wok0sVwg" targetArrow="NoDecoration" size="2">
+        <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']/@style"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_qpl0obolEeiMK4wok0sVwg"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer/@edgeMappings[name='ParameterRelation']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_5Ylx9rogEeiMK4wok0sVwg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/br.ufes.inf.nemo.FrameWeb_Martins2015.design/description/FrameWeb.odesign#//@ownedViewpoints[name='']/@ownedRepresentations[name='Method%20Diagram']/@defaultLayer"/>
+    <target xmi:type="frameweb:FrontControllerMethod" href="SMCSS.frameweb#//@compose.1/Controller%20Package/GerenciarMatriculasController/listarOfertasDisciplinasPeriodo"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>
