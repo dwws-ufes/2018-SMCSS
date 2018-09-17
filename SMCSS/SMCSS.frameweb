@@ -3,7 +3,7 @@
   <compose xsi:type="frameweb:EntityModel" name="EntidadesDominio">
     <packagedElement xsi:type="frameweb:DomainPackage" name="Entity Package">
       <packagedElement xsi:type="frameweb:DomainClass" name="Curso">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nome" visibility="private">
@@ -20,7 +20,7 @@
         <ownedAttribute xsi:type="frameweb:DecimalAttribute" name="cargaHoraria" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
       </packagedElement>
@@ -28,7 +28,7 @@
         <ownedAttribute xsi:type="frameweb:IdAttribute" name="codigo" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
       </packagedElement>
@@ -47,7 +47,7 @@
             </qualifier>
           </qualifier>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
       </packagedElement>
@@ -80,7 +80,7 @@
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Disciplina" association="//@compose.0/Entity%20Package/-%20disciplina"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Pessoa">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nome" visibility="private">
@@ -95,7 +95,7 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Matricula">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="situacao" visibility="private">
@@ -106,12 +106,12 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Professor">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Aula">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="diaDaSemana" visibility="private">
@@ -171,7 +171,7 @@
         </ownedEnd>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Candidato">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="pontuacaoAlcancada" visibility="private">
@@ -182,7 +182,7 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Aluno">
-        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private">
+        <ownedAttribute xsi:type="frameweb:IdAttribute" name="id" visibility="private" isID="true">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/long"/>
         </ownedAttribute>
       </packagedElement>
