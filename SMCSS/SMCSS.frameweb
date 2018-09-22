@@ -613,11 +613,15 @@
         <ownedOperation xsi:type="frameweb:ServiceMethod" name="consultarSolicitacao" methodType="//@compose.0/Entity%20Package/SolicitacaoMatricula">
           <ownedParameter name="solicitacaoMatricula" type="//@compose.0/Entity%20Package/SolicitacaoMatricula"/>
         </ownedOperation>
-        <ownedOperation xsi:type="frameweb:ServiceMethod" name="listarAlunos" methodType="//@compose.0/Entity%20Package/SolicitacaoMatricula">
-          <ownedParameter name="orientador" type="//@compose.0/Entity%20Package/SolicitacaoMatricula"/>
-          <ownedParameter name="periodoLetivo"/>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="listarSolicitacoes">
+          <ownedParameter name="orientador" type="//@compose.0/Entity%20Package/Professor"/>
+          <ownedParameter name="periodoLetivo" type="//@compose.0/Entity%20Package/PeriodoLetivo"/>
+          <methodType xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/List"/>
         </ownedOperation>
-        <ownedOperation xsi:type="frameweb:ServiceMethod" name="consultarSolicitacao" methodType="//@compose.0/Entity%20Package/SolicitacaoMatricula">
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="aprovarSolicitacao">
+          <ownedParameter name="solicitacaoMatricula" type="//@compose.0/Entity%20Package/SolicitacaoMatricula"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:ServiceMethod" name="rejeitarSolicitacao">
           <ownedParameter name="solicitacaoMatricula" type="//@compose.0/Entity%20Package/SolicitacaoMatricula"/>
         </ownedOperation>
       </packagedElement>
@@ -663,6 +667,12 @@
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.11/Target"/>
         <ownedEnd name="Source" type="//@compose.5/Application%20Package/GerenciarCandidatosServiceBean" association="//@compose.5/Application%20Package/@packagedElement.11"/>
         <ownedEnd name="Target" type="//@compose.4/Persistence%20Package/CandidatoDAO" association="//@compose.5/Application%20Package/@packagedElement.11"/>
+      </packagedElement>
+      <packagedElement xsi:type="frameweb:DAOServiceAssociation" memberEnd="//@compose.5/Application%20Package/@packagedElement.12/Source //@compose.5/Application%20Package/@packagedElement.12/Target">
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.12/Source"/>
+        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.5/Application%20Package/@packagedElement.12/Target"/>
+        <ownedEnd name="Source" type="//@compose.5/Application%20Package/GerenciarMatriculasServiceBean" association="//@compose.5/Application%20Package/@packagedElement.12"/>
+        <ownedEnd name="Target" type="//@compose.4/Persistence%20Package/SolicitacaoMatriculaDAO" association="//@compose.5/Application%20Package/@packagedElement.12"/>
       </packagedElement>
     </packagedElement>
   </compose>
