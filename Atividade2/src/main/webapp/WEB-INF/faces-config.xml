@@ -1,0 +1,24 @@
+<faces-config 
+	xmlns="http://java.sun.com/xml/ns/javaee"
+   	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	
+	<!-- Internationalization issues for admin-tenplate
+		https://github.com/adminfaces/admin-template#internationalization
+		https://github.com/adminfaces/admin-template/issues/69#issuecomment-388648551 
+	-->
+	<application>
+	
+		<resource-bundle>
+			<base-name>com.github.adminfaces.template.i18n.AdminUTF8Bundle</base-name>
+			<var>msgs</var>
+		</resource-bundle>
+	
+		<locale-config>
+		    <default-locale>pt_BR</default-locale>
+            <supported-locale>en_US</supported-locale>
+		</locale-config>
+		
+	</application>
+</faces-config>
