@@ -1,5 +1,6 @@
 package br.ufes.informatica.smcss.core.domain;
 
+import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -71,6 +72,12 @@ public class Candidato extends PersistentObjectSupport implements Comparable<Can
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
+	}
+	
+	@Override
+	@javax.persistence.Transient
+	public String toString() {
+		return "Candidato " + this.nome;
 	}
 	
 }

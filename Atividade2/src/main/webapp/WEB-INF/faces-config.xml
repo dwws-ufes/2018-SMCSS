@@ -4,21 +4,32 @@
    	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
 	version="2.0">
 	
-	<!-- Internationalization issues for admin-tenplate
+	<!-- Internationalization issues for admin-template
 		https://github.com/adminfaces/admin-template#internationalization
 		https://github.com/adminfaces/admin-template/issues/69#issuecomment-388648551 
 	-->
 	<application>
+		<!-- Defines the resource bundle that contains the standard JSF messages (overriding the ones provided). -->
+		<message-bundle>br.ufes.informatica.smcss.faces</message-bundle>
 	
+		<!-- Loads resource bundles for i18n messages and assigns names to them for template and global messages -->
 		<resource-bundle>
-			<base-name>com.github.adminfaces.template.i18n.AdminUTF8Bundle</base-name>
+			<base-name>br.ufes.informatica.smcss.messages</base-name>
 			<var>msgs</var>
 		</resource-bundle>
+
+		<!-- Loads resource bundles for i18n messages and assigns names to them for core subsystem -->	
+		<resource-bundle>
+			<base-name>br.ufes.informatica.smcss.messages</base-name>
+			<var>msgsCore</var>
+		</resource-bundle>
 	
+		<!-- Defines the default locale. -->
 		<locale-config>
-		    <default-locale>pt_BR</default-locale>
-            <supported-locale>en_US</supported-locale>
+			<default-locale>en</default-locale>
+			<supported-locale>en</supported-locale>
+            <supported-locale>pt_BR</supported-locale>
 		</locale-config>
-		
 	</application>
+
 </faces-config>
