@@ -12,10 +12,10 @@ import br.ufes.informatica.smcss.core.persistence.PessoaDAO;
 @Stateless @PermitAll
 public class GerenciarCandidatosServiceBean extends CrudServiceBean<Pessoa> implements GerenciarCandidatosService {
 	private static final long serialVersionUID = 1L;
-	
+
 	@EJB
 	private PessoaDAO candidatoDAO;
-	
+
 	@Override
 	public BaseDAO<Pessoa> getDAO() {
 		return candidatoDAO;

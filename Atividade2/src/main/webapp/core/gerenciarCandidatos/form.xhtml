@@ -14,7 +14,7 @@
 			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id != null)}" />
 		<h:outputText value="#{msgs['gerenciarCandidatos.title.retrieve']}" rendered="#{gerenciarCandidatosController.readOnly}" />
 	</ui:define>
-	
+
 	<ui:define name="description">
 		<h:outputText value="#{msgs['gerenciarCandidatos.title.create.description']}"
 			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id == null)}" />
@@ -22,7 +22,7 @@
 			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id != null)}" />
 		<h:outputText value="#{msgs['gerenciarCandidatos.title.retrieve.description']}" rendered="#{gerenciarCandidatosController.readOnly}" />
 	</ui:define>
-	
+
 	<ui:define name="body">
 		<h:form id="entitiesForm">
 			<p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">

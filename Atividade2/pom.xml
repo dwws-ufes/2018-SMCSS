@@ -20,7 +20,7 @@
 			<artifactId>admin-template</artifactId>
 			<version>1.0.0-RC18</version>
 		</dependency>
-		
+
 		<!-- https://github.com/dwws-ufes/jbutler/wiki/Tutorial04 -->
 		<dependency>
 			<groupId>br.ufes.inf.nemo</groupId>
@@ -28,7 +28,7 @@
 			<version>1.2.7</version>
 		</dependency>
 	</dependencies>
-	
+
 	<build>
 		<finalName>smcss</finalName>
 		<plugins>
