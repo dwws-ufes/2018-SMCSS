@@ -5,6 +5,15 @@
 		<jta-data-source>java:jboss/datasources/SMCSS</jta-data-source>
 		<class>br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport</class>
 		<class>br.ufes.informatica.smcss.core.domain.Pessoa</class>
+		<class>br.ufes.informatica.smcss.core.domain.Aluno</class>
+		<class>br.ufes.informatica.smcss.core.domain.Aula</class>
+		<class>br.ufes.informatica.smcss.core.domain.Disciplina</class>
+		<class>br.ufes.informatica.smcss.core.domain.OfertaDisciplina</class>
+		<class>br.ufes.informatica.smcss.core.domain.Candidato</class>
+		<class>br.ufes.informatica.smcss.core.domain.Curso</class>
+		<class>br.ufes.informatica.smcss.core.domain.PeriodoLetivo</class>
+		<class>br.ufes.informatica.smcss.core.domain.SolicitacaoMatricula</class>
+		<class>br.ufes.informatica.smcss.core.domain.Professor</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update"/>
