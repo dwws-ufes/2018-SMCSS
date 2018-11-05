@@ -7,17 +7,17 @@ import javax.inject.Named;
 import br.ufes.inf.nemo.jbutler.ejb.application.CrudService;
 import br.ufes.inf.nemo.jbutler.ejb.controller.CrudController;
 import br.ufes.informatica.smcss.core.application.GerenciarCandidatosService;
-import br.ufes.informatica.smcss.core.domain.Candidato;
+import br.ufes.informatica.smcss.core.domain.Pessoa;
 
 @Named @SessionScoped
-public class GerenciarCandidatosController extends CrudController<Candidato> {
+public class GerenciarCandidatosController extends CrudController<Pessoa> {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
 	private GerenciarCandidatosService gerenciarCandidatoService;
 	
 	@Override
-	protected CrudService<Candidato> getCrudService() {
+	protected CrudService<Pessoa> getCrudService() {
 		return gerenciarCandidatoService;
 	}
 	

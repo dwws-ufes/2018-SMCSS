@@ -6,18 +6,18 @@ import javax.ejb.Stateless;
 
 import br.ufes.inf.nemo.jbutler.ejb.application.CrudServiceBean;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
-import br.ufes.informatica.smcss.core.domain.Candidato;
+import br.ufes.informatica.smcss.core.domain.Pessoa;
 import br.ufes.informatica.smcss.core.persistence.CandidatoDAO;
 
 @Stateless @PermitAll
-public class GerenciarCandidatosServiceBean extends CrudServiceBean<Candidato> implements GerenciarCandidatosService {
+public class GerenciarCandidatosServiceBean extends CrudServiceBean<Pessoa> implements GerenciarCandidatosService {
 	private static final long serialVersionUID = 1L;
 	
 	@EJB
 	private CandidatoDAO candidatoDAO;
 	
 	@Override
-	public BaseDAO<Candidato> getDAO() {
+	public BaseDAO<Pessoa> getDAO() {
 		return candidatoDAO;
 	}
 }

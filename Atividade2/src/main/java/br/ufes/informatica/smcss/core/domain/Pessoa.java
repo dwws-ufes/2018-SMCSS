@@ -1,6 +1,5 @@
 package br.ufes.informatica.smcss.core.domain;
 
-import java.beans.Transient;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -12,13 +11,13 @@ import javax.validation.constraints.Size;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
 
 @Entity
-public class Candidato extends PersistentObjectSupport implements Comparable<Candidato> {
+public class Pessoa extends PersistentObjectSupport {
 	private static final long serialVersionUID = 1L;
-	
+
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
+
 	@Size(max = 200)
 	private String nome;
 
@@ -33,15 +32,6 @@ public class Candidato extends PersistentObjectSupport implements Comparable<Can
 	@Temporal(TemporalType.DATE)
 	private Date dataNascimento;
 
-	@Override
-	public int compareTo(Candidato c) {
-		if (this.cpf == c.cpf) {
-			return 1;
-		} else {
-			return 0;
-		}
-	}
-	
 	public String getNome() {
 		return nome;
 	}
@@ -73,11 +63,10 @@ public class Candidato extends PersistentObjectSupport implements Comparable<Can
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
+
 	@Override
 	@javax.persistence.Transient
 	public String toString() {
-		return "Candidato " + this.nome;
+		return "Pessoa{id:" + this.getId() + "}";
 	}
-	
 }
