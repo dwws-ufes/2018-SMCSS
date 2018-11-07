@@ -4,7 +4,10 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
+import br.ufes.informatica.smcss.core.domain.Disciplina;
 import br.ufes.informatica.smcss.core.domain.OfertaDisciplina;
+import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
+import br.ufes.informatica.smcss.core.domain.Professor;
 
 @StaticMetamodel(OfertaDisciplina.class)
 public abstract class OfertaDisciplina_ extends PersistentObjectSupport_ {

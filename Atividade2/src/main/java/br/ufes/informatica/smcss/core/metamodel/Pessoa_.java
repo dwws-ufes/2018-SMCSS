@@ -1,5 +1,7 @@
 package br.ufes.informatica.smcss.core.metamodel;
 
+import java.util.Date;
+
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 

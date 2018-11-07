@@ -5,6 +5,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
 import br.ufes.informatica.smcss.core.domain.Aluno;
+import br.ufes.informatica.smcss.core.domain.Candidato;
 
 @StaticMetamodel(Aluno.class)
 public abstract class Aluno_ extends PersistentObjectSupport_ {

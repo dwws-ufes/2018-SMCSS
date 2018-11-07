@@ -4,6 +4,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
+import br.ufes.informatica.smcss.core.domain.Periodo;
 import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
 
 @StaticMetamodel(PeriodoLetivo.class)

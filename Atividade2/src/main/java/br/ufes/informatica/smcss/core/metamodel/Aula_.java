@@ -1,10 +1,14 @@
 package br.ufes.informatica.smcss.core.metamodel;
 
+import java.util.Date;
+
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
 import br.ufes.informatica.smcss.core.domain.Aula;
+import br.ufes.informatica.smcss.core.domain.DiaDaSemana;
+import br.ufes.informatica.smcss.core.domain.OfertaDisciplina;
 
 @StaticMetamodel(Aula.class)
 public abstract class Aula_ extends PersistentObjectSupport_ {
