@@ -5,10 +5,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseJPADAO;
-import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
+import br.ufes.informatica.smcss.core.domain.Aluno;
 
 @Stateless
-public class PeriodoLetivoJPADAO extends BaseJPADAO<PeriodoLetivo> implements PeriodoLetivoDAO {
+public class AlunoJPADAO extends BaseJPADAO<Aluno> implements AlunoDAO {
 
     private static final long serialVersionUID = 1L;
 

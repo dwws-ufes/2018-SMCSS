@@ -9,13 +9,14 @@ import br.ufes.informatica.smcss.core.domain.Pessoa;
 
 @Stateless
 public class PessoaJPADAO extends BaseJPADAO<Pessoa> implements PessoaDAO {
-	private static final long serialVersionUID = 1L;
 
-	@PersistenceContext
-	private EntityManager entityManager;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	protected EntityManager getEntityManager() {
-		return entityManager;
-	}
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return entityManager;
+    }
 }
