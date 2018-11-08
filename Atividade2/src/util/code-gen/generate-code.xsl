@@ -5,6 +5,8 @@
           xmlns:func="http://exslt.org/functions"
           extension-element-prefixes="exsl func">
 
+<xsl:import href="view-files.xsl"/>
+
 <xsl:param name="rootFolder" select="/class-list/@root-folder"/>
 <xsl:variable name="n"><xsl:text>&#xa;</xsl:text></xsl:variable>
 
@@ -87,6 +89,9 @@
     <xsl:apply-templates mode="application-interface"/>
     <xsl:apply-templates mode="application-implementation"/>
     <xsl:apply-templates mode="controller-implementation"/>
+    <xsl:apply-templates mode="view-files">
+        <xsl:with-param name="viewroot" select="concat($rootFolder, '/../webapp')"/>
+    </xsl:apply-templates>
 </xsl:template>
 
 <xsl:template match="class" mode="metamodel">
