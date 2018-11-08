@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
           xmlns:exsl="http://exslt.org/common"
@@ -79,19 +80,13 @@
     </exsl:document>
 </xsl:template>
 
-<xsl:template match="class-list">
-    <xsl:value-of select="func:lowercase('Ok-')"/>
+<xsl:template match="/">
     <xsl:apply-templates mode="metamodel"/>
     <xsl:apply-templates mode="persistence-interface"/>
     <xsl:apply-templates mode="persistence-jpa-implementation"/>
     <xsl:apply-templates mode="application-interface"/>
     <xsl:apply-templates mode="application-implementation"/>
     <xsl:apply-templates mode="controller-implementation"/>
-</xsl:template>
-
-<xsl:template match="class">
-    <exsl:document href="/tmp/xsl-results/{@name}" method="text">
-    </exsl:document>
 </xsl:template>
 
 <xsl:template match="class" mode="metamodel">
