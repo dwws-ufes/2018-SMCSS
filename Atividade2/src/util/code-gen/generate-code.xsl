@@ -6,8 +6,12 @@
           extension-element-prefixes="exsl func">
 
 <xsl:import href="view-files.xsl"/>
+<xsl:import href="message-file.xsl"/>
 
 <xsl:param name="rootFolder" select="/class-list/@root-folder"/>
+<xsl:param name="resourcesFolder" select="concat($rootFolder,'/../resources')"/>
+<xsl:param name="webappFolder" select="concat($rootFolder,'/../webapp')"/>
+<xsl:param name="webinfFolder" select="concat($webappFolder,'/WEB-INF')"/>
 <xsl:variable name="n"><xsl:text>&#xa;</xsl:text></xsl:variable>
 
 <func:function name="func:lowercase">
@@ -22,6 +26,20 @@
     <xsl:variable name="firstLetter" select="substring($value, 1, 1)" />
     <xsl:variable name="otherLetters" select="substring($value, 2)" />
     <func:result select="concat(func:lowercase($firstLetter), $otherLetters)"/>
+</func:function>
+
+<func:function name="func:uppercase">
+    <xsl:param name="value" select="''"/>
+    <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" />
+    <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
+    <func:result select="translate($value, $lowercase, $uppercase)"/>
+</func:function>
+
+<func:function name="func:uppercasefirstletter">
+    <xsl:param name="value" select="''"/>
+    <xsl:variable name="firstLetter" select="substring($value, 1, 1)" />
+    <xsl:variable name="otherLetters" select="substring($value, 2)" />
+    <func:result select="concat(func:uppercase($firstLetter), $otherLetters)"/>
 </func:function>
 
 <xsl:template name="package-name">
@@ -92,6 +110,7 @@
     <xsl:apply-templates mode="view-files">
         <xsl:with-param name="viewroot" select="concat($rootFolder, '/../webapp')"/>
     </xsl:apply-templates>
+    <xsl:apply-templates mode="message-file"/>
 </xsl:template>
 
 <xsl:template match="class" mode="metamodel">
@@ -260,6 +279,5 @@ import <xsl:call-template name="class-name"/>;
 <!-- --></xsl:with-param>
     </xsl:call-template>
 </xsl:template>
-
 
 </xsl:stylesheet>
