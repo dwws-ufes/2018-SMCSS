@@ -25,8 +25,11 @@ public class GerenciarCandidatosController extends CrudController<Pessoa> {
 	protected void initFilters() {}
 
 	public String save() {
-		super.save();
-		return "/core/gerenciarCandidatos/list.xhmtl";
-
+			if (super.save() != null) {
+				return "/core/gerenciarCandidatos/list.xhmtl";
+			} else {
+				return null;
+			}
+				
 	}
 }
