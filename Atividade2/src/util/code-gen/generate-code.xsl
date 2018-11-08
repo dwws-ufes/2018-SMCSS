@@ -1,10 +1,25 @@
 <xsl:stylesheet version="1.0"
           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
           xmlns:exsl="http://exslt.org/common"
-          extension-element-prefixes="exsl">
+          xmlns:func="http://exslt.org/functions"
+          extension-element-prefixes="exsl func">
 
 <xsl:param name="rootFolder" select="/class-list/@root-folder"/>
 <xsl:variable name="n"><xsl:text>&#xa;</xsl:text></xsl:variable>
+
+<func:function name="func:lowercase">
+    <xsl:param name="value" select="''"/>
+    <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" />
+    <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
+    <func:result select="translate($value, $uppercase, $lowercase)"/>
+</func:function>
+
+<func:function name="func:lowercasefirstletter">
+    <xsl:param name="value" select="''"/>
+    <xsl:variable name="firstLetter" select="substring($value, 1, 1)" />
+    <xsl:variable name="otherLetters" select="substring($value, 2)" />
+    <func:result select="concat(func:lowercase($firstLetter), $otherLetters)"/>
+</func:function>
 
 <xsl:template name="package-name">
     <xsl:param name="moduleNode" select="ancestor::module"/>
@@ -24,19 +39,6 @@
     <xsl:param name="typeName" select="@name"/>
     <xsl:param name="typeNameSuffix" select="''"/>
     <xsl:value-of select="concat($organization, '.', $system, '.', $subsystem, '.', $module, '.', $typeName, $typeNameSuffix)"/>
-</xsl:template>
-
-<xsl:template name="first-letter-lower">
-    <xsl:param name="value"/>
-
-    <xsl:variable name="firstLetter" select="substring($value, 1, 1)" />
-    <xsl:variable name="otherLetters" select="substring($value, 2)" />
-
-    <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" />
-    <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
-    <xsl:variable name="firstLetterLower" select="translate($firstLetter, $uppercase, $lowercase)" />
-
-    <xsl:value-of select="concat($firstLetterLower,$otherLetters)"/>
 </xsl:template>
 
 <xsl:template name="type-file">
@@ -78,7 +80,7 @@
 </xsl:template>
 
 <xsl:template match="class-list">
-    <xsl:apply-templates/>
+    <xsl:value-of select="func:lowercase('Ok-')"/>
     <xsl:apply-templates mode="metamodel"/>
     <xsl:apply-templates mode="persistence-interface"/>
     <xsl:apply-templates mode="persistence-jpa-implementation"/>
@@ -183,11 +185,7 @@ import <xsl:call-template name="class-name"/>;
 
 <xsl:template match="class" mode="application-implementation">
     <xsl:variable name="DAOClass" select="concat(@name, 'DAO')"/>
-    <xsl:variable name="daoField">
-        <xsl:call-template name="first-letter-lower">
-            <xsl:with-param name="value" select="$DAOClass"/>
-        </xsl:call-template>
-    </xsl:variable>
+    <xsl:variable name="daoField" select="func:lowercasefirstletter($DAOClass)"/>
     <xsl:call-template name="type-file">
         <xsl:with-param name="typeNameSuffix">ServiceBean</xsl:with-param>
         <xsl:with-param name="module">application</xsl:with-param>
@@ -224,11 +222,7 @@ import <xsl:call-template name="class-name">
 
 <xsl:template match="class" mode="view-implementation">
     <xsl:variable name="ServiceClass" select="concat(@name, 'Service')"/>
-    <xsl:variable name="serviceField">
-        <xsl:call-template name="first-letter-lower">
-            <xsl:with-param name="value" select="$ServiceClass"/>
-        </xsl:call-template>
-    </xsl:variable>
+    <xsl:variable name="serviceField" select="func:lowercasefirstletter($ServiceClass)"/>
     <xsl:call-template name="type-file">
         <xsl:with-param name="typeNameSuffix">Controller</xsl:with-param>
         <xsl:with-param name="module">controller</xsl:with-param>
