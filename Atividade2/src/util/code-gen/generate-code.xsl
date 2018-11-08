@@ -86,7 +86,7 @@
     <xsl:apply-templates mode="persistence-jpa-implementation"/>
     <xsl:apply-templates mode="application-interface"/>
     <xsl:apply-templates mode="application-implementation"/>
-    <xsl:apply-templates mode="view-implementation"/>
+    <xsl:apply-templates mode="controller-implementation"/>
 </xsl:template>
 
 <xsl:template match="class">
@@ -220,7 +220,7 @@ import <xsl:call-template name="class-name">
     </xsl:call-template>
 </xsl:template>
 
-<xsl:template match="class" mode="view-implementation">
+<xsl:template match="class" mode="controller-implementation">
     <xsl:variable name="ServiceClass" select="concat(@name, 'Service')"/>
     <xsl:variable name="serviceField" select="func:lowercasefirstletter($ServiceClass)"/>
     <xsl:call-template name="type-file">
