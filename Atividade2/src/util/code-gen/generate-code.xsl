@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
+          xmlns:jee="http://java.sun.com/xml/ns/javaee"
           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
           xmlns:exsl="http://exslt.org/common"
           xmlns:func="http://exslt.org/functions"
@@ -101,16 +102,18 @@
 </xsl:template>
 
 <xsl:template match="/">
-    <xsl:apply-templates mode="metamodel"/>
-    <xsl:apply-templates mode="persistence-interface"/>
-    <xsl:apply-templates mode="persistence-jpa-implementation"/>
-    <xsl:apply-templates mode="application-interface"/>
-    <xsl:apply-templates mode="application-implementation"/>
-    <xsl:apply-templates mode="controller-implementation"/>
-    <xsl:apply-templates mode="view-files">
-        <xsl:with-param name="viewroot" select="concat($rootFolder, '/../webapp')"/>
-    </xsl:apply-templates>
-    <xsl:apply-templates mode="message-file"/>
+    <xsl:variable name="limbo">
+        <xsl:apply-templates mode="metamodel"/>
+        <xsl:apply-templates mode="persistence-interface"/>
+        <xsl:apply-templates mode="persistence-jpa-implementation"/>
+        <xsl:apply-templates mode="application-interface"/>
+        <xsl:apply-templates mode="application-implementation"/>
+        <xsl:apply-templates mode="controller-implementation"/>
+        <xsl:apply-templates mode="view-files">
+            <xsl:with-param name="viewroot" select="concat($rootFolder, '/../webapp')"/>
+        </xsl:apply-templates>
+        <xsl:apply-templates mode="message-file"/>
+    </xsl:variable>
 </xsl:template>
 
 <xsl:template match="class" mode="metamodel">
@@ -279,5 +282,7 @@ import <xsl:call-template name="class-name"/>;
 <!-- --></xsl:with-param>
     </xsl:call-template>
 </xsl:template>
+
+<xsl:template match="text()"/>
 
 </xsl:stylesheet>
