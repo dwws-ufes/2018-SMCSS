@@ -1,61 +1,96 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>br.ufes.inf</groupId>
-	<artifactId>smcss</artifactId>
-	<packaging>war</packaging>
-	<version>1.0.0</version>
-	<name>smcss Maven Webapp</name>
-	<url>http://maven.apache.org</url>
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.github.adminfaces</groupId>
-			<artifactId>admin-template</artifactId>
-			<version>1.0.0-RC18</version>
-		</dependency>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>br.ufes.inf</groupId>
+    <artifactId>smcss</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.0</version>
+    <name>smcss Maven Webapp</name>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.adminfaces</groupId>
+            <artifactId>admin-template</artifactId>
+            <version>1.0.0-RC18</version>
+        </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
 
-		<!-- https://github.com/dwws-ufes/jbutler/wiki/Tutorial04 -->
-		<dependency>
-			<groupId>br.ufes.inf.nemo</groupId>
-			<artifactId>jbutler-wp</artifactId>
-			<version>1.2.7</version>
-		</dependency>
-	</dependencies>
+        <!-- https://github.com/dwws-ufes/jbutler/wiki/Tutorial04 -->
+        <dependency>
+            <groupId>br.ufes.inf.nemo</groupId>
+            <artifactId>jbutler-wp</artifactId>
+            <version>1.2.7</version>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<finalName>smcss</finalName>
-		<plugins>
-			<plugin>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
-				<configuration>
-					<source>9</source>
-					<target>9</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+    <build>
+        <finalName>smcss</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                    <compilerArguments>
+                        <proc:none/>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.bsc.maven</groupId>
+                <artifactId>maven-processor-plugin</artifactId>
+                <version>2.0.5</version>
+                <executions>
+                    <execution>
+                        <id>process</id>
+                        <goals>
+                            <goal>process</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <processors>
+                                <processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+                            </processors>
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.hibernate</groupId>
+                        <artifactId>hibernate-jpamodelgen</artifactId>
+                        <version>5.3.7.Final</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 
-	<!-- https://github.com/dwws-ufes/jbutler/wiki/Tutorial04 -->
-	<repositories>
-		<repository>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>fail</checksumPolicy>
-			</releases>
-			<id>br.ufes.inf.nemo</id>
-			<name>Nemo Maven Repository</name>
-			<url>http://dev.nemo.inf.ufes.br/maven2</url>
-			<layout>default</layout>
-		</repository>
-	</repositories>
+    <!-- https://github.com/dwws-ufes/jbutler/wiki/Tutorial04 -->
+    <repositories>
+        <repository>
+            <releases>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>fail</checksumPolicy>
+            </releases>
+            <id>br.ufes.inf.nemo</id>
+            <name>Nemo Maven Repository</name>
+            <url>http://dev.nemo.inf.ufes.br/maven2</url>
+            <layout>default</layout>
+        </repository>
+    </repositories>
 
 </project>
