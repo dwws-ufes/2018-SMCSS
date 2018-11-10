@@ -2,7 +2,8 @@
 
 CMD_FILE=$( readlink -f "$0" )
 CMD_DIR=$( dirname "$CMD_FILE" )
-SED_PROGRAM="$CMD_DIR/class-to-xml.sed"
+CLASS_SED_PROGRAM="$CMD_DIR/class-to-xml.sed"
+MESSAGE_SED_PROGRAM="$CMD_DIR/messages-to-xml.sed"
 
 # Indentação do arquivo XML
 INDENT="    "
@@ -11,6 +12,18 @@ ROOT_FOLDER="$1"
 
 ENTITY_FOLDER_NAME="domain"
 SOURCE_FILES_REGEX=".*/${ENTITY_FOLDER_NAME}/[A-Za-z0-9_ ]+.java"
+
+# Converte cada espaço no início da linha em indentação
+indent() {
+    sed -e '
+:indent
+        s/^\(\s*\) /\1{INDENT}/
+        t indent
+        s/{INDENT}/'"${INDENT}"'/g
+        s/^/'"${INDENT}"'/
+    '
+}
+
 
 # Busca pasta se não especificada
 if [ -z "$ROOT_FOLDER" ]
@@ -28,18 +41,18 @@ then
     ROOT_FOLDER="$ROOT_FOLDER/src/main/java"
 fi
 
+closeModuleTag() {
+    if [ ! -z "$PREV_PKG_NAME" ]
+    then
+        echo " </module>"
+    fi
+}
+
+# Gera início do arquivo XML
+echo '<?xml version="1.0"?>'
+echo '<class-list root-folder="'"${ROOT_FOLDER}"'">'
+
 (
-    closeModuleTag() {
-        if [ ! -z "$PREV_PKG_NAME" ]
-        then
-            echo "    </module>"
-        fi
-    }
-
-    # Gera início do arquivo XML
-    echo '<?xml version="1.0"?>'
-    echo '<class-list root-folder="'"${ROOT_FOLDER}"'">'
-
     # Gera conteudo do arquivo XML
     IFS=$'\n' # Proteção contra nomes de arquivos com espaços
     for FILE_NAME in $( find "${ROOT_FOLDER}" -regex "${SOURCE_FILES_REGEX}" )
@@ -72,22 +85,27 @@ fi
             ORGANIZATION=${PACKAGE_NAME%.*}
 
             # Abre tag module com os componentes do pacote nos atributos
-            echo "${INDENT}<module name=\"${MODULE}\" subsystem=\"${SUBSYSTEM}\" system=\"${SYSTEM}\" organization=\"${ORGANIZATION}\">"
+            echo " <module name=\"${MODULE}\" subsystem=\"${SUBSYSTEM}\" system=\"${SYSTEM}\" organization=\"${ORGANIZATION}\">"
         fi
 
         # Gera lista de classes
-        sed -f "$SED_PROGRAM" "$FILE_NAME" | sed -e '
-:indent
-            s/^\s* /{INDENT}/
-            t indent
-            s/{INDENT}/'"${INDENT}"'/g
-            s/^/'"${INDENT}"'/
-        '
+        sed -f "$CLASS_SED_PROGRAM" "$FILE_NAME"
             
     done
     
     closeModuleTag
 
-    # Gera final do arquivo XML de lista
-    echo '</class-list>'
-)
+    # Gera mensagens
+    echo "<message-files>"
+    for FILE_NAME in "$CMD_DIR"/messages*.properties
+    do
+        BASE_NAME=$( basename "$FILE_NAME" )
+        echo " <message-file name=\"${BASE_NAME}\">"
+        sed -f "$MESSAGE_SED_PROGRAM" "$FILE_NAME"
+        echo " </message-file>"
+    done
+    echo "</message-files>"
+) | indent
+
+# Gera final do arquivo XML de lista
+echo '</class-list>'
