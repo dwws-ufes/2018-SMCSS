@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+
+
+<ui:define name="title">
+	<h:outputText value="#{msgs['gerenciarCandidatos.title']}" />
+</ui:define>
+
+<ui:define name="description">
+	<h:outputText value="#{msgs['gerenciarCandidatos.title.description']}" />
+</ui:define>
+
+<ui:define name="body">
+	<adm:breadcrumb link="/core/gerenciarCandidatos/index" title="#{msgs['gerenciarCandidatos.title']}" />
+	<h:form id="listingForm">
+		<p:dataTable id="entitiesDataTable" var="entity" value="#{gerenciarCandidatosController.lazyEntities}"
+			selection="#{gerenciarCandidatosController.selectedEntity}" selectionMode="single" paginator="true"
+			rows="#{gerenciarCandidatosController.maxDataTableRowsPerPage}"
+			paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+			rowsPerPageTemplate="#{gerenciarCandidatosController.halfMaxDataTableRowsPerPage},#{gerenciarCandidatosController.maxDataTableRowsPerPage},#{gerenciarCandidatosController.doubleMaxDataTableRowsPerPage}"
+			lazy="true" paginatorPosition="bottom" emptyMessage="#{msgs['gerenciarCandidatos.text.noEntities']}">
+			<p:ajax event="rowSelect" update="buttonsGroup" />
+			<p:ajax event="rowUnselect" update="buttonsGroup" />
+			<f:facet name="header">
+				<h:outputText value="#{msgs['gerenciarCandidatos.text.entities']}" />
+			</f:facet>
+			<p:column headerText="#{msgs['gerenciarCandidatos.field.nome']}">
+				<h:outputText value="#{entity.nome}" />
+			</p:column>
+			<p:column headerText="#{msgs['gerenciarCandidatos.field.cpf']}">
+				<h:outputText value="#{entity.cpf}" />
+			</p:column>
+			<p:column headerText="#{msgs['gerenciarCandidatos.field.email']}">
+				<h:outputText value="#{entity.email}" />
+			</p:column>
+			<p:column headerText="#{msgs['gerenciarCandidatos.field.dataNascimento']}">
+				<h:outputText value="#{entity.dataNascimento}">
+					<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" />
+				</h:outputText>
+			</p:column>
+			<f:facet name="footer">
+				<h:panelGroup id="buttonsGroup">
+					<p:commandButton action="#{gerenciarCandidatosController.create}" icon="fa fa-plus" value="#{msgs['jbutler.crud.button.create']}" />
+					<p:commandButton action="#{gerenciarCandidatosController.retrieve}" icon="fa fa-search" value="#{msgs['jbutler.crud.button.retrieve']}"
+						disabled="#{gerenciarCandidatosController.selectedEntity == null}" />
+					<p:commandButton action="#{gerenciarCandidatosController.update}" icon="fa fa-edit" value="#{msgs['jbutler.crud.button.update']}"
+						disabled="#{gerenciarCandidatosController.selectedEntity == null}" />
+					<p:commandButton action="#{gerenciarCandidatosController.trash}" icon="fa fa-trash" value="#{msgs['jbutler.crud.button.delete']}"
+						disabled="#{gerenciarCandidatosController.selectedEntity == null}" update=":listingForm:trashGroup" />
+				</h:panelGroup>
+			</f:facet>
+		</p:dataTable>
+		<h:panelGroup id="trashGroup">
+			<hr />
+			<p:panel id="trashPanel" header="#{msgs['jbutler.crud.text.trashHeader']}" toggleable="true" toggleSpeed="500"
+				rendered="#{not empty gerenciarCandidatosController.trashCan}">
+				<p:dataTable id="trashDataTable" var="entity" value="#{gerenciarCandidatosController.trashCan}">
+					<p:column headerText="#{msgs['gerenciarCandidatos.field.nome']}">
+						<h:outputText value="#{entity.nome}" />
+					</p:column>
+					<p:column headerText="#{msgs['gerenciarCandidatos.field.cpf']}">
+						<h:outputText value="#{entity.cpf}" />
+					</p:column>
+					<p:column headerText="#{msgs['gerenciarCandidatos.field.email']}">
+						<h:outputText value="#{entity.email}" />
+					</p:column>
+					<p:column headerText="#{msgs['gerenciarCandidatos.field.dataNascimento']}">
+						<h:outputText value="#{entity.dataNascimento}">
+							<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" />
+						</h:outputText>
+					</p:column>
+					<f:facet name="footer">
+						<p:commandButton action="#{gerenciarCandidatosController.cancelDeletion}" value="#{msgs['jbutler.crud.button.cancelDeletion']}"
+							icon="fa fa-fw fa-close" process="@this" update=":listingForm" />
+						<p:commandButton action="#{gerenciarCandidatosController.delete}" value="#{msgs['jbutler.crud.button.confirmDeletion']}"
+							icon="fa fa-fw fa-trash-o" process="@this" update=":listingForm" />
+					</f:facet>
+				</p:dataTable>
+			</p:panel>
+		</h:panelGroup>
+	</h:form>
+</ui:define>
+
+
+
+
+</ui:composition>
