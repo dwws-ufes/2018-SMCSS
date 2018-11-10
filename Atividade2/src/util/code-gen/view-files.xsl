@@ -39,32 +39,33 @@
 <xsl:template name="index-xhtml">
     <xsl:param name="entityName" select="func:lowercasefirstletter(@name)"/>
     <xsl:param name="controllerName" select="concat($entityName, 'Controller')"/>
+    <xsl:param name="msgs" select="concat('msgs',func:uppercasefirstletter(ancestor::module/@subsystem))"/>
 
-    <ui:composition>
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{{msgs['{$entityName}.title']}}" />
+            <h:outputText value="#{{{$msgs}['{$entityName}.title']}}" />
         </ui:define>
 
         <ui:define name="description">
-            <h:outputText value="#{{msgs['{$entityName}.title.description']}}" />
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.description']}}" />
         </ui:define>
 
         <ui:define name="body">
-            <adm:breadcrumb link="/core/{$entityName}/index" title="#{{msgs['{$entityName}.title']}}" />
+            <adm:breadcrumb link="/core/{$entityName}/index" title="#{{{$msgs}['{$entityName}.title']}}" />
             <h:form id="listingForm">
                 <p:dataTable id="entitiesDataTable" var="entity" value="#{{{$controllerName}.lazyEntities}}"
                     selection="#{{{$controllerName}.selectedEntity}}" selectionMode="single" paginator="true"
                     rows="#{{{$controllerName}.maxDataTableRowsPerPage}}"
                     paginatorTemplate="{{RowsPerPageDropdown}} {{FirstPageLink}} {{PreviousPageLink}} {{CurrentPageReport}} {{NextPageLink}} {{LastPageLink}}"
                     rowsPerPageTemplate="#{{{$controllerName}.halfMaxDataTableRowsPerPage}},#{{{$controllerName}.maxDataTableRowsPerPage}},#{{{$controllerName}.doubleMaxDataTableRowsPerPage}}"
-                    lazy="true" paginatorPosition="bottom" emptyMessage="#{{msgs['{$entityName}.text.noEntities']}}">
+                    lazy="true" paginatorPosition="bottom" emptyMessage="#{{{$msgs}['{$entityName}.text.noEntities']}}">
                     <p:ajax event="rowSelect" update="buttonsGroup" />
                     <p:ajax event="rowUnselect" update="buttonsGroup" />
                     <f:facet name="header">
-                        <h:outputText value="#{{msgs['{$entityName}.text.entities']}}" />
+                        <h:outputText value="#{{{$msgs}['{$entityName}.text.entities']}}" />
                     </f:facet>
                     <xsl:for-each select="field">
-                        <p:column headerText="#{{msgs['{$entityName}.field.{@name}']}}">
+                        <p:column headerText="#{{{$msgs}['{$entityName}.field.{@name}']}}">
                             <h:outputText value="#{{entity.{@name}}}">
                                 <xsl:if test="@type='Date'">
                                     <f:convertDateTime type="date" pattern="#{{msgs['jbutler.format.date.java']}}" />
@@ -90,7 +91,7 @@
                         rendered="#{{not empty {$controllerName}.trashCan}}">
                         <p:dataTable id="trashDataTable" var="entity" value="#{{{$controllerName}.trashCan}}">
                             <xsl:for-each select="field">
-                                <p:column headerText="#{{msgs['{$entityName}.field.{@name}']}}">
+                                <p:column headerText="#{{{$msgs}['{$entityName}.field.{@name}']}}">
                                     <h:outputText value="#{{entity.{@name}}}">
                                         <xsl:if test="@type='Date'">
                                             <f:convertDateTime type="date" pattern="#{{msgs['jbutler.format.date.java']}}" />
@@ -115,29 +116,30 @@
 <xsl:template name="form-xhtml">
     <xsl:param name="entityName" select="func:lowercasefirstletter(@name)"/>
     <xsl:param name="controllerName" select="concat($entityName, 'Controller')"/>
+    <xsl:param name="msgs" select="concat('msgs',func:uppercasefirstletter(ancestor::module/@subsystem))"/>
 
-    <ui:composition>
+    <ui:composition template="/WEB-INF/templates/template.xhtml">
         <ui:define name="title">
-            <h:outputText value="#{{msgs['{$entityName}.title.create']}}"
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.create']}}"
                 rendered="#{{(! {$controllerName}.readOnly) and ({$controllerName}.selectedEntity.id == null)}}" />
-            <h:outputText value="#{{msgs['{$entityName}.title.update']}}"
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.update']}}"
                 rendered="#{{(! {$controllerName}.readOnly) and ({$controllerName}.selectedEntity.id != null)}}" />
-            <h:outputText value="#{{msgs['{$entityName}.title.retrieve']}}" rendered="#{{{$controllerName}.readOnly}}" />
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.retrieve']}}" rendered="#{{{$controllerName}.readOnly}}" />
         </ui:define>
 
         <ui:define name="description">
-            <h:outputText value="#{{msgs['{$entityName}.title.create.description']}}"
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.create.description']}}"
                 rendered="#{{(! {$controllerName}.readOnly) and ({$controllerName}.selectedEntity.id == null)}}" />
-            <h:outputText value="#{{msgs['{$entityName}.title.update.description']}}"
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.update.description']}}"
                 rendered="#{{(! {$controllerName}.readOnly) and ({$controllerName}.selectedEntity.id != null)}}" />
-            <h:outputText value="#{{msgs['{$entityName}.title.retrieve.description']}}" rendered="#{{{$controllerName}.readOnly}}" />
+            <h:outputText value="#{{{$msgs}['{$entityName}.title.retrieve.description']}}" rendered="#{{{$controllerName}.readOnly}}" />
         </ui:define>
 
         <ui:define name="body">
             <h:form id="entitiesForm">
                 <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
                     <xsl:for-each select="field">
-                        <p:outputLabel for="{@name}Field" value="#{{msgs['{$entityName}.field.{@name}']}}" />
+                        <p:outputLabel for="{@name}Field" value="#{{{$msgs}['{$entityName}.field.{@name}']}}" />
                         <xsl:choose>
                             <xsl:when test="@type='Date'">
                                 <p:calendar id="{@name}Field" 
