@@ -39,7 +39,7 @@
 
     <!-- Generate message files, one for each message-file element in input -->
     <xsl:for-each select="//message-files/message-file">
-        <exsl:document href="{$rootFolder}/../resources/{$folderName}/{@name}" method="text">
+        <exsl:document href="{$rootFolder}/../resources/{$folderName}/{@name}" method="text" encoding="ISO-8859-1">
             <xsl:apply-templates select="exsl:node-set($context)" mode="message-file-content">
                 <xsl:with-param name="messageFile" select="."/>
             </xsl:apply-templates>
