@@ -6,19 +6,19 @@ import javax.ejb.Stateless;
 
 import br.ufes.inf.nemo.jbutler.ejb.application.CrudServiceBean;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
-import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
-import br.ufes.informatica.smcss.core.persistence.PeriodoLetivoDAO;
+import br.ufes.informatica.smcss.core.domain.Aluno;
+import br.ufes.informatica.smcss.core.persistence.AlunoDAO;
 
 @Stateless @PermitAll
-public class PeriodoLetivoServiceBean extends CrudServiceBean<PeriodoLetivo> implements PeriodoLetivoService {
+public class AlunoServiceBean extends CrudServiceBean<Aluno> implements AlunoService {
 
     private static final long serialVersionUID = 1L;
 
     @EJB
-    private PeriodoLetivoDAO periodoLetivoDAO;
+    private AlunoDAO alunoDAO;
 
     @Override
-    public BaseDAO<PeriodoLetivo> getDAO() {
-        return periodoLetivoDAO;
+    public BaseDAO<Aluno> getDAO() {
+        return alunoDAO;
     }
 }
