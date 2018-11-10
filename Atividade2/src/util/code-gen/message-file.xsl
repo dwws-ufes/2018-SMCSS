@@ -30,7 +30,7 @@
 <xsl:import href="faces-config.xsl"/>
 
 <xsl:template match="module" mode="message-file">
-    <xsl:variable name="packageName" select="concat(@organization, '.', @system, '.', @subsystem)"/>
+    <xsl:variable name="packageName" select="concat(@organization, '.', @system, '.', @subsystem, '.view')"/>
     <xsl:variable name="folderName" select="translate($packageName, '.', '/')"/>
     <xsl:variable name="context" select="."/>
 
@@ -63,6 +63,11 @@
         <xsl:with-param name="context" select="$context"/>
     </xsl:apply-templates>
     <xsl:value-of select="$n"/>
+</xsl:template>
+
+<xsl:template match="subsystem-name" mode="message-file-content">
+    <xsl:param name="context"/>
+    <xsl:value-of select="exsl:node-set($context)/ancestor-or-self::module/@subsystem"/>
 </xsl:template>
 
 <xsl:template match="class-name" mode="message-file-content">
