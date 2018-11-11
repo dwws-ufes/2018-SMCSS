@@ -103,7 +103,6 @@
 
 <xsl:template match="/">
     <xsl:variable name="limbo">
-        <xsl:apply-templates mode="metamodel"/>
         <xsl:apply-templates mode="persistence-interface"/>
         <xsl:apply-templates mode="persistence-jpa-implementation"/>
         <xsl:apply-templates mode="application-interface"/>
@@ -114,33 +113,6 @@
         </xsl:apply-templates>
         <xsl:apply-templates mode="message-file"/>
     </xsl:variable>
-</xsl:template>
-
-<xsl:template match="class" mode="metamodel">
-    <xsl:call-template name="type-file">
-        <xsl:with-param name="typeNameSuffix">_</xsl:with-param>
-        <xsl:with-param name="typeKind">abstract class</xsl:with-param>
-        <xsl:with-param name="module">metamodel</xsl:with-param>
-        <xsl:with-param name="extends" select="'PersistentObjectSupport_'"/>
-        <xsl:with-param name="headerContent">
-import javax.persistence.metamodel.SingularAttribute;
-import javax.persistence.metamodel.StaticMetamodel;
-
-import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport_;
-import <xsl:call-template name="class-name"/>;
-
-@StaticMetamodel(<xsl:value-of select="@name"/>.class)
-<!-- --></xsl:with-param>
-        <xsl:with-param name="typeContent">
-            <xsl:for-each select="field">
-                <xsl:variable name="lowercase" select="'abcdefghijklmnopqrstuvwxyz'" />
-                <xsl:variable name="uppercase" select="'ABCDEFGHIJKLMNOPQRSTUVWXYZ'" />
-
-                <xsl:value-of select="concat('    public static final String ',translate(@name,$lowercase,$uppercase),'=&quot;',@name,'&quot;;',$n)"/>
-                <xsl:value-of select="concat('    public static volatile SingularAttribute&lt;',../@name,', ',@type,'&gt; ', @name, ';',$n)"/>
-            </xsl:for-each>
-<!-- --></xsl:with-param>
-    </xsl:call-template>
 </xsl:template>
 
 <xsl:template match="class" mode="persistence-interface">
