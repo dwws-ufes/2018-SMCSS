@@ -45,8 +45,14 @@
             <li class="header"><h:outputText value="#{msgsCore['core.menu.database']}" /></li>
             <li>
                 <p:link outcome="/core/pessoa/index" onclick="clearBreadCrumbs()">
-                    <i class="fa fa-calendar"></i>
+                    <i class="fa fa-users"></i>
                     <span><h:outputText value="#{msgsCore['pessoa.title']}" /></span>
+                </p:link>
+            </li>
+            <li>
+                <p:link outcome="/core/professor/index" onclick="clearBreadCrumbs()">
+                    <i class="fa fa-pencil"></i>
+                    <span><h:outputText value="#{msgsCore['professor.title']}" /></span>
                 </p:link>
             </li>
         </ul>
