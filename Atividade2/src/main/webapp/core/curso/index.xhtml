@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:adm="http://github.com/adminfaces" template="/WEB-INF/templates/template.xhtml">
+  <ui:define name="title">
+    <h:outputText value="#{msgsCore['curso.title']}"/>
+  </ui:define>
+  <ui:define name="description">
+    <h:outputText value="#{msgsCore['curso.title.description']}"/>
+  </ui:define>
+  <ui:define name="body">
+    <adm:breadcrumb link="/core/curso/index" title="#{msgsCore['curso.title']}"/>
+    <h:form id="listingForm">
+      <p:dataTable id="entitiesDataTable" var="entity" value="#{cursoController.lazyEntities}" selection="#{cursoController.selectedEntity}" selectionMode="single" paginator="true" rows="#{cursoController.maxDataTableRowsPerPage}" paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" rowsPerPageTemplate="#{cursoController.halfMaxDataTableRowsPerPage},#{cursoController.maxDataTableRowsPerPage},#{cursoController.doubleMaxDataTableRowsPerPage}" lazy="true" paginatorPosition="bottom" emptyMessage="#{msgsCore['curso.text.noEntities']}">
+        <p:ajax event="rowSelect" update="buttonsGroup"/>
+        <p:ajax event="rowUnselect" update="buttonsGroup"/>
+        <f:facet name="header">
+          <h:outputText value="#{msgsCore['curso.text.entities']}"/>
+        </f:facet>
+        <p:column headerText="#{msgsCore['curso.field.nome']}">
+          <h:outputText value="#{entity.nome}"/>
+        </p:column>
+        <f:facet name="footer">
+          <h:panelGroup id="buttonsGroup">
+            <p:commandButton action="#{cursoController.create}" icon="fa fa-plus" value="#{msgs['jbutler.crud.button.create']}"/>
+            <p:commandButton action="#{cursoController.retrieve}" icon="fa fa-search" value="#{msgs['jbutler.crud.button.retrieve']}" disabled="#{cursoController.selectedEntity == null}"/>
+            <p:commandButton action="#{cursoController.update}" icon="fa fa-edit" value="#{msgs['jbutler.crud.button.update']}" disabled="#{cursoController.selectedEntity == null}"/>
+            <p:commandButton action="#{cursoController.trash}" icon="fa fa-trash" value="#{msgs['jbutler.crud.button.delete']}" disabled="#{cursoController.selectedEntity == null}" update=":listingForm:trashGroup"/>
+          </h:panelGroup>
+        </f:facet>
+      </p:dataTable>
+      <h:panelGroup id="trashGroup">
+        <hr/>
+        <p:panel id="trashPanel" header="#{msgs['jbutler.crud.text.trashHeader']}" toggleable="true" toggleSpeed="500" rendered="#{not empty cursoController.trashCan}">
+          <p:dataTable id="trashDataTable" var="entity" value="#{cursoController.trashCan}">
+            <p:column headerText="#{msgsCore['curso.field.nome']}">
+              <h:outputText value="#{entity.nome}"/>
+            </p:column>
+            <f:facet name="footer">
+              <p:commandButton action="#{cursoController.cancelDeletion}" value="#{msgs['jbutler.crud.button.cancelDeletion']}" icon="fa fa-fw fa-close" process="@this" update=":listingForm"/>
+              <p:commandButton action="#{cursoController.delete}" value="#{msgs['jbutler.crud.button.confirmDeletion']}" icon="fa fa-fw fa-trash-o" process="@this" update=":listingForm"/>
+            </f:facet>
+          </p:dataTable>
+        </p:panel>
+      </h:panelGroup>
+    </h:form>
+  </ui:define>
+</ui:composition>

@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
 
 @Entity
-public class Curso extends PersistentObjectSupport {
+public class Curso extends PersistentObjectSupport implements Comparable<Curso> {
 	private static final long serialVersionUID = 1L;
 
 	public static long getSerialversionuid() {
@@ -31,4 +31,9 @@ public class Curso extends PersistentObjectSupport {
 	public String toString() {
 		return "Curso{id:" + this.getId() + "}";
 	}
+
+    @Override
+    public int compareTo(Curso other) {
+        return this.nome.compareTo(other.nome);
+    }
 }

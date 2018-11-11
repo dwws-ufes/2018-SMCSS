@@ -44,6 +44,12 @@
 
             <li class="header"><h:outputText value="#{msgsCore['core.menu.database']}" /></li>
             <li>
+                <p:link outcome="/core/curso/index" onclick="clearBreadCrumbs()">
+                    <i class="fa fa-book"></i>
+                    <span><h:outputText value="#{msgsCore['curso.title']}" /></span>
+                </p:link>
+            </li>
+            <li>
                 <p:link outcome="/core/periodoLetivo/index" onclick="clearBreadCrumbs()">
                     <i class="fa fa-calendar"></i>
                     <span><h:outputText value="#{msgsCore['periodoLetivo.title']}" /></span>
