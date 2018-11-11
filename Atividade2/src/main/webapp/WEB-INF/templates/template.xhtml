@@ -35,12 +35,6 @@
             </li>
 
             <li class="header"><h:outputText value="#{msgsCore['core.menu.admin']}" /></li>
-            <li>
-                <p:link outcome="/core/gerenciarCandidatos/index" onclick="clearBreadCrumbs()">
-                    <i class="fa fa-calendar"></i>
-                    <span><h:outputText value="#{msgsCore['core.menu.admin.gerenciarCandidatos']}" /></span>
-                </p:link>
-            </li>
 
             <li class="header"><h:outputText value="#{msgsCore['core.menu.database']}" /></li>
             <li>
@@ -71,6 +65,12 @@
                 <p:link outcome="/core/professor/index" onclick="clearBreadCrumbs()">
                     <i class="fa fa-pencil"></i>
                     <span><h:outputText value="#{msgsCore['professor.title']}" /></span>
+                </p:link>
+            </li>
+            <li>
+                <p:link outcome="/core/candidato/index" onclick="clearBreadCrumbs()">
+                    <i class="fa fa-check"></i>
+                    <span><h:outputText value="#{msgsCore['core.menu.admin.candidato']}" /></span>
                 </p:link>
             </li>
         </ul>

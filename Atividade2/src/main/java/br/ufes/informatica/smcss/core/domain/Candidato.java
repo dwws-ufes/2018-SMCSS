@@ -1,13 +1,14 @@
 package br.ufes.informatica.smcss.core.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
 
 @Entity
-public class Candidato extends PersistentObjectSupport {
+public class Candidato extends PersistentObjectSupport implements Comparable<Candidato> {
 	private static final long serialVersionUID = 1L;
 
 	public static long getSerialversionuid() {
@@ -18,6 +19,7 @@ public class Candidato extends PersistentObjectSupport {
 	private PeriodoLetivo periodoLetivo;
 
 	@NotNull
+	@ManyToOne
 	private Pessoa pessoa;
 
 	@Min(0)
@@ -63,4 +65,9 @@ public class Candidato extends PersistentObjectSupport {
 	public String toString() {
 		return "Candidato{id:" + this.getId() + "}";
 	}
+	
+	@Override
+    public int compareTo(Candidato other) {
+        return this.pessoa.compareTo(other.pessoa);
+    }
 }

@@ -9,11 +9,12 @@ import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import br.ufes.informatica.smcss.core.domain.Curso;
 import br.ufes.informatica.smcss.core.domain.Pessoa;
 import br.ufes.informatica.smcss.core.persistence.PessoaDAO;
 
 @FacesConverter("pessoaNomeConverter")
-public class PessoaNomeConverter implements Converter<Pessoa> {
+public class PessoaNomeConverter implements Converter {
 
     private static final String NAME="pessoaNomeConverterBean";
 
@@ -59,7 +60,12 @@ public class PessoaNomeConverter implements Converter<Pessoa> {
     }
 
     @Override
-    public String getAsString(FacesContext context, UIComponent component, Pessoa value) {
-        return (value == null) ? null : value.getNome();
+    public String getAsString(FacesContext context, UIComponent component, Object value) {
+    	if (value == null) {
+    		return null;
+    	} else {
+    		Pessoa pessoa = (Pessoa) value;
+    		return pessoa.getNome();
+    	}
     }
 }

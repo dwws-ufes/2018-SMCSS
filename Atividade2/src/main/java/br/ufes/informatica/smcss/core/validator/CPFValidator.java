@@ -8,7 +8,7 @@ import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
 @FacesValidator("cpfValidator")
-public class CPFValidator implements Validator<String> {
+public class CPFValidator implements Validator {
 
     private char modulo11(String text, int length) {
         int mul = 2;
@@ -24,15 +24,18 @@ public class CPFValidator implements Validator<String> {
     }
 
     @Override
-    public void validate(FacesContext context, UIComponent component, String value) throws ValidatorException {
-        // Remove "não dígitos" da string
-        value = value.replaceAll("[^0-9]", "");
+    public void validate(FacesContext context, UIComponent component, Object value) throws ValidatorException {
+        // Converte para String
+    	String cpf = (String) value;
+    	
+    	// Remove "não dígitos" da string
+        cpf = cpf.replaceAll("[^0-9]", "");
 
-        if (value.length() != 11) {
+        if (cpf.length() != 11) {
             error("CPF length must be 11");
         }
 
-        if ((value.charAt(9) != modulo11(value, 9)) || (value.charAt(10) != modulo11(value, 10))) {
+        if ((cpf.charAt(9) != modulo11(cpf, 9)) || (cpf.charAt(10) != modulo11(cpf, 10))) {
             error("CPF is invalid");
         }
     }

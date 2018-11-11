@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+
+	<ui:define name="title">
+		<h:outputText value="#{msgsCore['candidato.title.create']}"
+			rendered="#{(! candidatoController.readOnly) and (candidatoController.selectedEntity.id == null)}" />
+		<h:outputText value="#{msgsCore['candidato.title.update']}"
+			rendered="#{(! candidatoController.readOnly) and (candidatoController.selectedEntity.id != null)}" />
+		<h:outputText value="#{msgsCore['candidato.title.retrieve']}" rendered="#{candidatoController.readOnly}" />
+	</ui:define>
+
+	<ui:define name="description">
+		<h:outputText value="#{msgsCore['candidato.title.create.description']}"
+			rendered="#{(! candidatoController.readOnly) and (candidatoController.selectedEntity.id == null)}" />
+		<h:outputText value="#{msgsCore['candidato.title.update.description']}"
+			rendered="#{(! candidatoController.readOnly) and (candidatoController.selectedEntity.id != null)}" />
+		<h:outputText value="#{msgsCore['candidato.title.retrieve.description']}" rendered="#{candidatoController.readOnly}" />
+	</ui:define>
+
+	<ui:define name="body">
+		<h:form id="entitiesForm">
+			<p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+			
+			<p:outputLabel for="pessoaField" value="#{msgsCore['candidato.field.pessoa']}"/>
+	        <p:autoComplete id="pessoaField" 
+	        	value="#{candidatoController.selectedEntity.pessoa}"
+	        	completeMethod="#{candidatoController.completeNomePessoa}"
+	        	var="pessoa"
+	        	itemLabel="#{pessoa.nome}"
+	        	itemValue="#{pessoa}"
+	        	converter="pessoaNomeConverter" 
+	        	style="width: 100%;"
+	        	forceSelection="true">
+        	</p:autoComplete>
+			
+			
+			
+			
+
+			</p:panelGrid>
+			
+			<p:commandButton id="cancelButton" value="#{msgs['jbutler.crud.button.cancel']}" icon="fa fa-close"
+				action="#{candidatoController.list}" immediate="true" rendered="#{! candidatoController.readOnly}" />
+			<p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}" icon="fa fa-save" action="#{candidatoController.save}"
+				rendered="#{! candidatoController.readOnly}" />
+			<p:defaultCommand target="saveButton" />
+			<p:commandButton id="backButton" value="#{msgs['jbutler.crud.button.back']}" icon="fa fa-arrow-circle-left"
+				action="#{candidatoController.list}" immediate="true" rendered="#{candidatoController.readOnly}" />
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>

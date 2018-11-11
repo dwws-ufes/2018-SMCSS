@@ -6,4 +6,6 @@ import br.ufes.informatica.smcss.core.domain.Disciplina;
 
 @Local
 public interface DisciplinaDAO extends BaseDAO<Disciplina> {
+
+	Disciplina retrieveByCodigo(String codigo);
 }
