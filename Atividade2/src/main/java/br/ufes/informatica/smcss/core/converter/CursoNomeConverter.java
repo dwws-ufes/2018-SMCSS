@@ -13,12 +13,12 @@ import br.ufes.informatica.smcss.core.domain.Curso;
 import br.ufes.informatica.smcss.core.persistence.CursoDAO;
 
 @FacesConverter("cursoNomeConverter")
-public class CursoNomeConverter implements Converter<Curso> {
+public class CursoNomeConverter implements Converter {
 
     private static final String NAME="cursoNomeConverterBean";
 
     /**
-     * Classe utilitária para injeção de dependências do conversor.
+     * Classe utilitário para injeção de dependências do conversor.
      *
      * @author luciano
      * @see CursoNomeConverter#getPessoaDAO(FacesContext)
@@ -51,7 +51,13 @@ public class CursoNomeConverter implements Converter<Curso> {
     }
 
     @Override
-    public String getAsString(FacesContext context, UIComponent component, Curso value) {
-        return (value == null) ? null : value.getNome();
+    public String getAsString(FacesContext context, UIComponent component, Object value) {
+    	if (value == null) {
+    		return null;
+    	} else {
+    		Curso curso = (Curso) value;
+    		return curso.getNome();
+    	}
     }
+
 }
