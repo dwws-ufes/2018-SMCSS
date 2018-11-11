@@ -9,37 +9,37 @@
 
 
 <ui:define name="title">
-	<h:outputText value="#{msgs['gerenciarCandidatos.title']}" />
+	<h:outputText value="#{msgsCore['gerenciarCandidatos.title']}" />
 </ui:define>
 
 <ui:define name="description">
-	<h:outputText value="#{msgs['gerenciarCandidatos.title.description']}" />
+	<h:outputText value="#{msgsCore['gerenciarCandidatos.title.description']}" />
 </ui:define>
 
 <ui:define name="body">
-	<adm:breadcrumb link="/core/gerenciarCandidatos/index" title="#{msgs['gerenciarCandidatos.title']}" />
+	<adm:breadcrumb link="/core/gerenciarCandidatos/index" title="#{msgsCore['gerenciarCandidatos.title']}" />
 	<h:form id="listingForm">
 		<p:dataTable id="entitiesDataTable" var="entity" value="#{gerenciarCandidatosController.lazyEntities}"
 			selection="#{gerenciarCandidatosController.selectedEntity}" selectionMode="single" paginator="true"
 			rows="#{gerenciarCandidatosController.maxDataTableRowsPerPage}"
 			paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
 			rowsPerPageTemplate="#{gerenciarCandidatosController.halfMaxDataTableRowsPerPage},#{gerenciarCandidatosController.maxDataTableRowsPerPage},#{gerenciarCandidatosController.doubleMaxDataTableRowsPerPage}"
-			lazy="true" paginatorPosition="bottom" emptyMessage="#{msgs['gerenciarCandidatos.text.noEntities']}">
+			lazy="true" paginatorPosition="bottom" emptyMessage="#{msgsCore['gerenciarCandidatos.text.noEntities']}">
 			<p:ajax event="rowSelect" update="buttonsGroup" />
 			<p:ajax event="rowUnselect" update="buttonsGroup" />
 			<f:facet name="header">
-				<h:outputText value="#{msgs['gerenciarCandidatos.text.entities']}" />
+				<h:outputText value="#{msgsCore['gerenciarCandidatos.text.entities']}" />
 			</f:facet>
-			<p:column headerText="#{msgs['gerenciarCandidatos.field.nome']}">
+			<p:column headerText="#{msgsCore['gerenciarCandidatos.field.nome']}">
 				<h:outputText value="#{entity.nome}" />
 			</p:column>
-			<p:column headerText="#{msgs['gerenciarCandidatos.field.cpf']}">
+			<p:column headerText="#{msgsCore['gerenciarCandidatos.field.cpf']}">
 				<h:outputText value="#{entity.cpf}" />
 			</p:column>
-			<p:column headerText="#{msgs['gerenciarCandidatos.field.email']}">
+			<p:column headerText="#{msgsCore['gerenciarCandidatos.field.email']}">
 				<h:outputText value="#{entity.email}" />
 			</p:column>
-			<p:column headerText="#{msgs['gerenciarCandidatos.field.dataNascimento']}">
+			<p:column headerText="#{msgsCore['gerenciarCandidatos.field.dataNascimento']}">
 				<h:outputText value="#{entity.dataNascimento}">
 					<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" />
 				</h:outputText>
@@ -61,16 +61,16 @@
 			<p:panel id="trashPanel" header="#{msgs['jbutler.crud.text.trashHeader']}" toggleable="true" toggleSpeed="500"
 				rendered="#{not empty gerenciarCandidatosController.trashCan}">
 				<p:dataTable id="trashDataTable" var="entity" value="#{gerenciarCandidatosController.trashCan}">
-					<p:column headerText="#{msgs['gerenciarCandidatos.field.nome']}">
+					<p:column headerText="#{msgsCore['gerenciarCandidatos.field.nome']}">
 						<h:outputText value="#{entity.nome}" />
 					</p:column>
-					<p:column headerText="#{msgs['gerenciarCandidatos.field.cpf']}">
+					<p:column headerText="#{msgsCore['gerenciarCandidatos.field.cpf']}">
 						<h:outputText value="#{entity.cpf}" />
 					</p:column>
-					<p:column headerText="#{msgs['gerenciarCandidatos.field.email']}">
+					<p:column headerText="#{msgsCore['gerenciarCandidatos.field.email']}">
 						<h:outputText value="#{entity.email}" />
 					</p:column>
-					<p:column headerText="#{msgs['gerenciarCandidatos.field.dataNascimento']}">
+					<p:column headerText="#{msgsCore['gerenciarCandidatos.field.dataNascimento']}">
 						<h:outputText value="#{entity.dataNascimento}">
 							<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" />
 						</h:outputText>

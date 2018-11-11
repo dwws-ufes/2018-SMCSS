@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
 
 @Entity
-public class PeriodoLetivo extends PersistentObjectSupport {
+public class PeriodoLetivo extends PersistentObjectSupport implements Comparable<PeriodoLetivo> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class PeriodoLetivo extends PersistentObjectSupport {
 
 	@NotNull
 	@Embedded
-	private Periodo duracao;
+	private Periodo duracao = new Periodo();
 
 	@NotNull
 	@Embedded
@@ -33,7 +33,7 @@ public class PeriodoLetivo extends PersistentObjectSupport {
 	    @AttributeOverride(name="inicio", column=@Column(name="inicio_matricula")),
 	    @AttributeOverride(name="fim", column=@Column(name="fim_matricula"))
 	})
-	private Periodo periodoMatricula;
+	private Periodo periodoMatricula = new Periodo();
 
 	@NotNull
 	@Embedded
@@ -41,7 +41,7 @@ public class PeriodoLetivo extends PersistentObjectSupport {
 		@AttributeOverride(name="inicio", column=@Column(name="inicio_inscricao")),
 		@AttributeOverride(name="fim", column=@Column(name="fim_inscricao"))
 	})
-	private Periodo periodoInscricao;
+	private Periodo periodoInscricao = new Periodo();
 
 	@NotNull
 	@Embedded
@@ -49,7 +49,7 @@ public class PeriodoLetivo extends PersistentObjectSupport {
 		@AttributeOverride(name="inicio", column=@Column(name="inicio_ajuste_matricula")),
 		@AttributeOverride(name="fim", column=@Column(name="fim_ajuste_matricula"))
 	})
-	private Periodo periodoAjusteMatricula;
+	private Periodo periodoAjusteMatricula = new Periodo();
 
 	public String getCodigo() {
 		return codigo;
@@ -96,4 +96,9 @@ public class PeriodoLetivo extends PersistentObjectSupport {
 	public String toString() {
 		return "PeriodoLetivo{id:" + this.getId() + "}";
 	}
+
+    @Override
+    public int compareTo(PeriodoLetivo other) {
+        return this.codigo.compareTo(other.codigo);
+    }
 }

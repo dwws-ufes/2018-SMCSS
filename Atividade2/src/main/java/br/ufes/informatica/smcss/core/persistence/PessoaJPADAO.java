@@ -1,5 +1,7 @@
 package br.ufes.informatica.smcss.core.persistence;
 
+import java.util.List;
+
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,27 +17,47 @@ import br.ufes.informatica.smcss.core.domain.Pessoa_;
 
 @Stateless
 public class PessoaJPADAO extends BaseJPADAO<Pessoa> implements PessoaDAO {
-	private static final long serialVersionUID = 1L;
 
-	@PersistenceContext
-	private EntityManager entityManager;
+    private static final long serialVersionUID = 1L;
 
-	@Override
-	protected EntityManager getEntityManager() {
-		return entityManager;
-	}
-	
-	@Override
-	public Pessoa retrieveByCpf(String cpf) throws PersistentObjectNotFoundException, MultiplePersistentObjectsFoundException {
-		
-			// Constructs the query over the Institution class.
-			CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-			CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
-			Root<Pessoa> root = cq.from(Pessoa.class);
+    @PersistenceContext
+    private EntityManager entityManager;
 
-			// Filters the query with the name.
-			cq.where(cb.equal(root.get(Pessoa_.cpf), cpf));
-			Pessoa result = executeSingleResultQuery(cq, cpf);
-			return result;
-		}		
+    @Override
+    protected EntityManager getEntityManager() {
+        return entityManager;
+    }
+
+    @Override
+    public List<Pessoa> findByNome(String nome) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
+        Root<Pessoa> root = cq.from(Pessoa.class);
+        cq.where(cb.like(cb.lower(root.get(Pessoa_.nome)), "%" + nome.toLowerCase() + "%"));
+        cq.orderBy(cb.asc(root.get(Pessoa_.nome)));
+        return entityManager.createQuery(cq).getResultList();
+    }
+
+    @Override
+    public Pessoa retrieveByNome(String nome) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
+        Root<Pessoa> root = cq.from(Pessoa.class);
+        cq.where(cb.equal(root.get(Pessoa_.nome), nome));
+        return entityManager.createQuery(cq).getSingleResult();
+    }
+
+    @Override
+    public Pessoa retrieveByCpf(String cpf) throws PersistentObjectNotFoundException, MultiplePersistentObjectsFoundException {
+
+    // Constructs the query over the Institution class.
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
+        Root<Pessoa> root = cq.from(Pessoa.class);
+
+        // Filters the query with the name.
+        cq.where(cb.equal(root.get(Pessoa_.cpf), cpf));
+        Pessoa result = executeSingleResultQuery(cq, cpf);
+        return result;
+    }
 }

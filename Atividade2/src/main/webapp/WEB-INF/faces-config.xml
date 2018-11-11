@@ -20,7 +20,7 @@
 
 		<!-- Loads resource bundles for i18n messages and assigns names to them for core subsystem -->
 		<resource-bundle>
-			<base-name>br.ufes.informatica.smcss.messages</base-name>
+			<base-name>br.ufes.informatica.smcss.core.view.messages</base-name>
 			<var>msgsCore</var>
 		</resource-bundle>
 

@@ -1,6 +1,7 @@
 package br.ufes.informatica.smcss.core.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -8,7 +9,7 @@ import javax.validation.constraints.Size;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
 
 @Entity
-public class Disciplina extends PersistentObjectSupport {
+public class Disciplina extends PersistentObjectSupport implements Comparable<Disciplina> {
 	private static final long serialVersionUID = 1L;
 
 	public static long getSerialversionuid() {
@@ -16,6 +17,7 @@ public class Disciplina extends PersistentObjectSupport {
 	}
 
 	@NotNull
+	@ManyToOne
 	private Curso curso;
 
 	@NotNull
@@ -28,7 +30,7 @@ public class Disciplina extends PersistentObjectSupport {
 
 	@NotNull
 	@Min(1)
-	private String cargaHoraria;
+	private int cargaHoraria;
 
 	public Curso getCurso() {
 		return curso;
@@ -54,11 +56,11 @@ public class Disciplina extends PersistentObjectSupport {
 		this.nome = nome;
 	}
 
-	public String getCargaHoraria() {
+	public int getCargaHoraria() {
 		return cargaHoraria;
 	}
 
-	public void setCargaHoraria(String cargaHoraria) {
+	public void setCargaHoraria(int cargaHoraria) {
 		this.cargaHoraria = cargaHoraria;
 	}
 
@@ -67,4 +69,9 @@ public class Disciplina extends PersistentObjectSupport {
 	public String toString() {
 		return "Curso{id:" + this.getId() + ",nome:" + this.nome+ "}";
 	}
+
+    @Override
+    public int compareTo(Disciplina other) {
+        return this.codigo.compareTo(other.codigo);
+    }
 }
