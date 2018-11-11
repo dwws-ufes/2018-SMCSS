@@ -1,50 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ui:composition xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:f="http://java.sun.com/jsf/core"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:adm="http://github.com/adminfaces"
-    template="/WEB-INF/templates/template.xhtml">
+<?xml version="1.0" encoding="utf-8"?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:adm="http://github.com/adminfaces" template="/WEB-INF/templates/template.xhtml">
+  <ui:define name="title">
+    <h:outputText value="#{msgsCore['periodoLetivo.title.create']}" rendered="#{(! periodoLetivoController.readOnly) and (periodoLetivoController.selectedEntity.id == null)}"/>
+    <h:outputText value="#{msgsCore['periodoLetivo.title.update']}" rendered="#{(! periodoLetivoController.readOnly) and (periodoLetivoController.selectedEntity.id != null)}"/>
+    <h:outputText value="#{msgsCore['periodoLetivo.title.retrieve']}" rendered="#{periodoLetivoController.readOnly}"/>
+  </ui:define>
+  <ui:define name="description">
+    <h:outputText value="#{msgsCore['periodoLetivo.title.create.description']}" rendered="#{(! periodoLetivoController.readOnly) and (periodoLetivoController.selectedEntity.id == null)}"/>
+    <h:outputText value="#{msgsCore['periodoLetivo.title.update.description']}" rendered="#{(! periodoLetivoController.readOnly) and (periodoLetivoController.selectedEntity.id != null)}"/>
+    <h:outputText value="#{msgsCore['periodoLetivo.title.retrieve.description']}" rendered="#{periodoLetivoController.readOnly}"/>
+  </ui:define>
+  <ui:define name="body">
+    <h:form id="entitiesForm">
+      <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
+        <p:outputLabel for="codigoField" value="#{msgsCore['periodoLetivo.field.codigo']}"/>
+        <p:inputText id="codigoField" value="#{periodoLetivoController.selectedEntity.codigo}" style="width: 100%;"/>
 
-	<ui:define name="title">
-		<h:outputText value="#{msgs['gerenciarCandidatos.title.create']}"
-			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id == null)}" />
-		<h:outputText value="#{msgs['gerenciarCandidatos.title.update']}"
-			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id != null)}" />
-		<h:outputText value="#{msgs['gerenciarCandidatos.title.retrieve']}" rendered="#{gerenciarCandidatosController.readOnly}" />
-	</ui:define>
+        <p:outputLabel for="inicioField" value="#{msgsCore['periodoLetivo.field.duracao.inicio']}"/>
+        <p:calendar id="inicioField" value="#{periodoLetivoController.selectedEntity.duracao.inicio}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
+        <p:outputLabel for="fimField" value="#{msgsCore['periodoLetivo.field.duracao.fim']}"/>
+        <p:calendar id="fimField" value="#{periodoLetivoController.selectedEntity.duracao.fim}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
 
-	<ui:define name="description">
-		<h:outputText value="#{msgs['gerenciarCandidatos.title.create.description']}"
-			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id == null)}" />
-		<h:outputText value="#{msgs['gerenciarCandidatos.title.update.description']}"
-			rendered="#{(! gerenciarCandidatosController.readOnly) and (gerenciarCandidatosController.selectedEntity.id != null)}" />
-		<h:outputText value="#{msgs['gerenciarCandidatos.title.retrieve.description']}" rendered="#{gerenciarCandidatosController.readOnly}" />
-	</ui:define>
+        <p:outputLabel for="inicioMatriculaField" value="#{msgsCore['periodoLetivo.field.periodoMatricula.inicio']}"/>
+        <p:calendar id="inicioMatriculaField" value="#{periodoLetivoController.selectedEntity.periodoMatricula.inicio}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
+        <p:outputLabel for="fimMatriculaField" value="#{msgsCore['periodoLetivo.field.periodoMatricula.fim']}"/>
+        <p:calendar id="fimMatriculaField" value="#{periodoLetivoController.selectedEntity.periodoMatricula.fim}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
 
-	<ui:define name="body">
-		<h:form id="entitiesForm">
-			<p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
-				<p:outputLabel for="nomeField" value="#{msgs['gerenciarCandidatos.field.nome']}" />
-				<p:inputText id="nomeField" value="#{gerenciarCandidatosController.selectedEntity.nome}" style="width: 100%;" />
-				<p:outputLabel for="emailField" value="#{msgs['gerenciarCandidatos.field.email']} " />
-				<p:inputText id="emailField" value="#{gerenciarCandidatosController.selectedEntity.email}" style="width: 100%;" />
-				<p:outputLabel for="cpfField" value="#{msgs['gerenciarCandidatos.field.cpf']}" />
-				<p:inputText id="cpfField" value="#{gerenciarCandidatosController.selectedEntity.cpf}" style="width: 100%;" />
-				<p:outputLabel for="dataNascimentoField" value="#{msgs['gerenciarCandidatos.field.dataNascimento']}" />
-				<p:calendar id="dataNascimentoField" value="#{gerenciarCandidatosController.selectedEntity.dataNascimento}" showOn="button"
-					pattern="dd/MM/yyyy" mask="true" style="width: 100%;" />
-			</p:panelGrid>
-			<p:commandButton id="cancelButton" value="#{msgs['jbutler.crud.button.cancel']}" icon="fa fa-close"
-				action="#{gerenciarCandidatosController.list}" immediate="true" rendered="#{! gerenciarCandidatosController.readOnly}" />
-			<p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}" icon="fa fa-save" action="#{gerenciarCandidatosController.save}"
-				rendered="#{! gerenciarCandidatosController.readOnly}" />
-			<p:defaultCommand target="saveButton" />
-			<p:commandButton id="backButton" value="#{msgs['jbutler.crud.button.back']}" icon="fa fa-arrow-circle-left"
-				action="#{gerenciarCandidatosController.list}" immediate="true" rendered="#{gerenciarCandidatosController.readOnly}" />
-		</h:form>
-	</ui:define>
+        <p:outputLabel for="inicioInscricaoField" value="#{msgsCore['periodoLetivo.field.periodoInscricao.inicio']}"/>
+        <p:calendar id="inicioInscricaoField" value="#{periodoLetivoController.selectedEntity.periodoInscricao.inicio}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
+        <p:outputLabel for="fimInscricaoField" value="#{msgsCore['periodoLetivo.field.periodoInscricao.fim']}"/>
+        <p:calendar id="fimInscricaoField" value="#{periodoLetivoController.selectedEntity.periodoInscricao.fim}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
 
-
+        <p:outputLabel for="inicioAjusteMatriculaField" value="#{msgsCore['periodoLetivo.field.periodoAjusteMatricula.inicio']}"/>
+        <p:calendar id="inicioAjusteMatriculaField" value="#{periodoLetivoController.selectedEntity.periodoAjusteMatricula.inicio}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
+        <p:outputLabel for="fimAjusteMatriculaField" value="#{msgsCore['periodoLetivo.field.periodoAjusteMatricula.fim']}"/>
+        <p:calendar id="fimAjusteMatriculaField" value="#{periodoLetivoController.selectedEntity.periodoAjusteMatricula.fim}" showOn="button" pattern="dd/MM/yyyy" mask="true" style="width: 100%;"/>
+      </p:panelGrid>
+      <p:commandButton id="cancelButton" value="#{msgs['jbutler.crud.button.cancel']}" icon="fa fa-close" action="#{periodoLetivoController.list}" immediate="true" rendered="#{! periodoLetivoController.readOnly}"/>
+      <p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}" icon="fa fa-save" action="#{periodoLetivoController.save}" rendered="#{! periodoLetivoController.readOnly}"/>
+      <p:defaultCommand target="saveButton"/>
+      <p:commandButton id="backButton" value="#{msgs['jbutler.crud.button.back']}" icon="fa fa-arrow-circle-left" action="#{periodoLetivoController.list}" immediate="true" rendered="#{periodoLetivoController.readOnly}"/>
+    </h:form>
+  </ui:define>
 </ui:composition>

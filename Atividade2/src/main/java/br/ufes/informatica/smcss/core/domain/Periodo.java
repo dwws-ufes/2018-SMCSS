@@ -17,4 +17,20 @@ public class Periodo {
 	@NotNull
 	@Temporal(TemporalType.DATE)
 	private Date fim;
+
+    public Date getInicio() {
+        return inicio;
+    }
+
+    public void setInicio(Date inicio) {
+        this.inicio = inicio;
+    }
+
+    public Date getFim() {
+        return fim;
+    }
+
+    public void setFim(Date fim) {
+        this.fim = fim;
+    }
 }
