@@ -13,7 +13,7 @@ Para executar o SMCSS são necessários a IDE Eclipse, o servidor de aplicaçõe
 * WildFly 13.0.0: http://wildfly.org/downloads/;
 * MySQL Community Server - GPL versão v8.0.12: https://dev.mysql.com/downloads/mysql/;
 * MySQL Workbench v8.0: https://dev.mysql.com/downloads/workbench/;
-MySQL Connector/J JDBC Driver v8.12.0: https://dev.mysql.com/downloads/connector/j/;
+* MySQL Connector/J JDBC Driver v8.12.0: https://dev.mysql.com/downloads/connector/j/;
 
 Versões mais recentes destas ferramentas provavelmente também funcionarão, em especial o servidor MySQL, pois bancos de dados tendem a ser bastante estáveis com relação a atualizações.
 
