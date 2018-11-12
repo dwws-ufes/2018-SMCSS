@@ -47,7 +47,6 @@ Após instalado o WildFly, é necessário fazer a configuração para utilizar o
 * usuário: ```smcss```
 * senha: ```smcss```
 
-
 5. Em seguida, é necessário criar um driver e um datasource de conexão para a aplicação conseguir utilizar o MySQL por meio do WildFly. No diretório de instalação do WildFly, encontre o arquivo ```standalone\configuration\standalone.xml```. Dentro deste XML, procure a seção ```<datasources>``` e nela inclua as linhas para configurar a conexão do sistema com os dados de exemplo utilizado na parte 4:
 
 ```
@@ -70,5 +69,14 @@ Após instalado o WildFly, é necessário fazer a configuração para utilizar o
 </driver>
 ```
 
+7. Dentro do projeto do sistema, no arquivo ```persistence.xml``` inclua a linha ```<persistence-unit name="SMCSS" transaction-type="JTA">``` para indicar que está utilizando o datasource configurado no passo 5: 
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="SMCSS" transaction-type="JTA">
+	...
+	...
+```
 
 Estas instruções foram baseadas no tutorial do JButler, disponível em: https://github.com/dwws-ufes/jbutler
