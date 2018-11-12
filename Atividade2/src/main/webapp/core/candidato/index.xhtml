@@ -31,19 +31,29 @@
 				<h:outputText value="#{msgsCore['candidato.text.entities']}" />
 			</f:facet>
 			<p:column headerText="#{msgsCore['candidato.field.nome']}">
-				<h:outputText value="#{entity.nome}" />
+				<h:outputText value="#{entity.pessoa.nome}" />
 			</p:column>
 			<p:column headerText="#{msgsCore['candidato.field.cpf']}">
-				<h:outputText value="#{entity.cpf}" />
+				<h:outputText value="#{entity.pessoa.cpf}" />
 			</p:column>
-			<p:column headerText="#{msgsCore['candidato.field.email']}">
-				<h:outputText value="#{entity.email}" />
+<!-- 			<p:column headerText="#{msgsCore['candidato.field.email']}"> -->
+<!-- 				<h:outputText value="#{entity.pessoa.email}" /> -->
+<!-- 			</p:column> -->
+<!-- 			<p:column headerText="#{msgsCore['candidato.field.dataNascimento']}"> -->
+<!-- 				<h:outputText value="#{entity.pessoa.dataNascimento}"> -->
+<!-- 					<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" /> -->
+<!-- 				</h:outputText> -->
+<!-- 			</p:column> -->
+			<p:column headerText="#{msgsCore['candidato.field.periodoLetivo']}">
+				<h:outputText value="#{entity.periodoLetivo.codigo}" />
 			</p:column>
-			<p:column headerText="#{msgsCore['candidato.field.dataNascimento']}">
-				<h:outputText value="#{entity.dataNascimento}">
-					<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" />
-				</h:outputText>
+			<p:column headerText="#{msgsCore['candidato.field.pontuacaoAlcancada']}">
+				<h:outputText value="#{entity.pontuacaoAlcancada}" />
 			</p:column>
+			<p:column headerText="#{msgsCore['candidato.field.classificacaoFinal']}">
+				<h:outputText value="#{entity.classificacaoFinal}" />
+			</p:column>			
+
 			<f:facet name="footer">
 				<h:panelGroup id="buttonsGroup">
 					<p:commandButton action="#{candidatoController.create}" icon="fa fa-plus" value="#{msgs['jbutler.crud.button.create']}" />
@@ -62,19 +72,28 @@
 				rendered="#{not empty candidatoController.trashCan}">
 				<p:dataTable id="trashDataTable" var="entity" value="#{candidatoController.trashCan}">
 					<p:column headerText="#{msgsCore['candidato.field.nome']}">
-						<h:outputText value="#{entity.nome}" />
+						<h:outputText value="#{entity.pessoa.nome}" />
 					</p:column>
 					<p:column headerText="#{msgsCore['candidato.field.cpf']}">
-						<h:outputText value="#{entity.cpf}" />
+						<h:outputText value="#{entity.pessoa.cpf}" />
 					</p:column>
-					<p:column headerText="#{msgsCore['candidato.field.email']}">
-						<h:outputText value="#{entity.email}" />
+<!-- 					<p:column headerText="#{msgsCore['candidato.field.email']}"> -->
+<!-- 						<h:outputText value="#{entity.pessoa.email}" /> -->
+<!-- 					</p:column> -->
+<!-- 					<p:column headerText="#{msgsCore['candidato.field.dataNascimento']}"> -->
+<!-- 						<h:outputText value="#{entity.pessoa.dataNascimento}"> -->
+<!-- 							<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" /> -->
+<!-- 						</h:outputText> -->
+<!-- 					</p:column> -->
+					<p:column headerText="#{msgsCore['candidato.field.periodoLetivo']}">
+						<h:outputText value="#{entity.periodoLetivo.codigo}" />
 					</p:column>
-					<p:column headerText="#{msgsCore['candidato.field.dataNascimento']}">
-						<h:outputText value="#{entity.dataNascimento}">
-							<f:convertDateTime type="date" pattern="#{msgs['jbutler.format.date.java']}" />
-						</h:outputText>
+					<p:column headerText="#{msgsCore['candidato.field.pontuacaoAlcancada']}">
+						<h:outputText value="#{entity.pontuacaoAlcancada}" />
 					</p:column>
+					<p:column headerText="#{msgsCore['candidato.field.classificacaoFinal']}">
+						<h:outputText value="#{entity.classificacaoFinal}" />
+					</p:column>	
 					<f:facet name="footer">
 						<p:commandButton action="#{candidatoController.cancelDeletion}" value="#{msgs['jbutler.crud.button.cancelDeletion']}"
 							icon="fa fa-fw fa-close" process="@this" update=":listingForm" />

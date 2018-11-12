@@ -9,7 +9,6 @@ import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.ufes.informatica.smcss.core.domain.Curso;
 import br.ufes.informatica.smcss.core.domain.Pessoa;
 import br.ufes.informatica.smcss.core.persistence.PessoaDAO;
 

@@ -10,6 +10,7 @@ import br.ufes.inf.nemo.jbutler.ejb.application.CrudService;
 import br.ufes.inf.nemo.jbutler.ejb.controller.CrudController;
 import br.ufes.informatica.smcss.core.application.CandidatoService;
 import br.ufes.informatica.smcss.core.domain.Candidato;
+import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
 import br.ufes.informatica.smcss.core.domain.Pessoa;
 
 @Named
@@ -33,6 +34,10 @@ public class CandidatoController extends CrudController<Candidato> {
 
 	public List<Pessoa> completeNomePessoa(String nome) {
 		return candidatoService.findPessoaByNome(nome);
+	}
+	
+	public List<PeriodoLetivo> completeCodigoPeriodoLetivo(String codigo) {
+		return candidatoService.findPeriodoByCodigo(codigo);
 	}
 
 	public String save() {

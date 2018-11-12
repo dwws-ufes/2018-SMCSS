@@ -27,21 +27,35 @@
 		<h:form id="entitiesForm">
 			<p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
 			
-			<p:outputLabel for="pessoaField" value="#{msgsCore['candidato.field.pessoa']}"/>
-	        <p:autoComplete id="pessoaField" 
-	        	value="#{candidatoController.selectedEntity.pessoa}"
-	        	completeMethod="#{candidatoController.completeNomePessoa}"
-	        	var="pessoa"
-	        	itemLabel="#{pessoa.nome}"
-	        	itemValue="#{pessoa}"
-	        	converter="pessoaNomeConverter" 
-	        	style="width: 100%;"
-	        	forceSelection="true">
-        	</p:autoComplete>
-			
-			
-			
-			
+				<p:outputLabel for="pessoaField" value="#{msgsCore['candidato.field.pessoa']}"/>
+		        <p:autoComplete id="pessoaField" 
+		        	value="#{candidatoController.selectedEntity.pessoa}"
+		        	completeMethod="#{candidatoController.completeNomePessoa}"
+		        	var="pessoa"
+		        	itemLabel="#{pessoa.nome}"
+		        	itemValue="#{pessoa}"
+		        	converter="pessoaNomeConverter" 
+		        	style="width: 100%;"
+		        	forceSelection="true">
+	        	</p:autoComplete>
+				
+				<p:outputLabel for="periodoLetivoField" value="#{msgsCore['candidato.field.periodoLetivo']}"/>
+		        <p:autoComplete id="periodoLetivoField" 
+		        	value="#{candidatoController.selectedEntity.periodoLetivo}"
+		        	completeMethod="#{candidatoController.completeCodigoPeriodoLetivo}"
+		        	var="periodoLetivo"
+		        	itemLabel="#{periodoLetivo.codigo}"
+		        	itemValue="#{periodoLetivo}"
+		        	converter="periodoLetivoCodigoConverter" 
+		        	style="width: 100%;"
+		        	forceSelection="true">
+	        	</p:autoComplete>
+				
+			 	<p:outputLabel for="pontuacaoAlcancadaField" value="#{msgsCore['candidato.field.pontuacaoAlcancada']}"/>
+        		<p:inputText id="pontuacaoAlcancadaField" value="#{candidatoController.selectedEntity.pontuacaoAlcancada}" style="width: 100%;"/>
+    			<p:outputLabel for="classificacaoFinalField" value="#{msgsCore['candidato.field.classificacaoFinal']}"/>
+        		<p:inputText id="classificacaoFinalField" value="#{candidatoController.selectedEntity.classificacaoFinal}" style="width: 100%;"/>
+				
 
 			</p:panelGrid>
 			

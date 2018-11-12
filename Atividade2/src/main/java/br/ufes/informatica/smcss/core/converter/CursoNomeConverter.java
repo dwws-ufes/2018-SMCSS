@@ -21,7 +21,7 @@ public class CursoNomeConverter implements Converter {
      * Classe utilitário para injeção de dependências do conversor.
      *
      * @author luciano
-     * @see CursoNomeConverter#getPessoaDAO(FacesContext)
+     * @see PeriodoLetivoCodigoConverter#getPessoaDAO(FacesContext)
      */
     @Named(NAME)
     @RequestScoped

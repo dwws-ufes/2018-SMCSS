@@ -9,8 +9,10 @@ import javax.ejb.Stateless;
 import br.ufes.inf.nemo.jbutler.ejb.application.CrudServiceBean;
 import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
 import br.ufes.informatica.smcss.core.domain.Candidato;
+import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
 import br.ufes.informatica.smcss.core.domain.Pessoa;
 import br.ufes.informatica.smcss.core.persistence.CandidatoDAO;
+import br.ufes.informatica.smcss.core.persistence.PeriodoLetivoDAO;
 import br.ufes.informatica.smcss.core.persistence.PessoaDAO;
 
 @Stateless @PermitAll
@@ -23,6 +25,8 @@ public class CandidatoServiceBean extends CrudServiceBean<Candidato> implements 
     
     @EJB
     private PessoaDAO pessoaDAO;
+    
+
 
     @Override
     public BaseDAO<Candidato> getDAO() {
@@ -32,6 +36,15 @@ public class CandidatoServiceBean extends CrudServiceBean<Candidato> implements 
     @Override
     public List<Pessoa> findPessoaByNome(String nome) {
         return pessoaDAO.findByNome(nome);
+    }
+    
+    @EJB
+    private PeriodoLetivoDAO periodoLetivoDAO;
+    
+    @Override
+    public List<PeriodoLetivo> findPeriodoByCodigo(String codigo) {
+    	return periodoLetivoDAO.findByCodigo(codigo);
+    	
     }
     
 	/** @see br.ufes.inf.nemo.util.ejb3.application.CrudServiceBean#validateCreate(br.ufes.inf.nemo.util.ejb3.persistence.PersistentObject) */
