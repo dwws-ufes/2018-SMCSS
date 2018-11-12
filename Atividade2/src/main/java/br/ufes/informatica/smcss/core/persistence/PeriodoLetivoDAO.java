@@ -6,4 +6,8 @@ import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
 
 @Local
 public interface PeriodoLetivoDAO extends BaseDAO<PeriodoLetivo> {
+
+    PeriodoLetivo retrieveAnterior(PeriodoLetivo periodoLetivo);
+
+    PeriodoLetivo retrieveSeguinte(PeriodoLetivo periodoLetivo);
 }

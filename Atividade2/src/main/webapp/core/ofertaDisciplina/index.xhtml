@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:adm="http://github.com/adminfaces" template="/WEB-INF/templates/template.xhtml">
+  <ui:define name="title">
+    <h:outputText value="#{msgsCore['ofertaDisciplina.title']}"/>
+  </ui:define>
+  <ui:define name="description">
+    <h:outputText value="#{msgsCore['ofertaDisciplina.title.description']}"/>
+  </ui:define>
+  <ui:define name="body">
+    <adm:breadcrumb link="/core/ofertaDisciplina/index" title="#{msgsCore['ofertaDisciplina.title']}"/>
+    <h:form id="listingForm">
+      <div>
+        <p:commandButton
+            action="#{ofertaDisciplinaController.navegarParaPeriodoLetivoAnterior}"
+            disabled="#{(!ofertaDisciplinaController.existePeriodoLetivoAnterior())}"
+            update="@form"
+            icon="fa fa-next"
+        />
+        <h:outputText value="#{ofertaDisciplinaController.periodoLetivo.codigo}"/>
+        <p:commandButton
+            action="#{ofertaDisciplinaController.navegarParaPeriodoLetivoSeguinte}"
+            disabled="#{(!ofertaDisciplinaController.existePeriodoLetivoSeguinte())}"
+            update="@form"
+            icon="fa fa-prev"
+        />
+      </div>
+      <p:dataTable id="entitiesDataTable" var="entity" value="#{ofertaDisciplinaController.lazyEntities}" selection="#{ofertaDisciplinaController.selectedEntity}" selectionMode="single" paginator="true" rows="#{ofertaDisciplinaController.maxDataTableRowsPerPage}" paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" rowsPerPageTemplate="#{ofertaDisciplinaController.halfMaxDataTableRowsPerPage},#{ofertaDisciplinaController.maxDataTableRowsPerPage},#{ofertaDisciplinaController.doubleMaxDataTableRowsPerPage}" lazy="true" paginatorPosition="bottom" emptyMessage="#{msgsCore['ofertaDisciplina.text.noEntities']}">
+        <p:ajax event="rowSelect" update="buttonsGroup"/>
+        <p:ajax event="rowUnselect" update="buttonsGroup"/>
+        <f:facet name="header">
+          <h:outputText value="#{msgsCore['ofertaDisciplina.text.entities']}"/>
+        </f:facet>
+        <p:column headerText="#{msgsCore['disciplina.field.curso']}">
+          <h:outputText value="#{entity.disciplina.curso.nome}"/>
+        </p:column>
+        <p:column headerText="#{msgsCore['disciplina.field.codigo']}">
+          <h:outputText value="#{entity.disciplina.codigo}"/>
+        </p:column>
+        <p:column headerText="#{msgsCore['ofertaDisciplina.field.disciplina']}">
+          <h:outputText value="#{entity.disciplina.nome}"/>
+        </p:column>
+        <p:column headerText="#{msgsCore['ofertaDisciplina.field.professor']}">
+          <h:outputText value="#{entity.professor}"/>
+        </p:column>
+        <p:column headerText="#{msgsCore['ofertaDisciplina.field.periodoLetivo']}">
+          <h:outputText value="#{entity.periodoLetivo.codigo}"/>
+        </p:column>
+        <f:facet name="footer">
+          <h:panelGroup id="buttonsGroup">
+            <p:commandButton action="#{ofertaDisciplinaController.create}" icon="fa fa-plus" value="#{msgs['jbutler.crud.button.create']}"/>
+            <p:commandButton action="#{ofertaDisciplinaController.retrieve}" icon="fa fa-search" value="#{msgs['jbutler.crud.button.retrieve']}" disabled="#{ofertaDisciplinaController.selectedEntity == null}"/>
+            <p:commandButton action="#{ofertaDisciplinaController.update}" icon="fa fa-edit" value="#{msgs['jbutler.crud.button.update']}" disabled="#{ofertaDisciplinaController.selectedEntity == null}"/>
+            <p:commandButton action="#{ofertaDisciplinaController.trash}" icon="fa fa-trash" value="#{msgs['jbutler.crud.button.delete']}" disabled="#{ofertaDisciplinaController.selectedEntity == null}" update=":listingForm:trashGroup"/>
+          </h:panelGroup>
+        </f:facet>
+      </p:dataTable>
+      <h:panelGroup id="trashGroup">
+        <hr/>
+        <p:panel id="trashPanel" header="#{msgs['jbutler.crud.text.trashHeader']}" toggleable="true" toggleSpeed="500" rendered="#{not empty ofertaDisciplinaController.trashCan}">
+          <p:dataTable id="trashDataTable" var="entity" value="#{ofertaDisciplinaController.trashCan}">
+            <p:column headerText="#{msgsCore['ofertaDisciplina.field.disciplina']}">
+              <h:outputText value="#{entity.disciplina}"/>
+            </p:column>
+            <p:column headerText="#{msgsCore['disciplina.field.curso']}">
+              <h:outputText value="#{entity.disciplina.curso.nome}"/>
+            </p:column>
+            <p:column headerText="#{msgsCore['disciplina.field.codigo']}">
+              <h:outputText value="#{entity.disciplina.codigo}"/>
+            </p:column>
+            <p:column headerText="#{msgsCore['ofertaDisciplina.field.disciplina']}">
+              <h:outputText value="#{entity.disciplina.nome}"/>
+            </p:column>
+            <p:column headerText="#{msgsCore['ofertaDisciplina.field.professor']}">
+              <h:outputText value="#{entity.professor}"/>
+            </p:column>
+            <p:column headerText="#{msgsCore['ofertaDisciplina.field.periodoLetivo']}">
+              <h:outputText value="#{entity.periodoLetivo.codigo}"/>
+            </p:column>
+          </p:dataTable>
+        </p:panel>
+      </h:panelGroup>
+    </h:form>
+  </ui:define>
+</ui:composition>
