@@ -5,7 +5,7 @@ Assignment for the 2018 edition of the "Web Development and the Semantic Web" co
 # Sistema de Matrículas para Cursos Stricto Sensu - SMCSS
 Aplicação desenvolvida no escopo da disciplina Desenvolvimento Web e Web Semântica, em 2018/2. O sistema tem o objetivo de prover os cadastros candidatos aprovados no processo seletivo, cursos, disciplinas, períodos letivos, ofertas de disciplinas, solicitação de matrícula e aprovação da solicitação. 
 
-# Instalação 
+# Requisitos 
 Para executar o SMCSS são necessários a IDE Eclipse, o servidor de aplicações WildFly e o banco de dados MySQL. Foram utilizados as seguintes versões e ferramentas:
 
 * Java SE Development Kit 8: https://www.oracle.com/technetwork/pt/java/javase/downloads/jdk8-downloads-2133151.html;
