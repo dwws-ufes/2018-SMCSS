@@ -1,5 +1,6 @@
 package br.ufes.informatica.smcss.core.persistence;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -7,14 +8,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
 
-import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseJPADAO;
 import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
 import br.ufes.informatica.smcss.core.domain.PeriodoLetivo_;
+import br.ufes.informatica.smcss.core.domain.Periodo_;
+import br.ufes.informatica.smcss.util.SmcssBaseJPADAO;
 
 @Stateless
-public class PeriodoLetivoJPADAO extends BaseJPADAO<PeriodoLetivo> implements PeriodoLetivoDAO {
+public class PeriodoLetivoJPADAO extends SmcssBaseJPADAO<PeriodoLetivo> implements PeriodoLetivoDAO {
 
 	private static final long serialVersionUID = 1L;
 
@@ -45,4 +48,21 @@ public class PeriodoLetivoJPADAO extends BaseJPADAO<PeriodoLetivo> implements Pe
 		return entityManager.createQuery(cq).getSingleResult();
 	}
 
+    @Override
+    public PeriodoLetivo retrieveAnterior(PeriodoLetivo periodoLetivo) {
+        return queryFirst((cb, cq, root) -> {
+            Path<Date> inicioPeriodo = root.get(PeriodoLetivo_.duracao).get(Periodo_.inicio);
+            cq.where(cb.lessThan(inicioPeriodo, periodoLetivo.getDuracao().getInicio()));
+            cq.orderBy(cb.desc(inicioPeriodo));
+        });
+    }
+
+    @Override
+    public PeriodoLetivo retrieveSeguinte(PeriodoLetivo periodoLetivo) {
+        return queryFirst((cb, cq, root) -> {
+            Path<Date> inicioPeriodo = root.get(PeriodoLetivo_.duracao).get(Periodo_.inicio);
+            cq.where(cb.greaterThan(inicioPeriodo, periodoLetivo.getDuracao().getInicio()));
+            cq.orderBy(cb.asc(inicioPeriodo));
+        });
+    }
 }

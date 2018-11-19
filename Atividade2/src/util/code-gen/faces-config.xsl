@@ -41,7 +41,7 @@
     </xsl:copy>
 </xsl:template>
 
-<xsl:template match="jee:resource-bundle" mode="faces-config" xmlns="http://java.sun.com/xml/ns/javaee">
+<xsl:template match="jee:resource-bundle" mode="faces-config">
     <xsl:param name="params"/>
     <xsl:copy>
         <xsl:apply-templates mode="faces-config">

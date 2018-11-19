@@ -52,22 +52,22 @@ public class DisciplinaServiceBean extends CrudServiceBean<Disciplina> implement
 	/** @see br.ufes.inf.nemo.util.ejb3.application.CrudServiceBean#validateCreate(br.ufes.inf.nemo.util.ejb3.persistence.PersistentObject) */
 	@Override
 	public void validateCreate(Disciplina entity) throws CrudException {
-		//FIXME implementar validações do CRUD Disciplinas
-		//TODO internacionalização
+		//FIXME implementar validaÃ§Ãµes do CRUD Disciplinas
+		//TODO internacionalizaÃ§Ã£o
 	}
 	
 	/** @see br.ufes.inf.nemo.util.ejb3.application.CrudServiceBean#validateUpdate(br.ufes.inf.nemo.util.ejb3.persistence.PersistentObject) */
 	@Override
 	public void validateUpdate(Disciplina entity) throws CrudException {
-		//FIXME implementar validações do CRUD Disciplinas
-		//TODO internacionalização
+		//FIXME implementar validaÃ§Ãµes do CRUD Disciplinas
+		//TODO internacionalizaÃ§Ã£o
 	}
 
 	/** @see br.ufes.inf.nemo.util.ejb3.application.CrudServiceBean#validate(br.ufes.inf.nemo.util.ejb3.persistence.PersistentObject, br.ufes.inf.nemo.util.ejb3.persistence.PersistentObject) */
 	@Override
 	protected Disciplina validate(Disciplina newEntity, Disciplina oldEntity) {
-		//FIXME implementar validações do CRUD Disciplinas
-		//TODO internacionalização
+		//FIXME implementar validaÃ§Ãµes do CRUD Disciplinas
+		//TODO internacionalizaÃ§Ã£o
 		return newEntity;
 	}
     

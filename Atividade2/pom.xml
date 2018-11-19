@@ -45,7 +45,7 @@
                     <source>8</source>
                     <target>8</target>
                     <compilerArguments>
-                        proc:none
+                        <proc:none/>
                     </compilerArguments>
                 </configuration>
             </plugin>

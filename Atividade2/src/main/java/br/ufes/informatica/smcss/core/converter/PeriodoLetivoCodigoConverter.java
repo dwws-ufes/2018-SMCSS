@@ -18,7 +18,7 @@ public class PeriodoLetivoCodigoConverter implements Converter {
 	private static final String NAME = "periodoLetivoCodigoConverterBean";
 
 	/**
-	 * Classe utilitária para injeção de dependência do conversor.
+	 * Classe utilitÃ¡ria para injeÃ§Ã£o de dependÃªncia do conversor.
 	 *
 	 * @author Gabriel
 	 * @see PeriodoLetivoCodigoConverter#getPeriodoLetivoDAO(FacesContext)

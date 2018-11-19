@@ -13,4 +13,8 @@ public interface PeriodoLetivoDAO extends BaseDAO<PeriodoLetivo> {
 	List<PeriodoLetivo> findByCodigo(String codigo);
 
 	PeriodoLetivo retrieveByCodigo(String codigo);
+
+    PeriodoLetivo retrieveAnterior(PeriodoLetivo periodoLetivo);
+
+    PeriodoLetivo retrieveSeguinte(PeriodoLetivo periodoLetivo);
 }
