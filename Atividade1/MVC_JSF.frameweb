@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frameweb:FramewebProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:frameweb="http://nemo.inf.ufes.br/projects/frameweb/FW-2015">
+  <configures xsi:type="frameweb:FrontControllerTemplate" name="JSF" classTemplate="package%20FW_PACKAGE%3B%0A%0Aimport%20javax.faces.bean.ManagedBean%3B%0Aimport%20javax.faces.bean.SessionScoped%3B%0A%0A%40ManagedBean(name%20%3D%20%22FW_BEAN_NAME%22)%0A%40SessionScoped%0Apublic%20class%20FW_CLASS_NAME%20FW_EXTENDS%20%7B%0AFW_FRONT_CONTROLLER_ATTRIBUTES%0A%0A%09public%20FW_CLASS_NAME()%7B%0A%09%09%0A%09%7D%0A%0AFW_FRONT_CONTROLLER_METHOD%0A%09%0A%7D" methodTemplate="%09public%20FW_METHOD_RETURN_TYPE%20FW_METHOD_NAME()%7B%0A%09%09return%20null%3B%0A%09%7D%0A" pageTemplate="%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22ISO-8859-1%22%20%3F%3E%0A%3C!DOCTYPE%20html%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20XHTML%201.0%20Strict%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FTR%2Fxhtml1%2FDTD%2Fxhtml1-strict.dtd%22%3E%0A%3Chtml%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%0A%09xmlns%3Ac%3D%22http%3A%2F%2Fjava.sun.com%2Fjsf%2Fcore%22%0A%09xmlns%3Aui%3D%22http%3A%2F%2Fjava.sun.com%2Fjsf%2Ffacelets%22%0A%09xmlns%3Ah%3D%22http%3A%2F%2Fjava.sun.com%2Fjsf%2Fhtml%22%3E%0A%3Chead%3E%0A%09%3Cmeta%20http-equiv%3D%22Content-Type%22%20content%3D%22text%2Fhtml%3B%20charset%3DISO-8859-1%22%20%2F%3E%0A%09%3Ctitle%3EInsert%20title%20here%3C%2Ftitle%3E%0A%3C%2Fhead%3E%0A%3Ch%3Abody%3E%0AFW_BODY%0A%3C%2Fh%3Abody%3E%0A%3C%2Fhtml%3E" formTemplate="%09%3Ch%3Aform%20id%3D%22FW_ID%22%3EFW_BODY%0A%09%3C%2Fh%3Aform%3E" classExtension=".java" pageExtension=".xhtml" attributeTemplate="%09%0A%09private%20FW_ATTRIBUTE_TYPE%20FW_ATTRIBUTE%3B%0A%0A%09public%20FW_ATTRIBUTE_TYPE%20getFW_ATTRIBUTE_FIRST_UPPER()%7B%0A%09%09return%20FW_ATTRIBUTE%3B%0A%09%7D%0A%0A%09public%20void%20setFW_ATTRIBUTE_FIRST_UPPER(FW_ATTRIBUTE_TYPE%20_FW_ATTRIBUTE)%7B%0A%09%09FW_ATTRIBUTE%20%3D%20_FW_ATTRIBUTE%3B%0A%09%7D">
+    <packagedElement xsi:type="frameweb:TagLib" name="JSFhtml" URI="http://java.sun.com/jsf/html" prefix="h">
+      <packagedElement xsi:type="frameweb:Tag" name="body" codeGenerationTemplate=""/>
+      <packagedElement xsi:type="frameweb:Tag" name="button"/>
+      <packagedElement xsi:type="frameweb:Tag" name="column"/>
+      <packagedElement xsi:type="frameweb:Tag" name="commandButton"/>
+      <packagedElement xsi:type="frameweb:Tag" name="commandLink"/>
+      <packagedElement xsi:type="frameweb:Tag" name="dataTable"/>
+      <packagedElement xsi:type="frameweb:Tag" name="form"/>
+      <packagedElement xsi:type="frameweb:Tag" name="graphicImage"/>
+      <packagedElement xsi:type="frameweb:Tag" name="head"/>
+      <packagedElement xsi:type="frameweb:Tag" name="inputHidden"/>
+      <packagedElement xsi:type="frameweb:Tag" name="inputSecret"/>
+      <packagedElement xsi:type="frameweb:Tag" name="inputText" codeGenerationTemplate="%09%09%3Cbr%20%2F%3E%0A%09%09%3Ch%3AinputText%20id%3D%22FW_ID%22%20value%3D%22%23%7BFW_VALUE%7D%22%20%2F%3E"/>
+      <packagedElement xsi:type="frameweb:Tag" name="inputTextArea"/>
+      <packagedElement xsi:type="frameweb:Tag" name="link"/>
+      <packagedElement xsi:type="frameweb:Tag" name="message"/>
+      <packagedElement xsi:type="frameweb:Tag" name="messages"/>
+      <packagedElement xsi:type="frameweb:Tag" name="outputFormat"/>
+      <packagedElement xsi:type="frameweb:Tag" name="outputLabel"/>
+      <packagedElement xsi:type="frameweb:Tag" name="outputLink"/>
+      <packagedElement xsi:type="frameweb:Tag" name="outputScript"/>
+      <packagedElement xsi:type="frameweb:Tag" name="outputStylesheet"/>
+      <packagedElement xsi:type="frameweb:Tag" name="outputText"/>
+      <packagedElement xsi:type="frameweb:Tag" name="panelGrid"/>
+      <packagedElement xsi:type="frameweb:Tag" name="panelGroup"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectBooleanCheckbox"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectManyCheckbox"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectManyListbox"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectManyMenu"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectOneListbox"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectOneMenu" codeGenerationTemplate="%09%09%3Cbr%20%2F%3E%0A%09%09%3Ch%3AselectOneMenu%20id%3D%22FW_ID%22%20value%3D%22%23%7BFW_VALUE%7D%22%3E%0A%09%09%3C%2Fh%3AselectOneMenu%3E"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectOneRadio"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:TagLib" name="JSFcomposite" URI="http://jsflive.at/taglib" prefix="jf">
+      <packagedElement xsi:type="frameweb:Tag" name="actionSource"/>
+      <packagedElement xsi:type="frameweb:Tag" name="attribute"/>
+      <packagedElement xsi:type="frameweb:Tag" name="editableValueHolder"/>
+      <packagedElement xsi:type="frameweb:Tag" name="extension"/>
+      <packagedElement xsi:type="frameweb:Tag" name="facet"/>
+      <packagedElement xsi:type="frameweb:Tag" name="implementation"/>
+      <packagedElement xsi:type="frameweb:Tag" name="insertChildren"/>
+      <packagedElement xsi:type="frameweb:Tag" name="insertFacet"/>
+      <packagedElement xsi:type="frameweb:Tag" name="interface"/>
+      <packagedElement xsi:type="frameweb:Tag" name="renderFacet"/>
+      <packagedElement xsi:type="frameweb:Tag" name="valueHolder"/>
+    </packagedElement>
+    <packagedElement xsi:type="frameweb:TagLib" name="JSFcore" URI="http://java.sun.com/jsf/core" prefix="j">
+      <packagedElement xsi:type="frameweb:Tag" name="actionListner"/>
+      <packagedElement xsi:type="frameweb:Tag" name="ajax"/>
+      <packagedElement xsi:type="frameweb:Tag" name="attribute"/>
+      <packagedElement xsi:type="frameweb:Tag" name="converNumber"/>
+      <packagedElement xsi:type="frameweb:Tag" name="converter"/>
+      <packagedElement xsi:type="frameweb:Tag" name="event"/>
+      <packagedElement xsi:type="frameweb:Tag" name="facet"/>
+      <packagedElement xsi:type="frameweb:Tag" name="loadBundle"/>
+      <packagedElement xsi:type="frameweb:Tag" name="metadata"/>
+      <packagedElement xsi:type="frameweb:Tag" name="param"/>
+      <packagedElement xsi:type="frameweb:Tag" name="phaseListner"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectItem"/>
+      <packagedElement xsi:type="frameweb:Tag" name="selectItens"/>
+      <packagedElement xsi:type="frameweb:Tag" name="setPropertiesActionListner"/>
+      <packagedElement xsi:type="frameweb:Tag" name="subview"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validateBean"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validateDoubleRange"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validateLenght"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validateLongRange"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validateRegex"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validateRequired"/>
+      <packagedElement xsi:type="frameweb:Tag" name="validator"/>
+      <packagedElement xsi:type="frameweb:Tag" name="valueChangeListner"/>
+      <packagedElement xsi:type="frameweb:Tag" name="verbatim"/>
+      <packagedElement xsi:type="frameweb:Tag" name="view"/>
+      <packagedElement xsi:type="frameweb:Tag" name="viewParam"/>
+    </packagedElement>
+  </configures>
+</frameweb:FramewebProject>
