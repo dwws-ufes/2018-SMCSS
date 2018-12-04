@@ -252,26 +252,26 @@
     <packagedElement xsi:type="frameweb:ViewPackage" name="View Package">
       <packagedElement xsi:type="frameweb:Page" name="aluno/solicitacaoMatricula" isAbstract="true">
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" association="//@compose.1/View%20Package/@packagedElement.1"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="nomeAluno" visibility="public" isReadOnly="true" isDerivedUnion="true">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="aluno.nome" visibility="private" isReadOnly="true" isDerivedUnion="true">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/outputText"/>
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
           <defaultValue xsi:type="uml:LiteralString" value=""/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/selecionarPeriodo" association="//@compose.1/View%20Package/@packagedElement.3"/>
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="solicitacoesMatriculasEnviadas">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="aluno.solicitacoesMatricula" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/dataTable"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="mensagem">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="mensagem" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/message"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/@packagedElement.6"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/solicitarMatricula"/>
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/ofertaDisciplinas.xhtml" association="//@compose.1/View%20Package/@packagedElement.9"/>
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/@packagedElement.6"/>
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/solicitarMatricula"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula/@ownedAttribute.0"/>
       <packagedElement xsi:type="frameweb:UIComponent" name="selecionarPeriodo">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="periodoLetivo" visibility="public">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="periodoLetivo.id" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/selectOneMenu"/>
         </ownedAttribute>
       </packagedElement>
@@ -284,32 +284,29 @@
       <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/View%20Package/@packagedElement.5/@ownedEnd.0">
         <ownedEnd xsi:type="frameweb:NavigationCompositionPart" association="//@compose.1/View%20Package/@packagedElement.5"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:UIComponent" name="">
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoOfertaDisciplina">
+      <packagedElement xsi:type="frameweb:UIComponent" name="solicitarMatricula">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="solicitacaoMatricula.ofertaDisciplinas.ids" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/inputHidden"/>
         </ownedAttribute>
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula"/>
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula"/>
         <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="matriculaAluno">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="aluno.matricula" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/inputHidden"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="codigoNomeDisciplina">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ofertaDisciplinasPorPeriodo.id" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/selectManyCheckbox"/>
-        </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ofertaDisciplinasSelecionadas">
-          <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFcore/selectItens"/>
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:NavigationAssociation" memberEnd="//@compose.1/View%20Package/@packagedElement.7/@ownedEnd.0">
         <ownedEnd xsi:type="frameweb:NavigationCompositionPart" association="//@compose.1/View%20Package/@packagedElement.7"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:Page" name="ofertaDisciplinas.xhtml">
-        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/@packagedElement.6" association="//@compose.1/View%20Package/@packagedElement.11"/>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ofertaDisciplinasSelecionadas">
+        <ownedAttribute xsi:type="frameweb:NavigationCompositionWhole" type="//@compose.1/View%20Package/solicitarMatricula" association="//@compose.1/View%20Package/@packagedElement.11"/>
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="solicitacaoMatricula.ofertaDisciplinas" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/dataTable"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ofertaDisciplinasDisponiveis">
+        <ownedAttribute xsi:type="frameweb:UIComponentField" name="ofertaDisciplinasPorPeriodo" visibility="private">
           <type xsi:type="frameweb:Tag" href="MVC_JSF.frameweb#//@configures.0/JSFhtml/dataTable"/>
         </ownedAttribute>
       </packagedElement>
@@ -325,32 +322,43 @@
     </packagedElement>
     <packagedElement xsi:type="frameweb:ControllerPackage" name="Controller Package" URI="">
       <packagedElement xsi:type="frameweb:FrontControllerClass" name="SolicitarMatriculaController">
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="ofertaDisciplinas">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="ofertaDisciplinasPorPeriodo" visibility="private">
           <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/List"/>
         </ownedAttribute>
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="aluno" type="//@compose.0/Entity%20Package/Aluno"/>
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="periodoLetivo" type="//@compose.0/Entity%20Package/PeriodoLetivo"/>
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="solicitacaoMatricula" type="//@compose.0/Entity%20Package/SolicitacaoMatricula"/>
-        <ownedAttribute xsi:type="frameweb:IOParameter" name="mensagem">
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="aluno" visibility="private" type="//@compose.0/Entity%20Package/Aluno"/>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="periodoLetivo" visibility="private" type="//@compose.0/Entity%20Package/PeriodoLetivo"/>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="solicitacaoMatricula" visibility="private" type="//@compose.0/Entity%20Package/SolicitacaoMatricula"/>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="mensagem" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>
-        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="selecionarPeriodo">
-          <ownedParameter name="periodoLetivo" type="//@compose.0/Entity%20Package/PeriodoLetivo"/>
-          <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
-        </ownedOperation>
+        <ownedAttribute xsi:type="frameweb:IOParameter" name="solicitacoesMatricula" visibility="private">
+          <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/List"/>
+        </ownedAttribute>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="solicitarMatricula">
-          <ownedParameter name="aluno" type="//@compose.0/Entity%20Package/Aluno"/>
-          <ownedParameter name="ofertaDisciplinas">
+          <ownedParameter name="idAluno">
+            <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+          </ownedParameter>
+          <ownedParameter name="idsOfertasDisciplinas">
             <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/List"/>
           </ownedParameter>
           <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
         </ownedOperation>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="adicionarOfertaDisciplinaMatricula">
-          <ownedParameter name="ofertaDisciplina" type="//@compose.0/Entity%20Package/OfertaDisciplina"/>
+          <ownedParameter name="idOfertaDisciplina">
+            <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+          </ownedParameter>
           <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
         </ownedOperation>
         <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="removerOfertaDisciplinaMatricula">
-          <ownedParameter name="ofertaDisciplina" type="//@compose.0/Entity%20Package/OfertaDisciplina"/>
+          <ownedParameter name="idOfertaDisciplina">
+            <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+          </ownedParameter>
+          <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
+        </ownedOperation>
+        <ownedOperation xsi:type="frameweb:FrontControllerMethod" name="listarOfertasDisciplinaPorPeriodo">
+          <ownedParameter name="idPeriodoLetivo">
+            <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
+          </ownedParameter>
           <methodType xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/boolean"/>
         </ownedOperation>
       </packagedElement>
@@ -367,8 +375,8 @@
     <packagedElement xsi:type="frameweb:ResultDependency" name="" client="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula" supplier="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula">
       <resultDependencyConstraint result="null"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/selecionarPeriodo">
-      <resultDependencyConstraint result="true"/>
+    <packagedElement xsi:type="frameweb:ResultDependency" name="" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/listarOfertasDisciplinaPorPeriodo">
+      <resultDependencyConstraint result="true | false"/>
     </packagedElement>
     <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/solicitarMatricula">
       <resultDependencyConstraint result="sucesso"/>
@@ -382,19 +390,19 @@
     <packagedElement xsi:type="frameweb:PageDependency" supplier="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula">
       <pageDependencyConstraint/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/View%20Package/selecionarPeriodo" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/selecionarPeriodo"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/View%20Package/selecionarPeriodo" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/listarOfertasDisciplinaPorPeriodo"/>
     <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/aluno%2FsolicitacaoMatricula" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/solicitarMatricula">
       <resultDependencyConstraint result="true"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/View%20Package/@packagedElement.6" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/adicionarOfertaDisciplinaMatricula"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/View%20Package/solicitarMatricula" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/adicionarOfertaDisciplinaMatricula"/>
     <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/ofertaDisciplinas.xhtml" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/adicionarOfertaDisciplinaMatricula">
       <resultDependencyConstraint result="true | false"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/View%20Package/@packagedElement.6" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/removerOfertaDisciplinaMatricula"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" client="//@compose.1/View%20Package/solicitarMatricula" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/removerOfertaDisciplinaMatricula"/>
     <packagedElement xsi:type="frameweb:ResultDependency" client="//@compose.1/Controller%20Package/SolicitarMatriculaController" supplier="//@compose.1/View%20Package/ofertaDisciplinas.xhtml" resultMethod="//@compose.1/Controller%20Package/SolicitarMatriculaController/removerOfertaDisciplinaMatricula">
       <resultDependencyConstraint result="true | false"/>
     </packagedElement>
-    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/View%20Package/@packagedElement.6" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/solicitarMatricula"/>
+    <packagedElement xsi:type="frameweb:FrontControllerDependency" name="" client="//@compose.1/View%20Package/solicitarMatricula" supplier="//@compose.1/Controller%20Package/SolicitarMatriculaController" method="//@compose.1/Controller%20Package/SolicitarMatriculaController/solicitarMatricula"/>
   </compose>
   <compose xsi:type="frameweb:NavigationModel" name="NavegacaoGerenciarSolicitacoesMatricula">
     <packagedElement xsi:type="frameweb:ViewPackage" name="View Package">
