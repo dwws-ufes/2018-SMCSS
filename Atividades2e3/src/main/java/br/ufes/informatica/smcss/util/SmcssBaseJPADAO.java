@@ -22,56 +22,43 @@ public abstract class SmcssBaseJPADAO<T extends PersistentObject> extends BaseJP
         void filter(CriteriaBuilder cb, CriteriaQuery<?> cq, Root<T> root);
     }
     
-    public static interface Query<D, R> {
-        R apply(Filter<D> filter); 
+    protected Long count(Filter<T> bySomething) {
+        EntityManager entityManager = getEntityManager();
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+        Root<T> root = cq.from(getDomainClass());
+        cq.select(cb.count(root));
+        bySomething.filter(cb, cq, root);
+        return entityManager.createQuery(cq).getSingleResult();
     }
     
-    protected Query<T, Long> countBy() {        
-        return (prepareQuery) -> {
-            EntityManager entityManager = getEntityManager();
-            CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-            CriteriaQuery<Long> cq = cb.createQuery(Long.class);
-            Root<T> root = cq.from(getDomainClass());
-            cq.select(cb.count(root));
-            prepareQuery.filter(cb, cq, root);
-            return entityManager.createQuery(cq).getSingleResult();
-        };
-    }
-    
-    protected TypedQuery<T> queryListBy(Filter<T> prepareQuery) {
+    protected TypedQuery<T> query(Filter<T> bySomething) {
         EntityManager entityManager = getEntityManager();
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<T> cq = cb.createQuery(getDomainClass());
         Root<T> root = cq.from(getDomainClass());
-        prepareQuery.filter(cb, cq, root);
+        bySomething.filter(cb, cq, root);
         return entityManager.createQuery(cq);
     }
     
-    protected T queryFirst(Filter<T> prepareQuery) {
-        List<T> resultList = queryListBy(prepareQuery).setMaxResults(1).getResultList();
+    protected T queryFirst(Filter<T> bySomething) {
+        List<T> resultList = query(bySomething).setMaxResults(1).getResultList();
         return resultList.isEmpty() ? null : resultList.get(0);
     }
     
-    protected T querySingleResult(Filter<T> prepareQuery) {
-        return queryListBy(prepareQuery).getSingleResult();
+    protected T querySingleResult(Filter<T> bySomething) {
+        return query(bySomething).getSingleResult();
     }
 
-    protected List<T> queryList(Filter<T> prepareQuery) {
-        return queryListBy(prepareQuery).getResultList();
+    protected List<T> list(Filter<T> bySomething) {
+        return query(bySomething).getResultList();
     }
     
-    protected Query<T, List<T>> listBy() {
-        return (prepareQuery) -> {            
-            return queryListBy(prepareQuery).getResultList();
-        };
+    protected List<T> page(int firstIndex, int lastIndex, Filter<T> bySomething) {
+        return query(bySomething).setFirstResult(firstIndex).setMaxResults(lastIndex - firstIndex).getResultList();
     }
-    
-    protected Query<T, List<T>> listBy(int firstIndex, int lastIndex) {
-        return (prepareQuery) -> {
-            TypedQuery<T> query = queryListBy(prepareQuery);
-            query.setFirstResult(firstIndex);
-            query.setMaxResults(lastIndex - firstIndex);
-            return query.getResultList();
-        };
-    }    
+
+    protected String ilike(String query) {
+        return ("%" + query + "%").toLowerCase();
+    }
 }

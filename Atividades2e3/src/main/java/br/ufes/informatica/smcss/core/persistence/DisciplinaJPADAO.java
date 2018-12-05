@@ -39,7 +39,7 @@ public class DisciplinaJPADAO extends SmcssBaseJPADAO<Disciplina> implements Dis
 
     @Override
     public List<Disciplina> findByCodigoOrNome(String texto) {
-        return queryList((cb, cq, root) -> {
+        return list((cb, cq, root) -> {
             String pattern = ("%" + texto + "%").toLowerCase();
             cq.where(cb.or(
                 cb.like(cb.lower(root.get(Disciplina_.codigo)), pattern),
