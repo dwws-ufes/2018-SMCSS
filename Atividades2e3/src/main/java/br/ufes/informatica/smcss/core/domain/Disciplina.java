@@ -72,6 +72,6 @@ public class Disciplina extends PersistentObjectSupport implements Comparable<Di
 
     @Override
     public int compareTo(Disciplina other) {
-        return this.codigo.compareTo(other.codigo);
+        return (this.codigo == null) ? (other.codigo == null ? 0 : -1) : this.codigo.compareTo(other.codigo);
     }
 }

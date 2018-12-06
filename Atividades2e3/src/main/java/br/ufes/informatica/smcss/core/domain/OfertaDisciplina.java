@@ -2,7 +2,9 @@ package br.ufes.informatica.smcss.core.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
@@ -29,7 +31,7 @@ public class OfertaDisciplina extends PersistentObjectSupport implements Compara
 	@ManyToOne
 	private PeriodoLetivo periodoLetivo;
 
-	@OneToMany(targetEntity=Aula.class,mappedBy="ofertaDisciplina")
+	@OneToMany(fetch = FetchType.EAGER, orphanRemoval = true, cascade = CascadeType.ALL, targetEntity = Aula.class, mappedBy = "ofertaDisciplina")
 	private List<Aula> aulas;
 
 	public Disciplina getDisciplina() {

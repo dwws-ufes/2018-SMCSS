@@ -36,4 +36,13 @@ public class Professor extends PersistentObjectSupport implements Comparable<Pro
     public int compareTo(Professor other) {
         return this.pessoa.compareTo(other.pessoa);
     }
+
+    @Transient
+    public String getNome() {
+        return pessoa.getNome();
+    }
+
+    public void setNome(String nome) {
+        pessoa.setNome(nome);
+    }
 }
