@@ -73,7 +73,7 @@
           <lowerValue xsi:type="uml:LiteralInteger" value="1"/>
         </ownedEnd>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainClass" name="Pessoa">
+      <packagedElement xsi:type="frameweb:DomainClass" name="Pessoa" powertypeExtent="//@compose.0/Entity%20Package/Pessoa.1 //@compose.0/Entity%20Package/Pessoa.2">
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="nome" visibility="private" size="150">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/String"/>
         </ownedAttribute>
@@ -88,15 +88,13 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="SolicitacaoMatricula">
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="situacao" visibility="private">
-          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
-        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="situacao" visibility="private" type="//@compose.0/SituacaoSolicitacaoMatricula"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainClass" name="Professor"/>
+      <packagedElement xsi:type="frameweb:DomainClass" name="Professor">
+        <generalization xsi:type="frameweb:DomainGeneralization" generalizationSet="//@compose.0/Entity%20Package/Pessoa.2"/>
+      </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Aula">
-        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="diaDaSemana" visibility="private">
-          <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
-        </ownedAttribute>
+        <ownedAttribute xsi:type="frameweb:DomainAttribute" name="diaDaSemana" visibility="private" type="//@compose.0/DiasDaSemana"/>
         <ownedAttribute xsi:type="frameweb:DateTimeAttribute" name="horarioInicio" visibility="private" dateTimePrecision="time">
           <type xsi:type="uml:Class" href="JAVA.frameweb#//@compose.0/Date"/>
         </ownedAttribute>
@@ -160,6 +158,7 @@
         </ownedEnd>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainClass" name="Candidato">
+        <generalization xsi:type="frameweb:DomainGeneralization" generalizationSet="//@compose.0/Entity%20Package/Pessoa.1"/>
         <ownedAttribute xsi:type="frameweb:DomainAttribute" name="pontuacaoAlcancada" visibility="private">
           <type xsi:type="uml:PrimitiveType" href="JAVA.frameweb#//@compose.0/int"/>
         </ownedAttribute>
@@ -181,16 +180,6 @@
         </ownedEnd>
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Candidato" association="//@compose.0/Entity%20Package/-%20candidato"/>
       </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="- pessoa" memberEnd="//@compose.0/Entity%20Package/-%20pessoa/Source //@compose.0/Entity%20Package/-%20pessoa/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20pessoa/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20pessoa/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20pessoa"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Candidato" association="//@compose.0/Entity%20Package/-%20pessoa">
-          <lowerValue xsi:type="uml:LiteralInteger"/>
-          <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
-        </ownedEnd>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Pessoa" association="//@compose.0/Entity%20Package/-%20pessoa"/>
-      </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="- periodoLetivo" memberEnd="//@compose.0/Entity%20Package/-%20periodoLetivo.1/Source //@compose.0/Entity%20Package/-%20periodoLetivo.1/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20periodoLetivo.1/Source"/>
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20periodoLetivo.1/Target"/>
@@ -200,15 +189,6 @@
           <upperValue xsi:type="uml:LiteralUnlimitedNatural" value="*"/>
         </ownedEnd>
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/PeriodoLetivo" association="//@compose.0/Entity%20Package/-%20periodoLetivo.1"/>
-      </packagedElement>
-      <packagedElement xsi:type="frameweb:DomainAssociation" name="- pessoa" memberEnd="//@compose.0/Entity%20Package/-%20pessoa.1/Source //@compose.0/Entity%20Package/-%20pessoa.1/Target">
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20pessoa.1/Source"/>
-        <ownedRule xsi:type="frameweb:DomainConstraints" name="Target Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20pessoa.1/Target"/>
-        <ownedRule xsi:type="frameweb:VocabularyConstraints" name="Vocabulary Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20pessoa.1"/>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Source" type="//@compose.0/Entity%20Package/Professor" association="//@compose.0/Entity%20Package/-%20pessoa.1">
-          <lowerValue xsi:type="uml:LiteralInteger"/>
-        </ownedEnd>
-        <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Pessoa" association="//@compose.0/Entity%20Package/-%20pessoa.1"/>
       </packagedElement>
       <packagedElement xsi:type="frameweb:DomainAssociation" name="- orientador" memberEnd="//@compose.0/Entity%20Package/-%20orientador/Source //@compose.0/Entity%20Package/-%20orientador/Target">
         <ownedRule xsi:type="frameweb:DomainConstraints" name="Source Constraint" constrainedElement="//@compose.0/Entity%20Package/-%20orientador/Source"/>
@@ -231,6 +211,22 @@
         </ownedEnd>
         <ownedEnd xsi:type="frameweb:DomainProperty" name="Target" type="//@compose.0/Entity%20Package/Curso" association="//@compose.0/Entity%20Package/-%20curso.1"/>
       </packagedElement>
+      <packagedElement xsi:type="frameweb:DomainGeneralizationSet" name="Pessoa" powertype="//@compose.0/Entity%20Package/Pessoa" generalization="//@compose.0/Entity%20Package/Candidato/@generalization.0"/>
+      <packagedElement xsi:type="frameweb:DomainGeneralizationSet" name="Pessoa" powertype="//@compose.0/Entity%20Package/Pessoa" generalization="//@compose.0/Entity%20Package/Professor/@generalization.0"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Enumeration" name="DiasDaSemana">
+      <ownedLiteral name="DOMINGO" classifier="//@compose.0/DiasDaSemana"/>
+      <ownedLiteral name="SEGUNDA" classifier="//@compose.0/DiasDaSemana"/>
+      <ownedLiteral name="TERCA" classifier="//@compose.0/DiasDaSemana"/>
+      <ownedLiteral name="QUARTA" classifier="//@compose.0/DiasDaSemana"/>
+      <ownedLiteral name="QUINTA" classifier="//@compose.0/DiasDaSemana"/>
+      <ownedLiteral name="SEXTA" classifier="//@compose.0/DiasDaSemana"/>
+      <ownedLiteral name="SABADO" classifier="//@compose.0/DiasDaSemana"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Enumeration" name="SituacaoSolicitacaoMatricula">
+      <ownedLiteral name="ENVIADA-AO-ORIENTADOR" classifier="//@compose.0/SituacaoSolicitacaoMatricula"/>
+      <ownedLiteral name="ACEITA" classifier="//@compose.0/SituacaoSolicitacaoMatricula"/>
+      <ownedLiteral name="REJEITADA" classifier="//@compose.0/SituacaoSolicitacaoMatricula"/>
     </packagedElement>
   </compose>
   <compose xsi:type="frameweb:NavigationModel" name="SolicitarMatricula" viewpoint="">
