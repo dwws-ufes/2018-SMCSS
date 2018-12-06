@@ -29,6 +29,14 @@
       <p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}" icon="fa fa-save" action="#{pessoaController.save}" rendered="#{! pessoaController.readOnly}"/>
       <p:defaultCommand target="saveButton"/>
       <p:commandButton id="backButton" value="#{msgs['jbutler.crud.button.back']}" icon="fa fa-arrow-circle-left" action="#{pessoaController.list}" immediate="true" rendered="#{pessoaController.readOnly}"/>
+      
+      <p:dataList value="#{dataListView.publicacoesDBLP}" var="publicacao" type="ordered">
+        <f:facet name="header">
+            Publicações indexadas pelo DBLP
+        </f:facet>
+        #{publicacao.titulo}, #{publicacao.ano}
+    </p:dataList>
+      
     </h:form>
   </ui:define>
 </ui:composition>
