@@ -8,7 +8,14 @@
   </ui:define>
   <ui:define name="body">
     <adm:breadcrumb link="/core/ofertaDisciplina/index" title="#{msgsCore['ofertaDisciplina.title']}"/>
-    <h:form id="listingForm">
+    <h:form id="noScholarPeriod" rendered="#{ofertaDisciplinaController.periodoLetivo == null}">
+        <div><h:outputText value="#{msgsCore['ofertaDisciplina.periodoLetivo.vazio']}"/></div>
+        <div><p:link outcome="/core/periodoLetivo/index" onclick="clearBreadCrumbs()">
+            <i class="fa fa-calendar"></i>
+            <span><h:outputText value="#{msgsCore['periodoLetivo.title']}" /></span>
+        </p:link></div>
+    </h:form>
+    <h:form id="listingForm" rendered="#{ofertaDisciplinaController.periodoLetivo != null}">
       <div>
         <p:commandButton
             action="#{ofertaDisciplinaController.navegarParaPeriodoLetivoAnterior}"

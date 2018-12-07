@@ -44,7 +44,7 @@ public class PeriodoLetivoJPADAO extends SmcssBaseJPADAO<PeriodoLetivo> implemen
 
     @Override
     public PeriodoLetivo retrieveAnterior(PeriodoLetivo periodoLetivo) {
-        return queryFirst((cb, cq, root) -> {
+        return (periodoLetivo == null) ? null : queryFirst((cb, cq, root) -> {
             Path<Date> inicioPeriodo = root.get(PeriodoLetivo_.duracao).get(Periodo_.inicio);
             cq.where(cb.lessThan(inicioPeriodo, periodoLetivo.getDuracao().getInicio()));
             cq.orderBy(cb.desc(inicioPeriodo));
@@ -55,7 +55,9 @@ public class PeriodoLetivoJPADAO extends SmcssBaseJPADAO<PeriodoLetivo> implemen
     public PeriodoLetivo retrieveSeguinte(PeriodoLetivo periodoLetivo) {
         return queryFirst((cb, cq, root) -> {
             Path<Date> inicioPeriodo = root.get(PeriodoLetivo_.duracao).get(Periodo_.inicio);
-            cq.where(cb.greaterThan(inicioPeriodo, periodoLetivo.getDuracao().getInicio()));
+            if (periodoLetivo != null) {
+                cq.where(cb.greaterThan(inicioPeriodo, periodoLetivo.getDuracao().getInicio()));
+            }
             cq.orderBy(cb.asc(inicioPeriodo));
         });
     }
