@@ -14,7 +14,9 @@
     <h:form id="entitiesForm">
       <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
         <p:outputLabel for="nomeField" value="#{msgsCore['pessoa.field.nome']}"/>
-        <p:inputText id="nomeField" value="#{pessoaController.selectedEntity.nome}" style="width: 100%;"/>
+        <p:inputText id="nomeField" value="#{pessoaController.selectedEntity.nome}" style="width: 100%;">
+        	<f:ajax event="blur" listener="#{pessoaController.listarPublicacoes}" execute="@this" render="listaPublicacoes" />
+		</p:inputText>
         <p:outputLabel for="emailField" value="#{msgsCore['pessoa.field.email']}"/>
         <p:inputText id="emailField" value="#{pessoaController.selectedEntity.email}" style="width: 100%;"/>
         <p:outputLabel for="cpfField" value="#{msgsCore['pessoa.field.cpf']}"/>
@@ -29,12 +31,12 @@
       <p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}" icon="fa fa-save" action="#{pessoaController.save}" rendered="#{! pessoaController.readOnly}"/>
       <p:defaultCommand target="saveButton"/>
       <p:commandButton id="backButton" value="#{msgs['jbutler.crud.button.back']}" icon="fa fa-arrow-circle-left" action="#{pessoaController.list}" immediate="true" rendered="#{pessoaController.readOnly}"/>
-      
-      <p:dataList value="#{dataListView.publicacoesDBLP}" var="publicacao" type="ordered">
+
+      <p:dataList id="listaPublicacoes" value="#{pessoaController.selectedEntity.publicacoes}" var="publicacao" type="ordered">
         <f:facet name="header">
             Publicações indexadas pelo DBLP
         </f:facet>
-        #{publicacao.titulo}, #{publicacao.ano}
+        #{publicacao.titulo}
     </p:dataList>
       
     </h:form>
