@@ -1,5 +1,6 @@
 package br.ufes.informatica.smcss.core.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
@@ -249,8 +250,8 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
 
     protected void saveAulaUI() {
 
-        List<Aula> aulas = selectedEntity.getAulas();
-        aulas.clear();
+        List<Aula> aulas = new ArrayList<Aula>();
+
         Aula aula = null;
         for (DiaDaSemana diaDaSemana : DiaDaSemana.values()) {
             for (int horario = HORA_INICIAL; horario < HORA_FINAL; horario++) {
@@ -274,6 +275,7 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
                 aula = null;
             }
         }
+        selectedEntity.setAulas(aulas);
     }
 
     private final AulaUI[] aulaUIArray = initAulas();
