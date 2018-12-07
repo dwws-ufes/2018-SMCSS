@@ -30,6 +30,8 @@
             icon="fa fa-arrow-right"
         />
       </div>
+      	<a style="float: right;" href="#{facesContext.externalContext.requestContextPath}/data/tourpackages">RDF/XML</a>
+            
       <p:dataTable id="entitiesDataTable" var="entity" value="#{ofertaDisciplinaController.lazyEntities}" selection="#{ofertaDisciplinaController.selectedEntity}" selectionMode="single" paginator="true" rows="#{ofertaDisciplinaController.maxDataTableRowsPerPage}" paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" rowsPerPageTemplate="#{ofertaDisciplinaController.halfMaxDataTableRowsPerPage},#{ofertaDisciplinaController.maxDataTableRowsPerPage},#{ofertaDisciplinaController.doubleMaxDataTableRowsPerPage}" lazy="true" paginatorPosition="bottom" emptyMessage="#{msgsCore['ofertaDisciplina.text.noEntities']}">
         <p:ajax event="rowSelect" update="buttonsGroup"/>
         <p:ajax event="rowUnselect" update="buttonsGroup"/>
