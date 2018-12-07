@@ -9,48 +9,43 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseJPADAO;
 import br.ufes.informatica.smcss.core.domain.Pessoa;
 import br.ufes.informatica.smcss.core.domain.Pessoa_;
+import br.ufes.informatica.smcss.util.SmcssBaseJPADAO;
 
 @Stateless
-public class PessoaJPADAO extends BaseJPADAO<Pessoa> implements PessoaDAO {
+public class PessoaJPADAO extends SmcssBaseJPADAO<Pessoa> implements PessoaDAO {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	@PersistenceContext
-	private EntityManager entityManager;
+    @PersistenceContext
+    private EntityManager entityManager;
 
-	@Override
-	protected EntityManager getEntityManager() {
-		return entityManager;
-	}
+    @Override
+    protected EntityManager getEntityManager() {
+        return entityManager;
+    }
 
-	@Override
-	public List<Pessoa> findByNome(String nome) {
-		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
-		Root<Pessoa> root = cq.from(Pessoa.class);
-		cq.where(cb.like(cb.lower(root.get(Pessoa_.nome)), "%" + nome.toLowerCase() + "%"));
-		cq.orderBy(cb.asc(root.get(Pessoa_.nome)));
-		return entityManager.createQuery(cq).getResultList();
-	}
+    @Override
+    public List<Pessoa> findByNome(String nome) {
+        return list((cb, cq, root) -> {
+            cq.where(cb.like(cb.lower(root.get(Pessoa_.nome)), ilike(nome)));
+            cq.orderBy(cb.asc(root.get(Pessoa_.nome)));
+        });
+    }
 
-	@Override
-	public Pessoa retrieveByNome(String nome) {
-		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
-		Root<Pessoa> root = cq.from(Pessoa.class);
-		cq.where(cb.equal(root.get(Pessoa_.nome), nome));
-		return entityManager.createQuery(cq).getSingleResult();
-	}
+    @Override
+    public Pessoa retrieveByNome(String nome) {
+        return querySingleResult((cb, cq, root) -> {
+            cq.where(cb.equal(root.get(Pessoa_.nome), nome));
+        });
+    }
 
-	@Override
-	public Pessoa retrieveByCpf(String cpf) {
-		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Pessoa> cq = cb.createQuery(Pessoa.class);
-		Root<Pessoa> root = cq.from(Pessoa.class);
-		cq.where(cb.equal(root.get(Pessoa_.cpf), cpf));
-		return entityManager.createQuery(cq).getSingleResult();
-	}
+    @Override
+    public Pessoa retrieveByCpf(String cpf) {
+        return querySingleResult((cb, cq, root) -> {
+            cq.where(cb.equal(root.get(Pessoa_.cpf), cpf));
+        });
+    }
+
 }
