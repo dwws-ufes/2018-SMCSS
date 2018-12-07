@@ -10,7 +10,6 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.primefaces.component.autocomplete.AutoComplete;
 import org.primefaces.event.SelectEvent;
 
 import br.ufes.inf.nemo.jbutler.ejb.application.CrudService;
@@ -99,7 +98,6 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
     }
 
     public <T> T selectDomainClass(SelectEvent event, Function<Long, T> getById) {
-        AutoComplete autoComplete = (AutoComplete) event.getComponent();
         Object newValue = event.getObject();
         return newValue == null ? null : getById.apply(Long.valueOf(newValue.toString()));
     }
