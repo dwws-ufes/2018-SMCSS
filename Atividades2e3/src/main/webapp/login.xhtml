@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
+
+    <ui:define name="title">
+        <h:outputText value="#{msgs['login.title']}" />
+    </ui:define>
+
+    <ui:define name="description">
+        <h:outputText value="#{msgs['login.description']}" />
+    </ui:define>
+
+    <ui:define name="body">
+        <div class="center">
+            <form method="POST" action="j_security_check" id="">
+                <h:panelGrid id="panel" columns="2" cellpadding="4" cellspacing="4">
+                    <h:outputLabel for="j_username" value="#{msgs['login.userName']}" />
+                    <input type="text" name="j_username" />
+                    <h:outputLabel for="j_password" value="#{msgs['login.password']}" />
+                    <input type="password" name="j_password" />
+                    <h:panelGroup>
+                        <input type="submit" value="#{msgs['login.submit']}" />
+                    </h:panelGroup>
+                </h:panelGrid>
+            </form>
+        </div>
+    </ui:define>
+</ui:composition>

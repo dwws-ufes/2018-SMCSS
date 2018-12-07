@@ -15,4 +15,6 @@ public interface PessoaDAO extends BaseDAO<Pessoa> {
 	public Pessoa retrieveByNome(String nome);
 
 	public Pessoa retrieveByCpf(String cpf);
+
+    public Pessoa retrieveByEmail(String email);
 }

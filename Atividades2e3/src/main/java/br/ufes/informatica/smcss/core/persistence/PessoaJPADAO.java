@@ -48,4 +48,10 @@ public class PessoaJPADAO extends SmcssBaseJPADAO<Pessoa> implements PessoaDAO {
         });
     }
 
+    @Override
+    public Pessoa retrieveByEmail(String email) {
+        return querySingleResult((cb, cq, root) -> {
+            cq.where(cb.equal(root.get(Pessoa_.email), email));
+        });
+    }
 }

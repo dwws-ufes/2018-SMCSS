@@ -21,4 +21,9 @@ public class PessoaServiceBean extends CrudServiceBean<Pessoa> implements Pessoa
     public BaseDAO<Pessoa> getDAO() {
         return pessoaDAO;
     }
+
+    @Override
+    public Pessoa retrievePessoaByEmail(String email) {
+        return pessoaDAO.retrieveByEmail(email);
+    }
 }

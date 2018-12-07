@@ -28,6 +28,55 @@
     <param-name>primefaces.TRANSFORM_METADATA</param-name>
     <param-value>true</param-value>
   </context-param>
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Recursos de Administração</web-resource-name>
+        <url-pattern>/core/curso/*</url-pattern>
+        <url-pattern>/core/disciplina/*</url-pattern>
+        <url-pattern>/core/periodoLetivo/*</url-pattern>
+        <url-pattern>/core/pessoa/*</url-pattern>
+        <url-pattern>/core/professor/*</url-pattern>
+        <url-pattern>/core/candidato/*</url-pattern>
+        <url-pattern>/core/ofertaDisciplina/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>Admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Recursos de candidatos</web-resource-name>
+        <url-pattern>/student/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>Candidato</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Recursos de alunos</web-resource-name>
+        <url-pattern>/core/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>Aluno</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+        <web-resource-name>Recursos de professores</web-resource-name>
+        <url-pattern>/teacher/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>Professor</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+        <form-login-page>/login.xhtml</form-login-page>
+        <form-error-page>/error.xhtml</form-error-page>
+    </form-login-config>
+  </login-config>
   <filter>
     <filter-name>Character Encoding Filter</filter-name>
     <filter-class>org.omnifaces.filter.CharacterEncodingFilter</filter-class>

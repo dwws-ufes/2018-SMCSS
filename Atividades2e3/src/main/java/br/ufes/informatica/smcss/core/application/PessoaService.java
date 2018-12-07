@@ -6,4 +6,6 @@ import br.ufes.informatica.smcss.core.domain.Pessoa;
 
 @Local
 public interface PessoaService extends CrudService<Pessoa> {
+
+    public Pessoa retrievePessoaByEmail(String email);
 }
