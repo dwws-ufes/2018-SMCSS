@@ -34,7 +34,7 @@
 
       <p:dataList id="listaPublicacoes" value="#{pessoaController.selectedEntity.publicacoes}" var="publicacao" type="ordered">
         <f:facet name="header">
-            Publicações indexadas pelo DBLP
+        	<p:outputLabel for="listaPublicacoes" value="#{msgsCore['pessoa.field.publicacoes']}"/>
         </f:facet>
         #{publicacao.titulo}
     </p:dataList>

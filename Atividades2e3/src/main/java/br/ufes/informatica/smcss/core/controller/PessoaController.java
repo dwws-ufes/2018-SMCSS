@@ -49,7 +49,7 @@ public class PessoaController extends CrudController<Pessoa> {
 				+ "PREFIX foaf: <http://xmlns.com/foaf/0.1/>" + "PREFIX dc: <http://purl.org/dc/elements/1.1/> 	"
 				+ "SELECT DISTINCT ?titulo WHERE {" 
 				+ "			?autor a foaf:Agent;"
-				+ "         		 foaf:name \"Giancarlo Guizzardi\"." 
+				+ "         		 foaf:name \"" + this.selectedEntity.getNome() + "\" . "
 				+ "  		?artigo foaf:maker ?autor;"
 				+ "          dc:title ?titulo." + "}" 
 				+ "LIMIT 50";
