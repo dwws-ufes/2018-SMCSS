@@ -2,6 +2,7 @@ package br.ufes.informatica.smcss.core.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 import br.ufes.inf.nemo.jbutler.ejb.persistence.PersistentObjectSupport;
@@ -35,5 +36,14 @@ public class Professor extends PersistentObjectSupport implements Comparable<Pro
     @Override
     public int compareTo(Professor other) {
         return this.pessoa.compareTo(other.pessoa);
+    }
+
+    @Transient
+    public String getNome() {
+        return pessoa.getNome();
+    }
+
+    public void setNome(String nome) {
+        pessoa.setNome(nome);
     }
 }

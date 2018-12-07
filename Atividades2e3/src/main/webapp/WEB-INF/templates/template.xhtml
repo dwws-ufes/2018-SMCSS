@@ -7,7 +7,7 @@
 
     <ui:define name="head">
         <title>SMCSS - Sistema de Matrículas em Cursos Stricto Sensu</title>
-        <link rel="stylesheet" href="#{request.contextPath}/fa/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"/>
+        <link rel="stylesheet" href="#{request.contextPath}/css/styles.css"/>
     </ui:define>
 
     <ui:define name="logo-lg">
@@ -64,6 +64,12 @@
                 <p:link outcome="/core/candidato/index" onclick="clearBreadCrumbs()">
                     <i class="fa fa-check"></i>
                     <span><h:outputText value="#{msgsCore['core.menu.admin.candidato']}" /></span>
+                </p:link>
+            </li>
+            <li>
+                <p:link outcome="/core/ofertaDisciplina/index" onclick="clearBreadCrumbs()">
+                    <i class="fa fa-arrow-right"></i>
+                    <span><h:outputText value="#{msgsCore['ofertaDisciplina.title']}" /></span>
                 </p:link>
             </li>
         </ul>

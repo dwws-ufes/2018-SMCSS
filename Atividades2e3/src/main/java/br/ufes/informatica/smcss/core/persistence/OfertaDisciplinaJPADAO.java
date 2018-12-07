@@ -24,24 +24,24 @@ public class OfertaDisciplinaJPADAO extends SmcssBaseJPADAO<OfertaDisciplina> im
         return entityManager;
     }
 
-    private <T> T byPeriodoLetivo(Query<OfertaDisciplina, T> query, PeriodoLetivo periodoLetivo) {
-        return query.apply((cb, cq, root) -> {
+    private Filter<OfertaDisciplina> by(PeriodoLetivo periodoLetivo) {
+        return (cb, cq, root) -> {
             cq.where(cb.equal(root.get(OfertaDisciplina_.periodoLetivo), periodoLetivo));
-        });
+        };
     }
 
     @Override
     public long countByPeriodoLetivo(PeriodoLetivo periodoLetivo) {
-        return byPeriodoLetivo(countBy(), periodoLetivo);
+        return count(by(periodoLetivo));
     }
 
     @Override
     public List<OfertaDisciplina> listByPeriodoLetivo(PeriodoLetivo periodoLetivo) {
-        return byPeriodoLetivo(listBy(), periodoLetivo);
+        return list(by(periodoLetivo));
     }
 
     @Override
-    public List<OfertaDisciplina> listByPeriodoLetivo(PeriodoLetivo periodoLetivo, int firstIndex, int lastIndex) {
-        return byPeriodoLetivo(listBy(firstIndex, lastIndex), periodoLetivo);
+    public List<OfertaDisciplina> listByPeriodoLetivo(PeriodoLetivo periodoLetivo, int from, int to) {
+        return page(from, to, by(periodoLetivo));
     }
 }

@@ -11,9 +11,11 @@ import br.ufes.inf.nemo.jbutler.ejb.persistence.BaseDAO;
 import br.ufes.informatica.smcss.core.domain.Disciplina;
 import br.ufes.informatica.smcss.core.domain.OfertaDisciplina;
 import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
+import br.ufes.informatica.smcss.core.domain.Professor;
 import br.ufes.informatica.smcss.core.persistence.DisciplinaDAO;
 import br.ufes.informatica.smcss.core.persistence.OfertaDisciplinaDAO;
 import br.ufes.informatica.smcss.core.persistence.PeriodoLetivoDAO;
+import br.ufes.informatica.smcss.core.persistence.ProfessorDAO;
 
 @Stateless @PermitAll
 public class OfertaDisciplinaServiceBean extends CrudServiceBean<OfertaDisciplina> implements OfertaDisciplinaService {
@@ -30,6 +32,9 @@ public class OfertaDisciplinaServiceBean extends CrudServiceBean<OfertaDisciplin
 
     @EJB
     private PeriodoLetivoDAO periodoLetivoDAO;
+
+	@EJB
+	private ProfessorDAO professorDAO;
 
     @Override
     public long countOfertasByPeriodoLetivo(PeriodoLetivo periodoLetivo) {
@@ -74,4 +79,29 @@ public class OfertaDisciplinaServiceBean extends CrudServiceBean<OfertaDisciplin
     public List<Disciplina> findDisciplinaByCodigoOrNome(String query) {
         return disciplinaDAO.findByCodigoOrNome(query);
     }
+
+	@Override
+	public Disciplina retrieveDisciplinaById(Long disciplinaId) {
+		return disciplinaDAO.retrieveById(disciplinaId);
+	}
+
+	@Override
+	public List<Professor> findProfessorByNome(String query) {
+		return professorDAO.findByNome(query);
+	}
+
+	@Override
+	public Professor retrieveProfessorById(Long professorId) {
+		return professorDAO.retrieveById(professorId);
+	}
+
+	@Override
+	public List<PeriodoLetivo> findPeriodoLetivoByCodigo(String query) {
+		return periodoLetivoDAO.findByCodigo(query);
+	}
+
+	@Override
+	public PeriodoLetivo retrievePeriodoLetivoById(Long periodoLetivoId) {
+		return periodoLetivoDAO.retrieveById(periodoLetivoId);
+	}
 }

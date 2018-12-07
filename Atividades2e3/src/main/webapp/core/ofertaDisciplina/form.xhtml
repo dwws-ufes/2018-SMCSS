@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui" xmlns:adm="http://github.com/adminfaces" template="/WEB-INF/templates/template.xhtml">
+<ui:composition
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:adm="http://github.com/adminfaces"
+    template="/WEB-INF/templates/template.xhtml">
   <ui:define name="title">
     <h:outputText value="#{msgsCore['ofertaDisciplina.title.create']}" rendered="#{(! ofertaDisciplinaController.readOnly) and (ofertaDisciplinaController.selectedEntity.id == null)}"/>
     <h:outputText value="#{msgsCore['ofertaDisciplina.title.update']}" rendered="#{(! ofertaDisciplinaController.readOnly) and (ofertaDisciplinaController.selectedEntity.id != null)}"/>
@@ -14,50 +21,70 @@
     <h:form id="entitiesForm">
       <p:panelGrid columns="2" columnClasses="ui-grid-col-4,ui-grid-col-8" layout="grid" styleClass="ui-panelgrid-blank">
         <p:outputLabel for="codigoDisciplinaField" value="#{msgsCore['ofertaDisciplina.field.disciplina']}"/>
-        <p:panelGrid columns="2">
-          <p:autoComplete id="codigoDisciplinaField"
-              value="#{ofertaDisciplinaController.selectedEntity.disciplina}"
-              completeMethod="#{ofertaDisciplinaController.completeDisciplina}"
-              var="disciplina"
-              itemLabel="#{disciplina.codigo}"
-              itemValue="#{disciplina}"
-              converter="disciplinaCodigoConverter"
-              forceSelection="true"
-              style="width: 100%;"
-              >
-              <p:ajax event="itemSelect" update="nomeDisciplinaField" />
-              <p:column>
-                  <h:outputText value="#{disciplina.codigo}"/>
-              </p:column>
-              <p:column>
-                  <h:outputText value="#{disciplina.nome}" />
-              </p:column>
-          </p:autoComplete>
-          <p:autoComplete id="nomeDisciplinaField"
-              value="#{ofertaDisciplinaController.selectedEntity.disciplina}"
-              completeMethod="#{ofertaDisciplinaController.completeDisciplina}"
-              var="disciplina"
-              itemLabel="#{disciplina.nome}"
-              itemValue="#{disciplina}"
-              converter="disciplinaNomeConverter"
-              forceSelection="true"
-              style="width: 100%;"
-              >
-              <p:ajax event="itemSelect" update="codigoDisciplinaField" />
-              <p:column>
-                  <h:outputText value="#{disciplina.codigo}"/>
-              </p:column>
-              <p:column>
-                  <h:outputText value="#{disciplina.nome}" />
-              </p:column>
-          </p:autoComplete>
-        </p:panelGrid>
-
+        <p:autoComplete id="codigoDisciplinaField"
+             value="#{ofertaDisciplinaController.textoDisciplina}"
+             completeMethod="#{ofertaDisciplinaController.completeDisciplina}"
+             var="disciplina"
+             itemLabel="#{disciplina}"
+             itemValue="#{disciplina.id}"
+             size="40"
+             style="width: 100%;"
+             >
+             <p:ajax event="itemSelect" listener="#{ofertaDisciplinaController.onSelectDisciplina}"
+                    process="codigoDisciplinaField" update="codigoDisciplinaField"/>
+             <p:column>
+                 <h:outputText value="#{disciplina.codigo}"/>
+             </p:column>
+             <p:column>
+                 <h:outputText value="#{disciplina.nome}" />
+             </p:column>
+        </p:autoComplete>
         <p:outputLabel for="professorField" value="#{msgsCore['ofertaDisciplina.field.professor']}"/>
-        <p:inputText id="professorField" value="#{ofertaDisciplinaController.selectedEntity.professor}" style="width: 100%;"/>
+        <p:autoComplete id="professorField"
+             value="#{ofertaDisciplinaController.nomeProfessor}"
+             completeMethod="#{ofertaDisciplinaController.completeProfessor}"
+             var="professor"
+             itemLabel="#{professor}"
+             itemValue="#{professor.id}"
+             size="40"
+             style="width: 100%;"
+             >
+             <p:ajax event="itemSelect" listener="#{ofertaDisciplinaController.onSelectProfessor}"
+                    process="professorField" update="professorField"/>
+             <p:column>
+                 <h:outputText value="#{professor.nome}" />
+             </p:column>
+        </p:autoComplete>
         <p:outputLabel for="periodoLetivoField" value="#{msgsCore['ofertaDisciplina.field.periodoLetivo']}"/>
-        <p:inputText id="periodoLetivoField" value="#{ofertaDisciplinaController.selectedEntity.periodoLetivo}" style="width: 100%;"/>
+        <p:autoComplete id="periodoLetivoField"
+             value="#{ofertaDisciplinaController.codigoPeriodoLetivo}"
+             completeMethod="#{ofertaDisciplinaController.completePeriodoLetivo}"
+             var="periodoLetivo"
+             itemLabel="#{periodoLetivo}"
+             itemValue="#{periodoLetivo.id}"
+             size="40"
+             style="width: 100%;"
+             >
+             <p:ajax event="itemSelect" listener="#{ofertaDisciplinaController.onSelectPeriodoLetivo}"
+                    process="periodoLetivoField" update="periodoLetivoField"/>
+             <p:column>
+                 <h:outputText value="#{periodoLetivo.codigo}" />
+             </p:column>
+        </p:autoComplete>
       </p:panelGrid>
+      <p:dataTable var="aula" value="#{ofertaDisciplinaController.aulas}">
+        <p:columns
+            var="diaDaSemana"
+            value="#{ofertaDisciplinaController.diasDaSemana}"
+            headerText="#{msgsCore[diaDaSemana.messageKey]}"
+            styleClass="#{aula.getSituacao(diaDaSemana).styleClass}"
+            >
+            <h:commandButton
+                value="#{aula.horarioInicial} - #{aula.horarioFinal}"
+                action="#{aula.getSituacao(diaDaSemana).toggle}"
+                process="@this" update="@parent" style="width: 100%"/>
+        </p:columns>
+      </p:dataTable>
       <p:commandButton id="cancelButton" value="#{msgs['jbutler.crud.button.cancel']}" icon="fa fa-close" action="#{ofertaDisciplinaController.list}" immediate="true" rendered="#{! ofertaDisciplinaController.readOnly}"/>
       <p:commandButton id="saveButton" value="#{msgs['jbutler.crud.button.save']}" icon="fa fa-save" action="#{ofertaDisciplinaController.save}" rendered="#{! ofertaDisciplinaController.readOnly}"/>
       <p:defaultCommand target="saveButton"/>
