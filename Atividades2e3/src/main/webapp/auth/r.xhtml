@@ -32,10 +32,10 @@
         <p:password id="passwordField" match="passwordConfirmationField"
           value="#{registerController.password}" required="true"
           feedback="true"
-          promptLabel="#{msgsAuth['auth.field.password.prompt']}"
-          weakLabel="#{msgsAuth['auth.field.password.weak']}"
-          goodLabel="#{msgsAuth['auth.field.password.good']}"
-          strongLabel="#{msgsAuth['auth.field.password.strong']}"
+          promptLabel="#{msgs['primefaces.password.prompt']}"
+          weakLabel="#{msgs['primefaces.password.weak']}"
+          goodLabel="#{msgs['primefaces.password.good']}"
+          strongLabel="#{msgs['primefaces.password.strong']}"
           style="width: 100%;" />
         <p:outputLabel for="passwordConfirmationField" value="#{msgsAuth['auth.field.passwordConfirmation']}" />
         <p:password id="passwordConfirmationField"

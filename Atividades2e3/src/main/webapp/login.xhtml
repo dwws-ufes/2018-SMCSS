@@ -28,6 +28,14 @@
                     </h:panelGroup>
                 </h:panelGrid>
             </form>
+            <p:link outcome="/auth/register" onclick="clearBreadCrumbs()">
+              <i class="fa fa-user"></i>
+              <span><h:outputText value="#{msgs['login.register']}" /></span>
+            </p:link>
+            <p:link outcome="/auth/recover" onclick="clearBreadCrumbs()">
+              <i class="fa fa-key"></i>
+              <span><h:outputText value="#{msgs['login.forgot']}" /></span>
+            </p:link>
         </div>
     </ui:define>
 </ui:composition>

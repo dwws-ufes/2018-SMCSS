@@ -2,7 +2,6 @@ package br.ufes.informatica.smcss.auth.controller;
 
 import java.util.Locale;
 
-
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.RequestScoped;

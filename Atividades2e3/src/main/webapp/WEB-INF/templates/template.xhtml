@@ -72,6 +72,16 @@
                     <span><h:outputText value="#{msgsCore['ofertaDisciplina.title']}" /></span>
                 </p:link>
             </li>
+            
+            <li class="header"><h:outputText value="#{msgsCore['core.menu.user']}" /></li>
+            <li>
+	            <h:form id="logout">
+	                <p:commandLink action="#{securityController.logout}" onclick="clearBreadCrumbs()" ajax="false">
+	                    <i class="fa fa-user"></i>
+	                    <span><h:outputText value="#{msgsCore['core.menu.logout']}" /></span>
+	                </p:commandLink>
+                </h:form>
+            </li>
         </ul>
     </ui:define>
 
