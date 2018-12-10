@@ -8,28 +8,10 @@
   </ui:define>
   <ui:define name="body">
     <adm:breadcrumb link="/core/ofertaDisciplina/index" title="#{msgsCore['ofertaDisciplina.title']}"/>
-    <h:form id="noScholarPeriod" rendered="#{ofertaDisciplinaController.periodoLetivo == null}">
-        <div><h:outputText value="#{msgsCore['ofertaDisciplina.periodoLetivo.vazio']}"/></div>
-        <div><p:link outcome="/core/periodoLetivo/index" onclick="clearBreadCrumbs()">
-            <i class="fa fa-calendar"></i>
-            <span><h:outputText value="#{msgsCore['periodoLetivo.title']}" /></span>
-        </p:link></div>
-    </h:form>
-    <h:form id="listingForm" rendered="#{ofertaDisciplinaController.periodoLetivo != null}">
-      <div>
-        <p:commandButton
-            action="#{ofertaDisciplinaController.navegarParaPeriodoLetivoAnterior}"
-            disabled="#{(!ofertaDisciplinaController.existePeriodoLetivoAnterior())}"
-            update=":listingForm:entitiesDataTable @form"
-            icon="fa fa-arrow-left"/>
-        <h:outputText value="#{ofertaDisciplinaController.periodoLetivo.codigo}"/>
-        <p:commandButton
-            action="#{ofertaDisciplinaController.navegarParaPeriodoLetivoSeguinte}"
-            disabled="#{(!ofertaDisciplinaController.existePeriodoLetivoSeguinte())}"
-            update=":listingForm:entitiesDataTable @form"
-            icon="fa fa-arrow-right"
-        />
-      </div>
+    <ui:include src="/WEB-INF/components/navegacaoPeriodo.xhtml">
+        <ui:param name="update" value=":listingForm:entitiesDataTable"/>
+    </ui:include>
+    <h:form id="listingForm" rendered="#{navegacaoPeriodoBean.periodoLetivo != null}">
       <p:dataTable id="entitiesDataTable" var="entity" value="#{ofertaDisciplinaController.lazyEntities}" selection="#{ofertaDisciplinaController.selectedEntity}" selectionMode="single" paginator="true" rows="#{ofertaDisciplinaController.maxDataTableRowsPerPage}" paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}" rowsPerPageTemplate="#{ofertaDisciplinaController.halfMaxDataTableRowsPerPage},#{ofertaDisciplinaController.maxDataTableRowsPerPage},#{ofertaDisciplinaController.doubleMaxDataTableRowsPerPage}" lazy="true" paginatorPosition="bottom" emptyMessage="#{msgsCore['ofertaDisciplina.text.noEntities']}">
         <p:ajax event="rowSelect" update="buttonsGroup"/>
         <p:ajax event="rowUnselect" update="buttonsGroup"/>

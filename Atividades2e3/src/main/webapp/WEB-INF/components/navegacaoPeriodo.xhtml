@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:component xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:cc="http://java.sun.com/jsf/composite"
+    xmlns:p="http://primefaces.org/ui">
+    
+    <h:form id="noScholarPeriod" rendered="#{navegacaoPeriodoBean.periodoLetivo == null}">
+        <div><h:outputText value="#{msgsCore['ofertaDisciplina.periodoLetivo.vazio']}"/></div>
+        <div><p:link outcome="/core/periodoLetivo/index" onclick="clearBreadCrumbs()">
+            <i class="fa fa-calendar"></i>
+            <span><h:outputText value="#{msgsCore['periodoLetivo.title']}" /></span>
+        </p:link></div>
+    </h:form>
+    <h:form id="periodNavigation"> 
+      <p:commandButton
+          action="#{navegacaoPeriodoBean.navegarParaPeriodoLetivoAnterior}"
+          disabled="#{(!navegacaoPeriodoBean.existePeriodoLetivoAnterior())}"
+          update="#{update} @form"
+          icon="fa fa-arrow-left"/>
+      <h:outputText value="#{navegacaoPeriodoBean.periodoLetivo.codigo}"/>
+      <p:commandButton
+          action="#{navegacaoPeriodoBean.navegarParaPeriodoLetivoSeguinte}"
+          disabled="#{(!navegacaoPeriodoBean.existePeriodoLetivoSeguinte())}"
+          update="#{update} @form"
+          icon="fa fa-arrow-right"
+      />
+    </h:form>
+</ui:component>

@@ -7,6 +7,7 @@ import java.util.function.Function;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
+import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -15,6 +16,7 @@ import org.primefaces.event.SelectEvent;
 import br.ufes.inf.nemo.jbutler.ejb.application.CrudService;
 import br.ufes.inf.nemo.jbutler.ejb.controller.CrudController;
 import br.ufes.informatica.smcss.core.application.OfertaDisciplinaService;
+import br.ufes.informatica.smcss.core.controller.NavegacaoPeriodoBean.PeriodoLetivoChangeEvent;
 import br.ufes.informatica.smcss.core.domain.Aula;
 import br.ufes.informatica.smcss.core.domain.DiaDaSemana;
 import br.ufes.informatica.smcss.core.domain.Disciplina;
@@ -29,6 +31,9 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
 
     @EJB
     private OfertaDisciplinaService ofertaDisciplinaService;
+    
+    @Inject
+    private NavegacaoPeriodoBean navegacaoPeriodo;
 
     @Override
     public CrudService<OfertaDisciplina> getCrudService() {
@@ -44,53 +49,16 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
     protected OfertaDisciplina createNewEntity() {
         // TODO Auto-generated method stub
         OfertaDisciplina ofertaDisciplina = super.createNewEntity();
-        ofertaDisciplina.setPeriodoLetivo(periodoLetivo);
+        ofertaDisciplina.setPeriodoLetivo(getPeriodoLetivo());
         return ofertaDisciplina;
     }
 
-    private PeriodoLetivo periodoLetivo;
-
-    @Inject
-    void initPeriodoLetivo() {
-        this.periodoLetivo = new PeriodoLetivo();
-        this.periodoLetivo.getDuracao().setInicio(new Date());
-        PeriodoLetivo periodoLetivo = retrievePeriodoLetivoAnterior();
-        this.periodoLetivo = periodoLetivo == null ? retrievePeriodoLetivoSeguinte() : periodoLetivo;
-    }
-
     public PeriodoLetivo getPeriodoLetivo() {
-        return periodoLetivo;
+        return navegacaoPeriodo.getPeriodoLetivo();
     }
 
-    public void setPeriodoLetivo(PeriodoLetivo periodoLetivo) {
-        if (periodoLetivo != null && periodoLetivo != this.periodoLetivo) {
-            this.periodoLetivo = periodoLetivo;
-            goFirst();
-        }
-    }
-
-    private PeriodoLetivo retrievePeriodoLetivoSeguinte() {
-        return ofertaDisciplinaService.retrievePeriodoLetivoSeguinte(periodoLetivo);
-    }
-
-    public boolean existePeriodoLetivoSeguinte() {
-        return retrievePeriodoLetivoSeguinte() != null;
-    }
-
-    public void navegarParaPeriodoLetivoSeguinte() {
-        setPeriodoLetivo(retrievePeriodoLetivoSeguinte());
-    }
-
-    private PeriodoLetivo retrievePeriodoLetivoAnterior() {
-        return ofertaDisciplinaService.retrievePeriodoLetivoAnterior(periodoLetivo);
-    }
-
-    public boolean existePeriodoLetivoAnterior() {
-        return retrievePeriodoLetivoAnterior() != null;
-    }
-
-    public void navegarParaPeriodoLetivoAnterior() {
-        setPeriodoLetivo(retrievePeriodoLetivoAnterior());
+    public void periodoLetivoChanged(@Observes PeriodoLetivoChangeEvent periodoLetivo) {
+        goFirst();
     }
 
     public List<Disciplina> completeDisciplina(String query) {
@@ -177,6 +145,8 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
      * função da falta de tempo hábil para estudar melhor o sistema de filtragem do JButler
      */
     protected void count() {
+        
+        final PeriodoLetivo periodoLetivo = getPeriodoLetivo();
 
         if (periodoLetivo == null) {
             super.count();
@@ -201,6 +171,8 @@ public class OfertaDisciplinaController extends CrudController<OfertaDisciplina>
     @Override
     protected void retrieveEntities() {
 
+        final PeriodoLetivo periodoLetivo = getPeriodoLetivo();
+        
         if (periodoLetivo == null) {
             super.retrieveEntities();
             return;

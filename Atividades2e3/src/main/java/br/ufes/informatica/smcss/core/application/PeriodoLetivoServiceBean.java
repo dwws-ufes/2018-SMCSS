@@ -21,4 +21,14 @@ public class PeriodoLetivoServiceBean extends CrudServiceBean<PeriodoLetivo> imp
     public BaseDAO<PeriodoLetivo> getDAO() {
         return periodoLetivoDAO;
     }
+
+    @Override
+    public PeriodoLetivo retrievePeriodoLetivoAnterior(PeriodoLetivo periodoLetivo) {
+        return periodoLetivoDAO.retrieveAnterior(periodoLetivo);
+    }
+
+    @Override
+    public PeriodoLetivo retrievePeriodoLetivoSeguinte(PeriodoLetivo periodoLetivo) {
+        return periodoLetivoDAO.retrieveSeguinte(periodoLetivo);
+    }
 }

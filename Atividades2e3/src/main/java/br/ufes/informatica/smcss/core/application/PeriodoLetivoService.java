@@ -6,4 +6,8 @@ import br.ufes.informatica.smcss.core.domain.PeriodoLetivo;
 
 @Local
 public interface PeriodoLetivoService extends CrudService<PeriodoLetivo> {
+
+    PeriodoLetivo retrievePeriodoLetivoAnterior(PeriodoLetivo periodoLetivo);
+
+    PeriodoLetivo retrievePeriodoLetivoSeguinte(PeriodoLetivo periodoLetivo);
 }
