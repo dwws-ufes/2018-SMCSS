@@ -28,6 +28,18 @@
     <param-name>primefaces.TRANSFORM_METADATA</param-name>
     <param-value>true</param-value>
   </context-param>
+  <env-entry>
+    <description>Public URL of application deployment root</description>
+    <env-entry-name>publicRootURL</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>http://smcss.inf.ufes.br/</env-entry-value>
+  </env-entry>
+  <env-entry>
+    <description>E-mail address in from clause of sent e-mails</description>
+    <env-entry-name>senderMailAddress</env-entry-name>
+    <env-entry-type>java.lang.String</env-entry-type>
+    <env-entry-value>smcss@radoj.org</env-entry-value>
+  </env-entry>
   <security-constraint>
     <web-resource-collection>
         <web-resource-name>Recursos de Administração</web-resource-name>

@@ -24,6 +24,12 @@
 			<var>msgsCore</var>
 		</resource-bundle>
 
+        <!-- Loads resource bundles for i18n messages and assigns names to them for auth subsystem -->
+        <resource-bundle>
+            <base-name>br.ufes.informatica.smcss.auth.view.messages</base-name>
+            <var>msgsAuth</var>
+        </resource-bundle>
+
 		<!-- Defines the default locale. -->
 		<locale-config>
 			<default-locale>en</default-locale>

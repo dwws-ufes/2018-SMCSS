@@ -1,0 +1,4 @@
+Registro de nova conta
+
+Recebemos sua solicitação de criação de conta.
+Para confirmar, acesse o endereço ${auth.request.url}.
