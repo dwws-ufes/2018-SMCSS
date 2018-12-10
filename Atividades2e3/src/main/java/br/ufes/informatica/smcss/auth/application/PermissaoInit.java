@@ -7,7 +7,6 @@ import java.util.Set;
 import javax.annotation.security.DeclareRoles;
 import javax.ejb.EJB;
 import javax.ejb.LocalBean;
-import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.Initialized;
 import javax.enterprise.event.Observes;
@@ -27,7 +26,6 @@ import br.ufes.informatica.smcss.auth.persistence.UsuarioDAO;
  *
  */
 @LocalBean
-@Stateless
 @ApplicationScoped
 @DeclareRoles({ "Admin", "Candidato", "Aluno", "Professor" })
 public class PermissaoInit implements ServletContextListener {
